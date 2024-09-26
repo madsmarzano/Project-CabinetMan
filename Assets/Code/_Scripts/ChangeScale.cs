@@ -7,6 +7,8 @@ public class ChangeScale : MonoBehaviour
 
     public Vector3 positionChange = new Vector3(0, 0.75f, 0); //Changes player position on the y axis relative to size to ensure Player remains grounded.
 
+    //public float lerpSpeed = 0.25f;
+
     public enum size
     {
         HUMAN,
@@ -29,6 +31,7 @@ public class ChangeScale : MonoBehaviour
             {
                 if (currentSize == size.HUMAN)
                 {
+                    //transform.localScale = Vector3.MoveTowards(humanSize, bugSize, lerpSpeed);
                     transform.localScale = bugSize;
                     transform.position -= positionChange;
                     currentSize = size.BUG;
