@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 292e7800f0b2e4d45bdcf07f3f2203db, type: 3}
-  m_Name: DefaultPlayerData
+  m_Name: PlayerHumanSizeData
   m_EditorClassIdentifier: 
   moveForce: 15
   maxSpeed: 8

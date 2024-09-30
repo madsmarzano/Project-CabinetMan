@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Player.States
+namespace CabinetMan.Player.States
 {
     public class PlayerIdleState : PlayerGroundedState
     {

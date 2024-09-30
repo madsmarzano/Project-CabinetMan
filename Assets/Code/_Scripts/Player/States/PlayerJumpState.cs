@@ -1,7 +1,7 @@
-using Game.Player.StateMachine;
+using CabinetMan.Player.StateMachine;
 using UnityEngine;
 
-namespace Game.Player.States
+namespace CabinetMan.Player.States
 {
     public class PlayerJumpState : PlayerState
     {
