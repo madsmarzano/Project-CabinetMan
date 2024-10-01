@@ -98,8 +98,9 @@ GameObject:
   - component: {fileID: 959061366892587626}
   - component: {fileID: 959061366892587622}
   - component: {fileID: 959061366892587645}
-  - component: {fileID: 959061366892587618}
+  - component: {fileID: 4306704116029100595}
   - component: {fileID: 959061366892587617}
+  - component: {fileID: 2496319760226305320}
   - component: {fileID: 959061366892587619}
   m_Layer: 0
   m_Name: PlayerPrototype
@@ -219,7 +220,7 @@ MonoBehaviour:
   groundCheckOffset: {x: 0, y: 0.14, z: 0}
   groundCheckRadius: 0.12
   enableGroundCheckGizmo: 0
---- !u!114 &959061366892587618
+--- !u!114 &4306704116029100595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,20 +229,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 959061366892587627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1b15e74c2a7374e9b20754ce99f924, type: 3}
+  m_Script: {fileID: 11500000, guid: 8baa0f74e1406b6408195bff25c26634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 0}
   input: {fileID: 0}
+  data: {fileID: 0}
   rb: {fileID: 0}
   cc: {fileID: 0}
-  data: {fileID: 11400000, guid: 3e78342a34baf9b48959318c24993f27, type: 2}
-  humanSizeData: {fileID: 11400000, guid: 3e78342a34baf9b48959318c24993f27, type: 2}
-  bugSizeData: {fileID: 11400000, guid: 8b9618e59b6ad7747a5f68d2facb3971, type: 2}
-  xInputRaw: 0
-  zInputRaw: 0
-  jumpTimer: 0
-  canJump: 1
-  currentState: 0
   isGrounded: 0
   ground:
     serializedVersion: 2
@@ -263,6 +258,18 @@ MonoBehaviour:
   moveDirRaw: {x: 0, y: 0, z: 0}
   PressedJump: 0
   HoldingJump: 0
+--- !u!114 &2496319760226305320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959061366892587627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f195548c7ee0d47bac2ed52e4598da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &959061366892587619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,5 +286,7 @@ MonoBehaviour:
   bugSize: {x: 0.25, y: 0.25, z: 0.25}
   scalingTimeSeconds: 0.5
   changeTimer: 0
+  humanSizeData: {fileID: 11400000, guid: 3e78342a34baf9b48959318c24993f27, type: 2}
+  bugSizeData: {fileID: 11400000, guid: 8b9618e59b6ad7747a5f68d2facb3971, type: 2}
   currentSize: 0
   hasChanged: 0

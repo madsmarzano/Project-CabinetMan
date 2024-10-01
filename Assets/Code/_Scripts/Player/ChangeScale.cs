@@ -13,7 +13,7 @@ public class ChangeScale : MonoBehaviour
     [Tooltip("Amount the scale and position will be changed each frame.")]
     private float changeIncrement;
 
-    private PlayerController player; //This will used to update the player's data based on size.
+    private Player player; //This will used to update the player's data based on size.
 
     public enum size
     {
@@ -21,14 +21,18 @@ public class ChangeScale : MonoBehaviour
         BUG
     }
 
+    public PlayerData humanSizeData;
+    public PlayerData bugSizeData;
+
     public size currentSize;
     public bool hasChanged = false;
 
     private void Awake()
     {
-        player = GetComponent<PlayerController>();
+        player = GetComponent<Player>();
 
         transform.localScale = humanSize;
+        player.data = humanSizeData;
 
         changeIncrement = (humanSize.x - bugSize.x) / scalingTimeSeconds; //only using the x value of the Vector3's since I need a single float and the values are the same
     }
@@ -64,12 +68,12 @@ public class ChangeScale : MonoBehaviour
                 if (currentSize == size.HUMAN)
                 {
                     currentSize = size.BUG;
-                    player.data = player.bugSizeData;
+                    player.data = bugSizeData;
                 }
                 else
                 {
                     currentSize = size.HUMAN;
-                    player.data = player.humanSizeData;
+                    player.data = humanSizeData;
                 }
 
                 hasChanged = true;
