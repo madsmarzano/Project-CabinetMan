@@ -1,9 +1,9 @@
-using Game.Player.StateMachine;
+using CabinetMan.Player.StateMachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Player.States
+namespace CabinetMan.Player.States
 {
     public class PlayerMovingState : PlayerGroundedState
     {

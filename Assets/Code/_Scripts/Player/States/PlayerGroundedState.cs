@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using Game.Player.StateMachine;
+using CabinetMan.Player.StateMachine;
 
-namespace Game.Player.States
+namespace CabinetMan.Player.States
 {
     public class PlayerGroundedState : PlayerState
     {

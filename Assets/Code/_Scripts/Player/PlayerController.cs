@@ -1,9 +1,9 @@
-using Game.Player.StateMachine;
-using Game.Player.States;
-using UnityEngine;
-
-namespace Game.Player
+namespace CabinetMan.Player
 {
+    using CabinetMan.Player.StateMachine;
+    using CabinetMan.Player.States;
+    using UnityEngine;
+
     public class PlayerController : MonoBehaviour
     {
         [HideInInspector]
@@ -15,7 +15,11 @@ namespace Game.Player
         [HideInInspector]
         public CapsuleCollider cc;
 
-        public PlayerData data;
+        [HideInInspector]
+        public PlayerData data; // This is the main instance of PlayerData that is referenced.
+
+        public PlayerData humanSizeData;
+        public PlayerData bugSizeData;
 
         [HideInInspector]
         public PlayerIdleState idleState;
@@ -24,6 +28,7 @@ namespace Game.Player
         public PlayerInAirState inAirState;
 
         public bool isGrounded;
+        public LayerMask ground;
 
         public float flightTimer = 0f;
 
@@ -38,6 +43,10 @@ namespace Game.Player
             movingState = new PlayerMovingState(this);
             jumpState = new PlayerJumpState(this);
             inAirState = new PlayerInAirState(this);
+
+            ground = LayerMask.GetMask("Ground");
+
+            data = humanSizeData;
 
         }
 
@@ -70,8 +79,7 @@ namespace Game.Player
 
         private bool GroundCheck()
         {
-            //Debug.DrawRay(transform.position, Vector3.down * 2.05f);
-            return Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 2.05f);
+            return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
         }
     }
 }

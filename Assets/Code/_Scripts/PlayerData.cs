@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data")]
@@ -16,7 +17,10 @@ public class PlayerData : ScriptableObject
     [Tooltip("Total time in seconds that player is able to fly.")]
     public float maxFlightTime = 5.0f;
 
-    //[Header("Debug Stuff")]
+    [Header("Ground/Slope/Step Checks")]
+    public Vector3 groundCheckOffset = new Vector3(0, 1.5f, 0);
+    public float groundCheckRadius = 0.95f;
+    public bool enableGroundCheckGizmo;
     //public bool showStateInConsole;
 
 }
