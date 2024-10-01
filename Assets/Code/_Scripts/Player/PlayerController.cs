@@ -25,7 +25,7 @@ namespace CabinetMan.Player
 
         public enum PlayerState
         {
-            IDLE,
+            IDLE, //Grounded, not moving
             MOVING, //Grounded
             JUMPING,
             FALLING, //In the air but not jumping
@@ -75,7 +75,7 @@ namespace CabinetMan.Player
                     LandedUpdate(); break;
             }
 
-            //Probably should move this into one of the states eventually.
+            //Determines how long player can fly for.
             if (flightTimer > 0f)
             {
                 flightTimer -= Time.deltaTime;
@@ -126,7 +126,7 @@ namespace CabinetMan.Player
         }
 
 
-        //-----States-----
+        #region Methods for Individual States
         public void IdleUpdate()
         {
             if (xInputRaw != 0 || zInputRaw != 0)
@@ -238,5 +238,7 @@ namespace CabinetMan.Player
                 currentState = PlayerState.IDLE;
             }
         }
+
+        #endregion
     }
 }
