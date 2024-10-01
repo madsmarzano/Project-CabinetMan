@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -564,9 +564,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b58d91930b8a94ca7691079d32b838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  humanSize: {x: 2, y: 2, z: 2}
+  humanSize: {x: 1.75, y: 1.75, z: 1.75}
   bugSize: {x: 0.25, y: 0.25, z: 0.25}
-  totalScalingFrames: 200
+  scalingTimeSeconds: 0.5
+  changeTimer: 0
   currentSize: 0
   hasChanged: 0
 --- !u!114 &686704911
@@ -587,6 +588,11 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 3e78342a34baf9b48959318c24993f27, type: 2}
   humanSizeData: {fileID: 11400000, guid: 3e78342a34baf9b48959318c24993f27, type: 2}
   bugSizeData: {fileID: 0}
+  xInputRaw: 0
+  zInputRaw: 0
+  jumpTimer: 0
+  canJump: 1
+  currentState: 0
   isGrounded: 0
   ground:
     serializedVersion: 2
