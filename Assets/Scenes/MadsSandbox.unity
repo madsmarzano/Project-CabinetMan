@@ -1637,5 +1637,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrototype
       objectReference: {fileID: 0}
+    - target: {fileID: 959061366892587645, guid: c9c3b43e748ee7c4e923f7ae2fa5451b, type: 3}
+      propertyPath: groundCheckRadius
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 959061366892587645, guid: c9c3b43e748ee7c4e923f7ae2fa5451b, type: 3}
+      propertyPath: groundCheckOffset.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 959061366892587645, guid: c9c3b43e748ee7c4e923f7ae2fa5451b, type: 3}
+      propertyPath: enableGroundCheckGizmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c3b43e748ee7c4e923f7ae2fa5451b, type: 3}
