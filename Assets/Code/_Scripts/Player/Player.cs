@@ -10,11 +10,17 @@ namespace CabinetMan.Player
         [Header("Behaviors")]
         public PlayerMovement movement;
         //MouseLook script goes here
-
+        
+        [HideInInspector]
         public InputHandler input;
+
+        [HideInInspector]
         public PlayerData data;
 
+        [HideInInspector]
         public Rigidbody rb;
+
+        [HideInInspector]
         public CapsuleCollider cc;
 
         public PlayerStateMachine stateMachine;
