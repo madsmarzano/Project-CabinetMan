@@ -13,7 +13,7 @@ public class ChangeScale : MonoBehaviour
     [Tooltip("Amount the scale and position will be changed each frame.")]
     private float changeIncrement;
 
-    private Player player; //This will used to update the player's data based on size.
+    private PlayerController player; //This will used to update the player's data based on size.
 
     public enum size
     {
@@ -29,7 +29,7 @@ public class ChangeScale : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponent<Player>();
+        player = GetComponent<PlayerController>();
 
         transform.localScale = humanSize;
         player.data = humanSizeData;
