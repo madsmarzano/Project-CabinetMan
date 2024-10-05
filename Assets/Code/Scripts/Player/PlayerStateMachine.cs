@@ -4,21 +4,11 @@ using UnityEngine;
 
 namespace CabinetMan.Player
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerStateMachine : MonoBehaviour
     {
-        [HideInInspector]
-        public InputHandler input;
-        [HideInInspector]
-        public Rigidbody rb;
-        [HideInInspector]
-        public CapsuleCollider cc;
+        private PlayerCore player;
 
-        [HideInInspector]
-        public PlayerData data; // This is the main instance of PlayerData that is referenced.
-
-        //public PlayerData humanSizeData;
-        //public PlayerData bugSizeData;
-
+        //these might get moved out of here 
         public float xInputRaw;
         public float zInputRaw;
 
@@ -36,28 +26,18 @@ namespace CabinetMan.Player
 
         public PlayerState currentState;
 
-        public bool isGrounded;
-        public LayerMask ground;
-
         public float flightTimer = 0f;
 
         private void Awake()
         {
-            input = GetComponent<InputHandler>();
-            rb = GetComponent<Rigidbody>();
-            cc = GetComponent<CapsuleCollider>();
-
-            ground = LayerMask.GetMask("Ground");
-
-            //data = humanSizeData;
-
+            player = GetComponent<PlayerCore>();
         }
 
         private void Start()
         {
             currentState = PlayerState.IDLE;
 
-            data.jumpCount = 0;
+            player.data.jumpCount = 0;
         }
 
         private void Update()
@@ -87,10 +67,10 @@ namespace CabinetMan.Player
                 flightTimer = 0f;
             }
 
-            isGrounded = GroundCheck();
+            player.isGrounded = GroundCheck();
 
-            xInputRaw = input.moveDirRaw.x;
-            zInputRaw = input.moveDirRaw.z;
+            xInputRaw = player.input.moveDirRaw.x;
+            zInputRaw = player.input.moveDirRaw.z;
         }
 
         private void FixedUpdate()
@@ -110,21 +90,21 @@ namespace CabinetMan.Player
 
         private bool GroundCheck()
         {
-            return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
+            return Physics.CheckSphere(player.transform.position - player.data.groundCheckOffset, player.data.groundCheckRadius, player.ground);
         }
 
         public void Move()
         {
-            float currentSpeed = rb.velocity.magnitude;
+            float currentSpeed = player.rb.velocity.magnitude;
 
-            Vector3 moveForce = new Vector3(xInputRaw, 0, zInputRaw) * data.moveForce;
+            Vector3 moveForce = new Vector3(xInputRaw, 0, zInputRaw) * player.data.moveForce;
 
             //Stop applying force if player has reached their max speed
-            bool isOverMaxSpeed = currentSpeed > data.maxSpeed;
+            bool isOverMaxSpeed = currentSpeed > player.data.maxSpeed;
             if (isOverMaxSpeed)
                 moveForce = Vector3.zero;
 
-            rb.AddForce(moveForce);
+            player.rb.AddForce(moveForce);
         }
 
 
@@ -134,18 +114,18 @@ namespace CabinetMan.Player
             if (xInputRaw != 0 || zInputRaw != 0)
                 currentState = PlayerState.MOVING;
 
-            if (input.PressedJump)
+            if (player.input.PressedJump)
             {
-                data.jumpCount++;
+                player.data.jumpCount++;
                 currentState = PlayerState.JUMPING;
             }
         }
 
         public void IdleFixedUpdate()
         {
-            if (rb.velocity.magnitude > 0)
+            if (player.rb.velocity.magnitude > 0)
             {
-                rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, data.slowDownSpeed * Time.deltaTime);
+                player.rb.velocity = Vector3.Lerp(player.rb.velocity, Vector3.zero, player.data.slowDownSpeed * Time.deltaTime);
             }
         }
 
@@ -154,9 +134,9 @@ namespace CabinetMan.Player
             if (xInputRaw == 0 && zInputRaw == 0)
                 currentState = PlayerState.IDLE; //If no input from the player, switch to idle state
 
-            if (input.PressedJump)
+            if (player.input.PressedJump)
             {
-                data.jumpCount++;
+                player.data.jumpCount++;
                 currentState = PlayerState.JUMPING;
             }
         }
@@ -168,15 +148,15 @@ namespace CabinetMan.Player
 
         public void JumpingUpdate()
         {
-            if (!input.HoldingJump)
+            if (!player.input.HoldingJump)
             {
                 jumpTimer = 0;
                 currentState = PlayerState.FALLING;
             }
 
-            if (data.jumpCount == 2)
+            if (player.data.jumpCount == 2)
             {
-                flightTimer = data.maxFlightTime;
+                flightTimer = player.data.maxFlightTime;
             }
         }
 
@@ -184,32 +164,32 @@ namespace CabinetMan.Player
         {
             Move();
 
-            if (jumpTimer >= data.maxJumpFrames)
+            if (jumpTimer >= player.data.maxJumpFrames)
             {
                 jumpTimer = 0;
                 currentState = PlayerState.FALLING;
             }
             else
             {
-                rb.AddForce(new Vector3(0, data.jumpForce, 0));
+                player.rb.AddForce(new Vector3(0, player.data.jumpForce, 0));
                 jumpTimer++;
             }
         }
 
         public void FallingUpdate()
         {
-            if (input.PressedJump && canJump)
+            if (player.input.PressedJump && canJump)
             {
-                data.jumpCount++;
+                player.data.jumpCount++;
                 currentState = PlayerState.JUMPING;
             }
 
-            if (isGrounded)
+            if (player.isGrounded)
             {
                 currentState = PlayerState.LANDED;
             }
 
-            if (flightTimer == 0 && data.jumpCount > 2)
+            if (flightTimer == 0 && player.data.jumpCount > 2)
             {
                 canJump = false;
             }
@@ -227,7 +207,7 @@ namespace CabinetMan.Player
         public void LandedUpdate()
         {
             jumpTimer = 0;
-            data.jumpCount = 0;
+            player.data.jumpCount = 0;
             flightTimer = 0;
             canJump = true;
 

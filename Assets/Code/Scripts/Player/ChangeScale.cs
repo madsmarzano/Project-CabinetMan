@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ChangeScale : MonoBehaviour
 {
+    private PlayerCore player;
+
     public Vector3 humanSize = Vector3.one;
     public Vector3 bugSize = new Vector3(0.25f, 0.25f, 0.25f);
 
@@ -13,26 +15,22 @@ public class ChangeScale : MonoBehaviour
     [Tooltip("Amount the scale and position will be changed each frame.")]
     private float changeIncrement;
 
-    private PlayerController player; //This will used to update the player's data based on size.
-
     public enum size
     {
-        HUMAN,
-        BUG
+        HUMAN = 1,
+        BUG = 2,
     }
-
-    public PlayerData humanSizeData;
-    public PlayerData bugSizeData;
 
     public size currentSize;
     public bool hasChanged = false;
 
     private void Awake()
     {
-        player = GetComponent<PlayerController>();
+        player = GetComponent<PlayerCore>();
 
         transform.localScale = humanSize;
-        player.data = humanSizeData;
+        currentSize = size.HUMAN;
+        player.SetPlayerDataForSize((int)currentSize);
 
         changeIncrement = (humanSize.x - bugSize.x) / scalingTimeSeconds; //only using the x value of the Vector3's since I need a single float and the values are the same
     }
@@ -68,12 +66,12 @@ public class ChangeScale : MonoBehaviour
                 if (currentSize == size.HUMAN)
                 {
                     currentSize = size.BUG;
-                    player.data = bugSizeData;
+                    player.SetPlayerDataForSize((int)currentSize);
                 }
                 else
                 {
                     currentSize = size.HUMAN;
-                    player.data = humanSizeData;
+                    player.SetPlayerDataForSize((int)currentSize);
                 }
 
                 hasChanged = true;
