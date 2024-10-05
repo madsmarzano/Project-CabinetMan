@@ -33,7 +33,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Prototype_512x512_Yellow
+  m_Name: PrototypeYellowMat
   m_Shader: {fileID: -6465566751694194690, guid: 883b9a4c1c796d44a990e521d314ed54, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
