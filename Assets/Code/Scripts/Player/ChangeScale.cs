@@ -1,9 +1,8 @@
-using CabinetMan.Player;
 using UnityEngine;
 
 public class ChangeScale : MonoBehaviour
 {
-    private PlayerCore player;
+    private Player player;
 
     public Vector3 humanSize = Vector3.one;
     public Vector3 bugSize = new Vector3(0.25f, 0.25f, 0.25f);
@@ -26,7 +25,7 @@ public class ChangeScale : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponent<PlayerCore>();
+        player = GetComponent<Player>();
 
         transform.localScale = humanSize;
         currentSize = size.HUMAN;
