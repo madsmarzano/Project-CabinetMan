@@ -1,4 +1,9 @@
-using UnityEngine;
+/// <summary>
+/// By Mads:
+/// 
+/// Represents the player when they are in the air but not actively jumping.
+/// They are still able to move on the X and Z axes.
+/// </summary>
 
 public class PlayerFallingState : PlayerState
 {
