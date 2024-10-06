@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCore : MonoBehaviour
 {
     [HideInInspector]
-    public InputHandler input;
+    public InputManager input;
     [HideInInspector]
     public Rigidbody rb;
     [HideInInspector]
@@ -21,7 +21,7 @@ public class PlayerCore : MonoBehaviour
 
     private void Awake()
     {
-        input = GetComponent<InputHandler>();
+        input = GetComponent<InputManager>();
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CapsuleCollider>();
 
