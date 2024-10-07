@@ -113,6 +113,7 @@ public class Player : MonoBehaviour
 
         rb.AddForce(moveForce);
 
+        //Get the velocity of the player on the x and z axes only
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         //Limit velocity to max speed
