@@ -103,17 +103,25 @@ public class Player : MonoBehaviour
         return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
     }
 
+    /// <summary>
+    /// Moves the player along the x and/or z axes.
+    /// Their velocity on either of these axes is limited to a specified maxSpeed set in PlayerData.
+    /// </summary>
     public void Move()
     {
-        float currentSpeed = rb.velocity.magnitude;
-
-        Vector3 moveForce = new Vector3(input.xInputRaw, 0, input.zInputRaw) * data.moveForce;
-
-        //Stop applying force if player has reached their max speed
-        bool isOverMaxSpeed = currentSpeed > data.maxSpeed;
-        if (isOverMaxSpeed)
-            moveForce = Vector3.zero;
+        Vector3 moveForce = new Vector3(input.xInputRaw, 0, input.zInputRaw) * data.acceleration;
 
         rb.AddForce(moveForce);
+
+        //Get the velocity of the player on the x and z axes only
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        //Limit velocity to max speed
+        if (flatVel.magnitude > data.maxSpeed)
+        {
+            Vector3 limitedVel = flatVel.normalized * data.maxSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+
     }
 }

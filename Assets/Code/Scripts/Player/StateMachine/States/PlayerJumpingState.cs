@@ -32,7 +32,7 @@ public class PlayerJumpingState : PlayerState
         }
         else
         {
-            player.rb.AddForce(new Vector3(0, player.data.jumpForce, 0));
+            player.rb.AddForce(Vector3.up * player.data.jumpForce);
             jumpTimer++;
         }
 

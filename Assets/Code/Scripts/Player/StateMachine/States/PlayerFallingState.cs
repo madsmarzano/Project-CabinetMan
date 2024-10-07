@@ -1,10 +1,11 @@
+using UnityEngine;
+
 /// <summary>
 /// By Mads:
 /// 
 /// Represents the player when they are in the air but not actively jumping.
 /// They are still able to move on the X and Z axes.
 /// </summary>
-
 public class PlayerFallingState : PlayerState
 {
     public PlayerFallingState(Player player, InputManager input, PlayerStateMachine stateMachine) : base(player, input, stateMachine)
@@ -25,6 +26,7 @@ public class PlayerFallingState : PlayerState
     {
         base.FixedUpdate();
 
+        //Allow player to move while falling.
         player.Move();
     }
 
