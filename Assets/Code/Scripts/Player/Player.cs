@@ -13,9 +13,12 @@ public class Player : MonoBehaviour
 
     [HideInInspector]
     public PlayerData data; // This is the main instance of PlayerData that is referenced.
+
+    [Header("Size-Specific Data")]
     public PlayerData bugSizeData;
     public PlayerData humanSizeData;
 
+    [Header("Jumping and Movement")]
     public bool isGrounded;
     public LayerMask ground;
 
@@ -46,6 +49,7 @@ public class Player : MonoBehaviour
 
         stateMachine = new PlayerStateMachine();
 
+        //Create instances of each player state and store them in a variable for easy access.
         groundedState = new PlayerGroundedState(this, input, stateMachine);
         idleState = new PlayerIdleState(this, input, stateMachine);
         movingState = new PlayerMovingState(this, input, stateMachine);
@@ -98,13 +102,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks beneath the Player for an object that has the "Ground" tag.
+    /// </summary>
+    /// <returns> True if ground is detected; false if ground is not detected.</returns>
     private bool GroundCheck()
     {
         return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
     }
 
     /// <summary>
-    /// Moves the player along the x and/or z axes.
+    /// Moves the player along the x and/or z axes. 
+    /// This function is called from all PlayerState scripts where the player is able to move on both axes.
     /// Their velocity on either of these axes is limited to a specified maxSpeed set in PlayerData.
     /// </summary>
     public void Move()
