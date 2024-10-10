@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public CapsuleCollider cc;
 
+    public Transform orientation; //A child GameObject of the player that updates the direction the player is facing based on where the camera is facing.
+
     [HideInInspector]
     public PlayerData data; // This is the main instance of PlayerData that is referenced.
 
@@ -118,9 +120,11 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Move()
     {
-        Vector3 moveForce = new Vector3(input.xInputRaw, 0, input.zInputRaw) * data.acceleration;
 
-        rb.AddForce(moveForce);
+        Vector3 moveDirection = orientation.right * input.xInputRaw + orientation.forward * input.zInputRaw;
+        //Vector3 moveDirection = new Vector3(transform.right * input.xInputRaw, 0, input.zInputRaw) * data.acceleration;
+
+        rb.AddForce(moveDirection.normalized * data.acceleration);
 
         //Get the velocity of the player on the x and z axes only
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
