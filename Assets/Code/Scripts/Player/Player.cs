@@ -83,6 +83,8 @@ public class Player : MonoBehaviour
             flightTimer = 0f;
         }
 
+        transform.rotation = orientation.rotation;
+
         isGrounded = GroundCheck();
     }
 
