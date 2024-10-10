@@ -23,13 +23,18 @@ public class CameraControl : MonoBehaviour
     //minimum and maximum values for Mathf.Clamp to use.
 
     private float yRot = 0;
+    private float xRot = 0;
+    private float delta;
     //variable for vertical rotation angle
+
+    public Transform orientation; //represents the Player's orientation -- MM 10/10/24
+
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (axes == rotationAxes.MouseX)
         {
@@ -56,6 +61,8 @@ public class CameraControl : MonoBehaviour
             float xRot = transform.localEulerAngles.y + delta;
 
             transform.localEulerAngles = new Vector3(yRot, xRot, 0);
+
+            orientation.rotation = Quaternion.Euler(0, xRot, 0);
         }
         //This essentially takes the same idea of the else if statement above, but instead of locking horizontal rotation,
         //it reads horizontal rotation to a new float and adds that rotation to the horizontal rotation.
