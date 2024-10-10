@@ -30,6 +30,7 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        transform.rotation = Quaternion.identity;
     }
 
     void LateUpdate()
@@ -58,9 +59,8 @@ public class CameraControl : MonoBehaviour
             float delta = Input.GetAxis("Mouse X") * sensitivityX;
             float xRot = transform.localEulerAngles.y + delta;
 
-            //transform.localEulerAngles = new Vector3(yRot, xRot, 0); -- leaving this out for now becuase I think transform.rotation is smoother?? -- MM 10/10/24
-
-            transform.rotation = Quaternion.Euler(yRot, xRot, 0);
+            //transform.localEulerAngles = new Vector3(yRot, xRot, 0); //-- leaving this out for now becuase I think transform.rotation is smoother?? -- MM 10/10/24
+            transform.rotation = Quaternion.Euler(yRot, xRot, 0); //Rotates the camera.
 
             orientation.rotation = Quaternion.Euler(0, xRot, 0); //Updates the player's orientation to match camera's rotation on the y axis. -- MM 10/10/24
         }

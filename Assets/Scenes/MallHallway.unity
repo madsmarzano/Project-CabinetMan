@@ -2343,6 +2343,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6610577912306405633, guid: e5dbe31436e18a641b8f6937c1231aeb, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6610577913222108929, guid: e5dbe31436e18a641b8f6937c1231aeb, type: 3}
       propertyPath: m_Name
       value: Player
