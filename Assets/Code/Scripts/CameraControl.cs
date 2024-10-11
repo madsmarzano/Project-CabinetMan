@@ -25,12 +25,12 @@ public class CameraControl : MonoBehaviour
     private float yRot = 0;
     //variable for vertical rotation angle
 
-    public Transform orientation; //represents the Player's orientation -- MM 10/10/24
+    public Transform _camera; //used to control the rotation of the camera, which is a child object of the Player -- MM 10/10/24
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        transform.rotation = Quaternion.identity;
+        
     }
 
     void LateUpdate()
@@ -60,9 +60,11 @@ public class CameraControl : MonoBehaviour
             float xRot = transform.localEulerAngles.y + delta;
 
             //transform.localEulerAngles = new Vector3(yRot, xRot, 0); //-- leaving this out for now becuase I think transform.rotation is smoother?? -- MM 10/10/24
-            transform.rotation = Quaternion.Euler(yRot, xRot, 0); //Rotates the camera.
 
-            orientation.rotation = Quaternion.Euler(0, xRot, 0); //Updates the player's orientation to match camera's rotation on the y axis. -- MM 10/10/24
+            _camera.rotation = Quaternion.Euler(yRot, xRot, 0); //Rotates the camera. -- MM 10/10/24
+
+            transform.rotation = Quaternion.Euler(0, xRot, 0); //Rotates the player on the y axis only. -- MM 10/10/24
+
         }
         //This essentially takes the same idea of the else if statement above, but instead of locking horizontal rotation,
         //it reads horizontal rotation to a new float and adds that rotation to the horizontal rotation.

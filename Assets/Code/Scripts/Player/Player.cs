@@ -83,6 +83,8 @@ public class Player : MonoBehaviour
             flightTimer = 0f;
         }
 
+        //transform.rotation = orientation.rotation;
+
         isGrounded = GroundCheck();
     }
 
@@ -121,7 +123,7 @@ public class Player : MonoBehaviour
     public void Move()
     {
 
-        Vector3 moveDirection = orientation.right * input.xInputRaw + orientation.forward * input.zInputRaw;
+        Vector3 moveDirection = transform.right * input.xInputRaw + transform.forward * input.zInputRaw;
         //Vector3 moveDirection = new Vector3(transform.right * input.xInputRaw, 0, input.zInputRaw) * data.acceleration;
 
         rb.AddForce(moveDirection.normalized * data.acceleration);
