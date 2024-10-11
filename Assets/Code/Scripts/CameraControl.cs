@@ -61,7 +61,7 @@ public class CameraControl : MonoBehaviour
 
             //transform.localEulerAngles = new Vector3(yRot, xRot, 0); //-- leaving this out for now becuase I think transform.rotation is smoother?? -- MM 10/10/24
 
-            _camera.rotation = Quaternion.Euler(yRot, xRot, 0); //Rotates the camera.
+            _camera.rotation = Quaternion.Euler(yRot, xRot, 0); //Rotates the camera. -- MM 10/10/24
 
             transform.rotation = Quaternion.Euler(0, xRot, 0); //Rotates the player on the y axis only. -- MM 10/10/24
 
