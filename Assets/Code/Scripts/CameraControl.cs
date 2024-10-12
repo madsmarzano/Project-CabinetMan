@@ -45,6 +45,7 @@ public class CameraControl : MonoBehaviour
         {
             //transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
             delta = Input.GetAxis("Mouse X") * sensitivityX;
+            xRot = transform.localEulerAngles.y + delta;
 
             _player.rotation = Quaternion.Euler(0, xRot, 0);
             _camera.rotation = Quaternion.Euler(0, xRot, 0);
