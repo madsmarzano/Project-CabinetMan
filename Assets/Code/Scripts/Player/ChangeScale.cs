@@ -21,17 +21,23 @@ public class ChangeScale : MonoBehaviour
     }
 
     public size currentSize;
+    public size startingSize;
     public bool hasChanged = false;
 
     private void Awake()
     {
         player = GetComponent<Player>();
 
-        transform.localScale = humanSize;
-        currentSize = size.HUMAN;
-        player.SetPlayerDataForSize((int)currentSize);
+        //transform.localScale = humanSize;
+        //currentSize = size.HUMAN;
+        //player.SetPlayerDataForSize((int)currentSize);
 
         changeIncrement = (humanSize.x - bugSize.x) / scalingTimeSeconds; //only using the x value of the Vector3's since I need a single float and the values are the same
+    }
+
+    private void Start()
+    {
+        SetStartingSize((int)startingSize);
     }
 
     private void Update()
@@ -75,6 +81,23 @@ public class ChangeScale : MonoBehaviour
 
                 hasChanged = true;
             }
+        }
+    }
+
+    public void SetStartingSize(int s)
+    {
+        //Takes the enum index as a parameter: 1 -- Human, 2 -- Bug
+        if (s == 1)
+        {
+            transform.localScale = humanSize;
+            currentSize = size.HUMAN;
+            player.SetPlayerDataForSize(s);
+        }
+        else
+        {
+            transform.localScale = bugSize;
+            currentSize = size.BUG;
+            player.SetPlayerDataForSize(s);
         }
     }
 
