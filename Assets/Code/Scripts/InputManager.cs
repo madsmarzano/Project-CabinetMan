@@ -14,7 +14,7 @@ public class InputManager : MonoBehaviour
 
     public bool PressedJump;
     public bool HoldingJump;
-    public bool ChangingSize;
+    public bool SizeChangeTriggered;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class InputManager : MonoBehaviour
         PressedJump = CheckForKeyQuickPress(_jump);
         HoldingJump = CheckForKeyPress(_jump);
 
-        ChangingSize = CheckForKeyQuickPress(_changeSize);
+        SizeChangeTriggered = CheckForKeyQuickPress(_changeSize);
     }
 
     //Returns true if the key passed in as an argument is being held down

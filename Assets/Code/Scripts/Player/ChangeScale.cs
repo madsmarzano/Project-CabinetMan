@@ -43,7 +43,7 @@ public class ChangeScale : MonoBehaviour
     private void Update()
     {
         //References the input manager to determine if the input which changes the player's size has been activated.
-        if (player.input.ChangingSize && !isChanging)
+        if (player.input.SizeChangeTriggered && !isChanging)
         {
             StartChange();
         }
@@ -62,31 +62,6 @@ public class ChangeScale : MonoBehaviour
         if (changeTimer == 0)
         {
             isChanging = false;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "ScaleChanger")
-        {
-            if (!isChanging)
-            {
-                changeTimer = scalingTimeSeconds;
-                changeIncrement = -changeIncrement;
-
-                if (currentSize == size.HUMAN)
-                {
-                    currentSize = size.BUG;
-                    player.SetPlayerDataForSize((int)currentSize);
-                }
-                else
-                {
-                    currentSize = size.HUMAN;
-                    player.SetPlayerDataForSize((int)currentSize);
-                }
-
-                isChanging = true;
-            }
         }
     }
 
