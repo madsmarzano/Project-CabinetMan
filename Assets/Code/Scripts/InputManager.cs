@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    //Creating KeyCode variables for each action that is tied to a key press
+    //to make passing the key into functions easier. 
     private KeyCode _jump;
+    private KeyCode _changeSize;
 
     public float xInput, xInputRaw;
     public float zInput, zInputRaw;
 
     public bool PressedJump;
     public bool HoldingJump;
+    public bool ChangingSize;
 
     private void Start()
     {
-        _jump = KeyCode.Space;
+        SetDefaultKeyBinds();
     }
     private void Update()
     {
@@ -24,10 +28,13 @@ public class InputManager : MonoBehaviour
         zInputRaw = Input.GetAxisRaw("Vertical");
 
         PressedJump = CheckForKeyQuickPress(_jump);
-        HoldingJump = CheckforKeyPress(_jump);
+        HoldingJump = CheckForKeyPress(_jump);
+
+        ChangingSize = CheckForKeyQuickPress(_changeSize);
     }
 
-    private bool CheckforKeyPress(KeyCode key)
+    //Returns true if the key passed in as an argument is being held down
+    private bool CheckForKeyPress(KeyCode key)
     {
         if (Input.GetKey(key))
             return true;
@@ -47,5 +54,11 @@ public class InputManager : MonoBehaviour
             return false;
 
         return false;
+    }
+
+    private void SetDefaultKeyBinds()
+    {
+        _jump = KeyCode.Space;
+        _changeSize = KeyCode.LeftShift;
     }
 }

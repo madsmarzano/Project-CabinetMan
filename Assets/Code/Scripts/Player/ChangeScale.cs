@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Attached to the Player GameObject.
+/// </summary>
+
 public class ChangeScale : MonoBehaviour
 {
     private Player player;
@@ -21,16 +25,12 @@ public class ChangeScale : MonoBehaviour
     }
 
     public size currentSize;
-    public size startingSize;
-    public bool hasChanged = false;
+    public size startingSize = size.HUMAN;
+    public bool isChanging = false;
 
     private void Awake()
     {
         player = GetComponent<Player>();
-
-        //transform.localScale = humanSize;
-        //currentSize = size.HUMAN;
-        //player.SetPlayerDataForSize((int)currentSize);
 
         changeIncrement = (humanSize.x - bugSize.x) / scalingTimeSeconds; //only using the x value of the Vector3's since I need a single float and the values are the same
     }
@@ -42,6 +42,12 @@ public class ChangeScale : MonoBehaviour
 
     private void Update()
     {
+        //References the input manager to determine if the input which changes the player's size has been activated.
+        if (player.input.ChangingSize && !isChanging)
+        {
+            StartChange();
+        }
+
         if (changeTimer > 0.0f)
         {
             transform.localScale += new Vector3(changeIncrement, changeIncrement, changeIncrement) * Time.deltaTime;
@@ -55,7 +61,7 @@ public class ChangeScale : MonoBehaviour
 
         if (changeTimer == 0)
         {
-            hasChanged = false;
+            isChanging = false;
         }
     }
 
@@ -63,7 +69,7 @@ public class ChangeScale : MonoBehaviour
     {
         if (collision.gameObject.tag == "ScaleChanger")
         {
-            if (!hasChanged)
+            if (!isChanging)
             {
                 changeTimer = scalingTimeSeconds;
                 changeIncrement = -changeIncrement;
@@ -79,8 +85,27 @@ public class ChangeScale : MonoBehaviour
                     player.SetPlayerDataForSize((int)currentSize);
                 }
 
-                hasChanged = true;
+                isChanging = true;
             }
+        }
+    }
+
+    public void StartChange()
+    {
+        isChanging = true;
+
+        changeTimer = scalingTimeSeconds;
+        changeIncrement = -changeIncrement;
+
+        if (currentSize == size.HUMAN)
+        {
+            currentSize = size.BUG;
+            player.SetPlayerDataForSize((int)currentSize);
+        }
+        else
+        {
+            currentSize = size.HUMAN;
+            player.SetPlayerDataForSize((int)currentSize);
         }
     }
 
