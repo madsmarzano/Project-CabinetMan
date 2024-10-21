@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292e7800f0b2e4d45bdcf07f3f2203db, type: 3}
   m_Name: PlayerBugSizeData
   m_EditorClassIdentifier: 
-  moveForce: 15
-  maxSpeed: 10
+  acceleration: 15
+  maxSpeed: 3
   slowDownSpeed: 3
   jumpForce: 40
   maxJumpFrames: 10
