@@ -57,7 +57,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.05
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -256,12 +256,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eebbec2802765b348b35c93220bf00f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 2081119789152473300}
   axes: 0
   sensitivityX: 9
   sensitivityY: 9
   minimumY: -45
   maximumY: 45
-  _camera: {fileID: 2081119789152473300}
 --- !u!114 &2081119789413004462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +279,8 @@ MonoBehaviour:
   scalingTimeSeconds: 0.5
   changeTimer: 0
   currentSize: 0
-  hasChanged: 0
+  startingSize: 1
+  isChanging: 0
 --- !u!114 &2081119789413004463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,3 +299,4 @@ MonoBehaviour:
   zInputRaw: 0
   PressedJump: 0
   HoldingJump: 0
+  SizeChangeTriggered: 0
