@@ -39,5 +39,10 @@ public class PlayerGroundedState : PlayerState
             player.data.jumpCount++;
             stateMachine.ChangeState(player.jumpState);
         }
+
+        if (!player.isGrounded)
+        {
+            stateMachine.ChangeState(player.fallingState);
+        }
     }
 }
