@@ -95,6 +95,7 @@ public class ChangeScale : MonoBehaviour
         }
         else
         {
+            changeIncrement = -changeIncrement;
             transform.localScale = bugSize;
             currentSize = size.BUG;
             player.SetPlayerDataForSize(s);
