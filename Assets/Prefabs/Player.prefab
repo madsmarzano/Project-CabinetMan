@@ -57,7 +57,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.05
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   humanSize: {x: 1, y: 1, z: 1}
-  bugSize: {x: 0.25, y: 0.25, z: 0.25}
+  bugSize: {x: 0.1, y: 0.1, z: 0.1}
   scalingTimeSeconds: 0.5
   changeTimer: 0
   currentSize: 0
