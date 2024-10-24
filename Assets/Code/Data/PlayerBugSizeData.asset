@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerBugSizeData
   m_EditorClassIdentifier: 
   acceleration: 15
-  maxSpeed: 3
+  maxSpeed: 1.5
   slowDownSpeed: 3
   jumpForce: 40
   maxJumpFrames: 10

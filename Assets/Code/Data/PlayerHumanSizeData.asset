@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerHumanSizeData
   m_EditorClassIdentifier: 
   acceleration: 30
-  maxSpeed: 10
+  maxSpeed: 5
   slowDownSpeed: 5
   jumpForce: 50
   maxJumpFrames: 10

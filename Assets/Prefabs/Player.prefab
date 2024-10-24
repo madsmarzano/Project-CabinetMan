@@ -161,7 +161,7 @@ MonoBehaviour:
   flightTimer: 0
   canJump: 1
   canChangeSize: 1
-  isInVent: 1
+  isInVent: 0
 --- !u!33 &2081119789413004457
 MeshFilter:
   m_ObjectHideFlags: 0
