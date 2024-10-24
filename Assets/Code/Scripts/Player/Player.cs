@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// By Mads.
+/// This script is the core of the Player controller. It uses a state machine to change between states such as Idle, Moving, Jumping, etc.
+/// </summary>
+
 public class Player : MonoBehaviour
 {
     [HideInInspector]
@@ -10,8 +15,6 @@ public class Player : MonoBehaviour
     public Rigidbody rb;
     [HideInInspector]
     public CapsuleCollider cc;
-
-    public Transform orientation; //A child GameObject of the player that updates the direction the player is facing based on where the camera is facing.
 
     [HideInInspector]
     public PlayerData data; // This is the main instance of PlayerData that is referenced.
@@ -22,10 +25,17 @@ public class Player : MonoBehaviour
 
     [Header("Jumping and Movement")]
     public bool isGrounded;
-    public LayerMask ground;
-
+    //public LayerMask ground; -- trying a different approach, I think this will be too confusing (MM 10/23/24)
     public float jumpTimer = 0;
+    public float flightTimer = 0f; //Amount of the time the player can spend flying. 
+    public float groundCheckLength;
+
+    [Header("Player Abilities")]
     public bool canJump = true;
+    public bool canChangeSize = true;
+
+    [Header("Vent Stuff")]
+    public bool isInVent = false;
 
     public PlayerStateMachine stateMachine;
 
@@ -39,15 +49,13 @@ public class Player : MonoBehaviour
 
     #endregion
 
-    public float flightTimer = 0f;
-
     private void Awake()
     {
         input = GetComponent<InputManager>();
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CapsuleCollider>();
 
-        ground = LayerMask.GetMask("Ground");
+        //ground = LayerMask.GetMask("Ground");
 
         stateMachine = new PlayerStateMachine();
 
@@ -112,7 +120,9 @@ public class Player : MonoBehaviour
     /// <returns> True if ground is detected; false if ground is not detected.</returns>
     private bool GroundCheck()
     {
-        return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
+        Debug.DrawRay(transform.position, Vector3.down * groundCheckLength);
+        return Physics.Raycast(transform.position, Vector3.down, data.height);
+        //return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
     }
 
     /// <summary>
