@@ -20,6 +20,7 @@ public class PlayerData : ScriptableObject
     [Header("Ground/Slope/Step Checks")]
     public Vector3 groundCheckOffset = new Vector3(0, 1.5f, 0);
     public float groundCheckRadius = 0.95f;
+    public float height;
     public bool enableGroundCheckGizmo;
     //public bool showStateInConsole;
 
