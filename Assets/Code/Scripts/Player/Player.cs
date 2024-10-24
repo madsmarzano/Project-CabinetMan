@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     [Header("Jumping and Movement")]
     public bool isGrounded;
-    public LayerMask ground;
+    //public LayerMask ground; -- trying a different approach, I think this will be too confusing
 
     public float jumpTimer = 0;
     public bool canJump = true;
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CapsuleCollider>();
 
-        ground = LayerMask.GetMask("Ground");
+        //ground = LayerMask.GetMask("Ground");
 
         stateMachine = new PlayerStateMachine();
 
@@ -112,7 +112,9 @@ public class Player : MonoBehaviour
     /// <returns> True if ground is detected; false if ground is not detected.</returns>
     private bool GroundCheck()
     {
-        return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
+        //Debug.DrawRay(transform.position, Vector3.down * groundCheckLength);
+        return Physics.Raycast(transform.position, Vector3.down, data.height);
+        //return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
     }
 
     /// <summary>
