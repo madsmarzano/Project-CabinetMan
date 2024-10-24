@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     //public LayerMask ground; -- trying a different approach, I think this will be too confusing (MM 10/23/24)
     public float jumpTimer = 0;
     public float flightTimer = 0f; //Amount of the time the player can spend flying. 
+    public float groundCheckLength;
 
     [Header("Player Abilities")]
     public bool canJump = true;
@@ -119,7 +120,7 @@ public class Player : MonoBehaviour
     /// <returns> True if ground is detected; false if ground is not detected.</returns>
     private bool GroundCheck()
     {
-        //Debug.DrawRay(transform.position, Vector3.down * groundCheckLength);
+        Debug.DrawRay(transform.position, Vector3.down * groundCheckLength);
         return Physics.Raycast(transform.position, Vector3.down, data.height);
         //return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
     }
