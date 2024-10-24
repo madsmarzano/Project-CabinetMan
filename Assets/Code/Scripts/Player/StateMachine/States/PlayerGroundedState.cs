@@ -18,11 +18,13 @@ public class PlayerGroundedState : PlayerState
     public override void EnterState()
     {
         base.EnterState();
+        player.canChangeSize = true;
     }
 
     public override void ExitState()
     {
         base.ExitState();
+        player.canChangeSize = false;
     }
 
     public override void FixedUpdate()

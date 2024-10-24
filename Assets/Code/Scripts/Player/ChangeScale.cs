@@ -37,13 +37,22 @@ public class ChangeScale : MonoBehaviour
 
     private void Start()
     {
-        SetStartingSize((int)startingSize);
+        if (player.isInVent)
+        {
+            SetStartingSize(2);
+        }
+        else
+        {
+            SetStartingSize(1);
+        }
+
+        //SetStartingSize((int)startingSize);
     }
 
     private void Update()
     {
         //References the input manager to determine if the input which changes the player's size has been activated.
-        if (player.input.SizeChangeTriggered && !isChanging)
+        if (player.input.SizeChangeTriggered && player.canChangeSize && !isChanging)
         {
             StartChange();
         }
