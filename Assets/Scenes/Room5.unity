@@ -679,6 +679,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+--- !u!1 &163580564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5918852788907933988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+  m_PrefabInstance: {fileID: 163580563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &163580565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163580564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 102.21106, y: 100.2829, z: 28.242004}
+  m_Center: {x: 608.9568, y: 0.0000019073486, z: 215.31302}
+--- !u!114 &163580569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163580564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb80845cd4fb184eac2db8b754209ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationName: ClothingStore
 --- !u!1 &335062735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,6 +2464,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6837190536370438173, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
   m_PrefabInstance: {fileID: 1946523939}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1946523941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5918852788907933988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+  m_PrefabInstance: {fileID: 1946523939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1946523942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946523941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb80845cd4fb184eac2db8b754209ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationName: FoodCourtB1
+--- !u!65 &1946523943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946523941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 102.21106, y: 100.2829, z: 28.242004}
+  m_Center: {x: 608.9568, y: 0.0000019073486, z: 215.31302}
 --- !u!1 &2065927664
 GameObject:
   m_ObjectHideFlags: 0
