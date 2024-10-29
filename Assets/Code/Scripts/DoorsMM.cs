@@ -2,6 +2,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// By Mads:
+/// 
+/// This script is attached to every vent that functions as a door to another room.
+/// 
+/// 
+/// </summary>
+
 public class DoorsMM : MonoBehaviour
 {
 
