@@ -18,7 +18,7 @@ public class DoorsMM : MonoBehaviour
         { 0, 5, 2, 3 }, //Room1
         { 1, 3, 0, 0 }, //Room2
         { 0, 1, 2, 0 }, //Room3
-        { 0, 0, 0, 0 }, //Room4 - unsure how entrances to the maze will work so it is all null
+        { 0, 0, 0, 0 }, //Room4 - unsure how entrances to the maze will work so currently it is all null
         { 1, 0, 2, 3 }  //Room5
 
     };
