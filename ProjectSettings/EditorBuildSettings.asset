@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Room1.unity
+    path: Assets/Scenes/FoodCourtB1.unity
     guid: 2aef33b8fa0465d438b8b108e4b1de70
   - enabled: 1
     path: Assets/Scenes/Room2.unity
