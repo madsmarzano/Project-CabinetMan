@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -16,5 +14,20 @@ public class GameManager : MonoBehaviour
         "INSERT ROOM 4 INFO HERE",
         "INSERT ROOM 5 INFO HERE"
     };
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            //If the instance reference has already been set and this is NOT the instance
+            //Destroy
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
 }
