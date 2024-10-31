@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 /// 
 /// </summary>
 
-public class DoorsMM : MonoBehaviour
+public class Doors : MonoBehaviour
 {
 
     public int[,] roomGridArray =
