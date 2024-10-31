@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    //[HideInInspector]
+    [HideInInspector]
     public string[] roomInfo =
     {
         "INSERT ROOM 1 INFO HERE",
