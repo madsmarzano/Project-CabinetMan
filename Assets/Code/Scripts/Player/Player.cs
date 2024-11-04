@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public CapsuleCollider cc;
 
-    public Transform lookDir;
+    //public Transform lookDir;
+    //public Transform playerBase; // For use in checking for ground
 
     [HideInInspector]
     public PlayerData data; // This is the main instance of PlayerData that is referenced.
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
 
     [Header("Jumping and Movement")]
     public bool isGrounded;
-    //public LayerMask ground; -- trying a different approach, I think this will be too confusing (MM 10/23/24)
+    public LayerMask ground; //-- trying a different approach, I think this will be too confusing (MM 10/23/24)
     public float jumpTimer = 0;
     public float flightTimer = 0f; //Amount of the time the player can spend flying. 
     public float groundCheckLength;
@@ -75,7 +76,7 @@ public class Player : MonoBehaviour
         //Set the player to be idle at the start of each scene.
         stateMachine.Initialize(idleState);
 
-        data.jumpCount = 0;
+        //data.jumpCount = 0;
     }
 
     private void Update()
@@ -123,7 +124,7 @@ public class Player : MonoBehaviour
     private bool GroundCheck()
     {
         Debug.DrawRay(transform.position, Vector3.down * groundCheckLength);
-        return Physics.Raycast(transform.position, Vector3.down, data.height);
+        return Physics.Raycast(transform.position, Vector3.down, data.height, ground);
         //return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
     }
 
