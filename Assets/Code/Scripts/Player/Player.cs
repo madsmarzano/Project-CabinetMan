@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public CapsuleCollider cc;
 
+    public Transform lookDir;
+
     [HideInInspector]
     public PlayerData data; // This is the main instance of PlayerData that is referenced.
 
@@ -132,9 +134,15 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Move()
     {
-
-        Vector3 moveDirection = transform.right * input.xInputRaw + transform.forward * input.zInputRaw;
+        //Vector3 forward = Vector3.forward * Camera.main.transform.right;
+        Vector3 moveDirection = Camera.main.transform.right * input.xInputRaw + Camera.main.transform.forward * input.zInputRaw;
+        //Vector3 forward = new Vector3(Camera.main.transform.right.z, 0.0f, Camera.main.transform.forward.z);
+        //Vector3 moveDirection = (forward * input.xInputRaw + Camera.main.transform.right * input.zInputRaw + Vector3.up * rb.velocity.y);
+        //Vector3 moveDirection = transform.right * input.xInputRaw + transform.forward * input.zInputRaw;
         //Vector3 moveDirection = new Vector3(transform.right * input.xInputRaw, 0, input.zInputRaw) * data.acceleration;
+
+        //cancel out y value so player doesn't fly away
+        moveDirection.y *= 0;
 
         rb.AddForce(moveDirection.normalized * data.acceleration);
 
