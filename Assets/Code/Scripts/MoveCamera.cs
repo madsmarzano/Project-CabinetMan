@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-    public Transform cameraPosition; //referencing the CameraPosition GameObject that is a child of the Player
+    public Transform player; //referencing the CameraPosition GameObject that is a child of the Player
 
     private void LateUpdate()
     {
-        transform.position = cameraPosition.position;
+        transform.position = player.position;
     }
 }
