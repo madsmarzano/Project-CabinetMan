@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public CapsuleCollider cc;
 
+    //public Transform lookDir;
+    //public Transform playerBase; // For use in checking for ground
+
     [HideInInspector]
     public PlayerData data; // This is the main instance of PlayerData that is referenced.
 
@@ -25,7 +28,7 @@ public class Player : MonoBehaviour
 
     [Header("Jumping and Movement")]
     public bool isGrounded;
-    //public LayerMask ground; -- trying a different approach, I think this will be too confusing (MM 10/23/24)
+    public LayerMask ground; //-- trying a different approach, I think this will be too confusing (MM 10/23/24)
     public float jumpTimer = 0;
     public float flightTimer = 0f; //Amount of the time the player can spend flying. 
     public float groundCheckLength;
@@ -73,7 +76,7 @@ public class Player : MonoBehaviour
         //Set the player to be idle at the start of each scene.
         stateMachine.Initialize(idleState);
 
-        data.jumpCount = 0;
+        //data.jumpCount = 0;
     }
 
     private void Update()
@@ -121,7 +124,7 @@ public class Player : MonoBehaviour
     private bool GroundCheck()
     {
         Debug.DrawRay(transform.position, Vector3.down * groundCheckLength);
-        return Physics.Raycast(transform.position, Vector3.down, data.height);
+        return Physics.Raycast(transform.position, Vector3.down, data.height, ground);
         //return Physics.CheckSphere(transform.position - data.groundCheckOffset, data.groundCheckRadius, ground);
     }
 
@@ -132,9 +135,15 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Move()
     {
-
-        Vector3 moveDirection = transform.right * input.xInputRaw + transform.forward * input.zInputRaw;
+        //Vector3 forward = Vector3.forward * Camera.main.transform.right;
+        Vector3 moveDirection = Camera.main.transform.right * input.xInputRaw + Camera.main.transform.forward * input.zInputRaw;
+        //Vector3 forward = new Vector3(Camera.main.transform.right.z, 0.0f, Camera.main.transform.forward.z);
+        //Vector3 moveDirection = (forward * input.xInputRaw + Camera.main.transform.right * input.zInputRaw + Vector3.up * rb.velocity.y);
+        //Vector3 moveDirection = transform.right * input.xInputRaw + transform.forward * input.zInputRaw;
         //Vector3 moveDirection = new Vector3(transform.right * input.xInputRaw, 0, input.zInputRaw) * data.acceleration;
+
+        //cancel out y value so player doesn't fly away
+        moveDirection.y *= 0;
 
         rb.AddForce(moveDirection.normalized * data.acceleration);
 

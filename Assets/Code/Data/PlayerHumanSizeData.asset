@@ -21,5 +21,5 @@ MonoBehaviour:
   maxFlightTime: 5
   groundCheckOffset: {x: 0, y: 1, z: 0}
   groundCheckRadius: 0.85
-  height: 2
+  height: 1.05
   enableGroundCheckGizmo: 0
