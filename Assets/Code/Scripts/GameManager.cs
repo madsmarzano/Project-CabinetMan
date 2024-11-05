@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+    public string previousScene = "";
 
     [HideInInspector]
     public string[] roomInfo =
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
             //Destroy
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);;
     }
 
 }
