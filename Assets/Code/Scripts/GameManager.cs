@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public string previousScene = "";
 
-
-    public List 
     [HideInInspector]
     public string[] roomInfo =
     {
