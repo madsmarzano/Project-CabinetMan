@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -12,6 +13,8 @@ public class Spider : MonoBehaviour
     public float wallCheckLength = 0.5f;
     public float patrolSpeed = 0.5f;
     public bool isTurning = false;
+
+    public bool canTurnRight, canTurnLeft;
 
 
     private void Update()
@@ -44,28 +47,56 @@ public class Spider : MonoBehaviour
     {
         isTurning = true;
 
-        int turnDirection = 0; //Direction spider will turn: -1 -- Left; 1 -- Right
+        //check if there is a wall to the left or to the right of the player
+        canTurnRight = CheckRight();
+        canTurnLeft = CheckLeft();
 
-        //Check if Player is to the left or right of the Spider
+        float targetAngle;
 
-        Vector3 spiderRight = transform.TransformDirection(Vector3.right);
-        Vector3 toPlayer = (player.transform.position - transform.position).normalized;
-
-        if (Vector3.Dot(spiderRight, toPlayer) < 0)
+        if (canTurnRight)
         {
-            turnDirection = -1;
+            Debug.Log("Turning Right");
+            targetAngle = 90f;
+        }
+        else if (canTurnLeft)
+        {
+            Debug.Log("Turning Left");
+            targetAngle = -90f;
         }
         else
         {
-            turnDirection = 1;
+            Debug.Log("Flipping");
+            targetAngle = 180f;
         }
 
+        //int turnDirection = 0; //Direction spider will turn: -1 -- Left; 1 -- Right
+        //float targetAngle;
+
+        //Check if Player is to the left or right of the Spider
+
+        //Vector3 spiderRight = transform.TransformDirection(Vector3.right);
+        //Vector3 toPlayer = (player.transform.position - transform.position).normalized;
+
         //turnDirection = player.transform.position.x < transform.position.x ? -1 : 1;
-        float targetAngle = 90f * turnDirection;
+        //float targetAngle = 90f * turnDirection;
 
         //Rotate Spider based on turnDirection
         transform.Rotate(0f, targetAngle, 0f);
 
         isTurning = false;
+    }
+
+    public bool CheckRight()
+    {
+        if (Physics.Raycast(transform.position, transform.right, wallCheckLength))
+            return false; 
+        else return true;
+    }
+
+    public bool CheckLeft()
+    {
+        if (Physics.Raycast(transform.position, -transform.right, wallCheckLength))
+            return false;
+        else return true;
     }
 }

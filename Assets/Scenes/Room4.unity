@@ -3011,9 +3011,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 443331844}
   wallDetected: 0
-  wallCheckLength: 0.5
-  patrolSpeed: 0.5
+  wallCheckLength: 0.505
+  patrolSpeed: 5
   isTurning: 0
+  canTurnRight: 0
+  canTurnLeft: 0
 --- !u!54 &239803997
 Rigidbody:
   m_ObjectHideFlags: 0
