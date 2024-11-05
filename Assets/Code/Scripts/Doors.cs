@@ -15,11 +15,11 @@ public class Doors : MonoBehaviour
 
     public int[,] roomGridArray =
     {
-        { 0, 5, 2, 3 }, //Room1
-        { 1, 3, 0, 0 }, //Room2
-        { 0, 1, 2, 0 }, //Room3
-        { 0, 0, 0, 0 }, //Room4 - unsure how entrances to the maze will work so currently it is all null
-        { 1, 0, 2, 3 }  //Room5
+        { 4, 5, 2, 3 }, //Room1
+        { 1, 3, 4, 0 }, //Room2
+        { 0, 1, 2, 4 }, //Room3
+        { 1, 5, 2, 3 }, //Room4 -- VENT MAZE
+        { 1, 4, 2, 3 }  //Room5
 
     };
 
@@ -27,12 +27,12 @@ public class Doors : MonoBehaviour
     {
 
         //figure out scene we are currently in
-        string sceneName = SceneManager.GetActiveScene().name;
-        Debug.Log("The active scene name is " + sceneName);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("The active scene name is " + currentSceneName);
 
         //convert scene name into an integer we can use
         //gets this number from the last character of the scene name
-        string roomNumberString = sceneName.Substring(sceneName.Length - 1);
+        string roomNumberString = currentSceneName.Substring(currentSceneName.Length - 1);
         Debug.Log("The active scene number is " + roomNumberString);
 
         //convert roomNumberString to an int
@@ -67,6 +67,9 @@ public class Doors : MonoBehaviour
         string destinationString = destination.ToString();
         string nextScene = "Room" + destinationString;
         Debug.Log("Traveling to " + nextScene);
+
+        //store the name of the current scene in the previousScene variable within GameManager
+        GameManager.instance.previousScene = currentSceneName;
 
         //go to destination
         SceneManager.LoadScene(nextScene);
