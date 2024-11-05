@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public string previousScene = "";
 
+
+    public List 
     [HideInInspector]
     public string[] roomInfo =
     {
@@ -30,5 +33,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);;
     }
+
+
 
 }
