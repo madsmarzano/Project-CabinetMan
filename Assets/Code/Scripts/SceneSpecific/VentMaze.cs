@@ -8,15 +8,20 @@ public class VentMaze : MonoBehaviour
     public GameObject player;
     public Player playerController;
 
+    public GameObject spider;
+    public Spider spiderController;
+
     private void Awake()
     {
         playerController = player.GetComponent<Player>();
+        spiderController = spider.GetComponent<Spider>();
     }
 
     private void Start()
     {
         int spawnIndex = SetSpawnPoint(GameManager.instance.previousScene);
         SpawnPlayer(spawnIndex);
+        SpawnSpider(spawnIndex);
 
         playerController.isInVent = true;
     }
@@ -44,6 +49,26 @@ public class VentMaze : MonoBehaviour
     {
         player.transform.position = spawnPoints[i].transform.position;
         player.transform.forward = spawnPoints[i].transform.forward;
-        Debug.Log("Spawning in at " + spawnPoints[i].name);
+        Debug.Log("Player spawned at " + spawnPoints[i].name);
+    }
+
+    private void SpawnSpider(int playerSpawnPoint)
+    {
+        //There are 5 total spawn-points the spider can pick at random to spawn in at
+        //however it cannot choose the same point that the player is spawning into
+        int spiderSpawnPoint = playerSpawnPoint;
+        while (spiderSpawnPoint == playerSpawnPoint)
+        {
+            spiderSpawnPoint = Random.Range(0, 4);
+        }
+
+        Vector3 spiderSpawnPosition = new Vector3(
+            spawnPoints[spiderSpawnPoint].transform.position.x,
+            0.5f, //Height has to be higher than the spawn point for player
+            spawnPoints[spiderSpawnPoint].transform.position.z);
+
+        spider.transform.position = spiderSpawnPosition;
+        spider.transform.forward = spawnPoints[spiderSpawnPoint].transform.forward;
+        Debug.Log("Spider spawned at " + spawnPoints[spiderSpawnPoint].name);
     }
 }
