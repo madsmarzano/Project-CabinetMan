@@ -10,6 +10,7 @@ public class Spider : MonoBehaviour
 
     [Header("Spider AI")]
     public bool wallDetected = false;
+    public bool branchDetected = false;
     public float wallCheckLength = 0.5f;
     public float patrolSpeed = 0.5f;
     public bool isTurning = false;
@@ -19,23 +20,22 @@ public class Spider : MonoBehaviour
 
     private void Update()
     {
-        wallDetected = CheckForWall();
+        wallDetected = CheckForward();
 
         if (wallDetected && !isTurning)
         {
             Debug.Log("Spider Detected Wall");
             Turn();
         }
+        else if (branchDetected && !isTurning)
+        {
+            Debug.Log("Spider Reached a Branch");
+            ChooseDirection();
+        }
         else
         {
             Move();
         }
-    }
-
-    private bool CheckForWall()
-    {
-        Debug.DrawRay(transform.position, transform.forward * wallCheckLength);
-        return Physics.Raycast(transform.position, transform.forward, wallCheckLength);
     }
 
     private void Move()
@@ -80,10 +80,59 @@ public class Spider : MonoBehaviour
         //turnDirection = player.transform.position.x < transform.position.x ? -1 : 1;
         //float targetAngle = 90f * turnDirection;
 
-        //Rotate Spider based on turnDirection
+        //Rotate Spider
         transform.Rotate(0f, targetAngle, 0f);
 
         isTurning = false;
+    }
+
+    public void ChooseDirection()
+    {
+        isTurning = true;
+
+        bool canMoveForward = (wallDetected == false);
+        canTurnRight = CheckRight();
+        canTurnLeft = CheckLeft();
+
+        //check if player is to the right or to the left of the spider
+        Vector3 spiderRight = transform.TransformDirection(Vector3.right);
+        Vector3 toPlayer = (player.transform.position - transform.position).normalized;
+
+        float targetAngle;
+
+        if (Vector3.Dot(spiderRight, toPlayer) > 0f && canTurnRight)
+        {
+            targetAngle = 90; // turn right
+        }
+        else if (Vector3.Dot(spiderRight, toPlayer)  < 0f && canTurnLeft)
+        {
+            targetAngle = -90; // turn left
+        }
+        else if (canMoveForward)
+        {
+            targetAngle = 0;
+        }
+        else if (canTurnRight)
+        {
+            targetAngle = 90;
+        }
+        else
+        {
+            targetAngle = -90;
+        }
+
+        transform.Rotate(0f, targetAngle, 0f);
+
+        StartCoroutine(BranchExitTime());
+
+        //isTurning = false;
+
+    }
+
+    public bool CheckForward()
+    {
+        Debug.DrawRay(transform.position, transform.forward * wallCheckLength);
+        return Physics.Raycast(transform.position, transform.forward, wallCheckLength);
     }
 
     public bool CheckRight()
@@ -98,5 +147,12 @@ public class Spider : MonoBehaviour
         if (Physics.Raycast(transform.position, -transform.right, wallCheckLength))
             return false;
         else return true;
+    }
+
+    public IEnumerator BranchExitTime()
+    {
+        yield return new WaitForSeconds(0.5f);
+        branchDetected = false;
+        isTurning = false;
     }
 }
