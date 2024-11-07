@@ -1138,6 +1138,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5085259455818760869, guid: 35f32190d9bbbee49a4a8d2c2bbdbf23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242398524923064279, guid: 35f32190d9bbbee49a4a8d2c2bbdbf23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8305750429844093704, guid: 35f32190d9bbbee49a4a8d2c2bbdbf23, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1224,7 +1232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8305750429844093716, guid: 35f32190d9bbbee49a4a8d2c2bbdbf23, type: 3}
       propertyPath: m_Name
-      value: RoomTextCanvas
+      value: UI Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f32190d9bbbee49a4a8d2c2bbdbf23, type: 3}
