@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
     {
         itemName = name;
         itemID = id;
-        itemDesc = desc;
+        description = desc;
         itemIcon = Resources.Load<Texture2D>("SampleSprites" + name);
         itemUsable = usable;
         itemUseWithID = useWithId;
