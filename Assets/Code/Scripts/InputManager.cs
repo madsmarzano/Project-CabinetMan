@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     //to make passing the key into functions easier. 
     private KeyCode _jump;
     private KeyCode _changeSize;
+    private KeyCode _inventory;
 
     public float xInput, xInputRaw;
     public float zInput, zInputRaw;
@@ -15,6 +16,8 @@ public class InputManager : MonoBehaviour
     public bool PressedJump;
     public bool HoldingJump;
     public bool SizeChangeTriggered;
+
+    public bool ToggledInventory;
 
     private void Start()
     {
@@ -31,6 +34,8 @@ public class InputManager : MonoBehaviour
         HoldingJump = CheckForKeyPress(_jump);
 
         SizeChangeTriggered = CheckForKeyQuickPress(_changeSize);
+
+        ToggledInventory = CheckForKeyQuickPress(_inventory);
     }
 
     //Returns true if the key passed in as an argument is being held down
@@ -60,5 +65,6 @@ public class InputManager : MonoBehaviour
     {
         _jump = KeyCode.Space;
         _changeSize = KeyCode.LeftShift;
+        _inventory = KeyCode.Q;
     }
 }
