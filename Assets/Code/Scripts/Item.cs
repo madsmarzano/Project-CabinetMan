@@ -9,17 +9,15 @@ public class Item : MonoBehaviour
     public int itemID;
     public string description;
     public Texture2D itemIcon;
-    public bool itemUsable;
-    public int itemUseWithID;
+    //public bool isUsable;
+    //public bool isCD;
+    //public int itemUseWithID;
 
-
-    public Item(string name, int id, string desc, bool usable, int useWithId)
+    public Item(string name, int id, string desc)
     {
         itemName = name;
         itemID = id;
         description = desc;
         itemIcon = Resources.Load<Texture2D>("SampleSprites" + name);
-        itemUsable = usable;
-        itemUseWithID = useWithId;
     }
 }

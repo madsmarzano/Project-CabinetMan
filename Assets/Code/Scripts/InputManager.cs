@@ -18,6 +18,7 @@ public class InputManager : MonoBehaviour
     public bool SizeChangeTriggered;
 
     public bool ToggledInventory;
+    //public bool UIselected; //used to select an item or action -- defaults to left mouse click
 
     private void Start()
     {
