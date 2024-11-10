@@ -6,16 +6,22 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     public bool showInventory;
+    public static bool showInteractPrompt;
+    public static bool showInteractionMenu;
 
     public GameObject roomText;
     public GameObject inventory;
     public GameObject actions;
+    public GameObject interactPrompt;
+    public GameObject interactionMenu;
 
     private void Awake()
     {
         roomText = transform.GetChild(0).gameObject;
         inventory = transform.GetChild(1).gameObject;
         actions = transform.GetChild(2).gameObject;
+        interactPrompt = transform.GetChild(3).gameObject;
+        interactionMenu = transform.GetChild(4).gameObject;
     }
 
     private void Start()
@@ -23,10 +29,15 @@ public class UIController : MonoBehaviour
         //inventory and actions are hidden at the start
         inventory.SetActive(false);
         actions.SetActive(false);
+        interactPrompt.SetActive(false);
+        interactionMenu.SetActive(false);
     }
     private void Update()
     {
         showInventory = !inventory.activeSelf; //should return the opposite of activeSelf I hope
+
+        interactPrompt.SetActive(showInteractPrompt);
+        interactionMenu.SetActive(showInteractionMenu);
 
         if (InputManager.ToggledInventory())
         {

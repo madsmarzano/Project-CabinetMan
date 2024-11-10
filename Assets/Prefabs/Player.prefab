@@ -117,7 +117,6 @@ GameObject:
   - component: {fileID: 3615438217231565925}
   - component: {fileID: 3615438217231565929}
   - component: {fileID: 3615438217231565932}
-  - component: {fileID: 3615438217231565933}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -153,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b4b30f458dae524d85991aa00ca3710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 0}
   rb: {fileID: 0}
   cc: {fileID: 0}
   data: {fileID: 0}
@@ -166,6 +164,7 @@ MonoBehaviour:
   jumpTimer: 0
   flightTimer: 0
   groundCheckLength: 0
+  movementAxes: {x: 0, y: 0}
   canJump: 1
   canChangeSize: 1
   isInVent: 0
@@ -268,22 +267,3 @@ MonoBehaviour:
   currentSize: 0
   startingSize: 1
   isChanging: 0
---- !u!114 &3615438217231565933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3615438217231565924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dd601ab34683174b8285f01802f65f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xInput: 0
-  xInputRaw: 0
-  zInput: 0
-  zInputRaw: 0
-  PressedJump: 0
-  HoldingJump: 0
-  SizeChangeTriggered: 0
