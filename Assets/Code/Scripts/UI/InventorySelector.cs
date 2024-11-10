@@ -77,7 +77,7 @@ public class InventorySelector : MonoBehaviour
     void UpdateIcons()
     {
         //Add the icon from the item added to the inventory into the corresponding spot in the UI
-        foreach (InventoryItem item in GameManager.instance.Inventory)
+        foreach (Item item in GameManager.instance.Inventory)
         {
             int i = GameManager.instance.Inventory.IndexOf(item);
             Image uiImage = transform.GetChild(i).GetComponent<Image>();

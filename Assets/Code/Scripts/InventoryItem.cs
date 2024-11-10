@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class InventoryItem : MonoBehaviour
 {
-    public string itemname;
+    public string itemName;
     public Sprite itemIcon;
     public bool isUsable;
     public bool isCD;
@@ -26,6 +26,6 @@ public class InventoryItem : MonoBehaviour
 
     public void AddToInventory()
     {
-        GameManager.instance.Inventory.Add(this);
+        GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, isUsable, isCD));
     }
 }

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     };
 
     //List to store the items that are in the Player's inventory
-    public List <InventoryItem> Inventory;
+    public List <Item> Inventory = new List<Item>();
     public bool inventoryUpdated;
 
     private void Awake()
