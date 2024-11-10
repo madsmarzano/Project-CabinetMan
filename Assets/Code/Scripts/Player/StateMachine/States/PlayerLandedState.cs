@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLandedState : PlayerState
 {
-    public PlayerLandedState(Player player, InputManager input, PlayerStateMachine stateMachine) : base(player, input, stateMachine)
+    public PlayerLandedState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
 
@@ -30,7 +30,7 @@ public class PlayerLandedState : PlayerState
     {
         base.Update();
 
-        if (input.xInputRaw != 0 || input.zInputRaw != 0)
+        if (player.movementAxes.x != 0 || player.movementAxes.y != 0)
         {
             stateMachine.ChangeState(player.movingState);
         }

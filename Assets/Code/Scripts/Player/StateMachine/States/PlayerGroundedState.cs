@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class PlayerGroundedState : PlayerState
 {
-    public PlayerGroundedState(Player player, InputManager input, PlayerStateMachine stateMachine) : base(player, input, stateMachine)
+    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
 
@@ -36,7 +36,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
-        if (player.input.PressedJump)
+        if (InputManager.JumpPressed())
         {
             player.data.jumpCount++;
             stateMachine.ChangeState(player.jumpState);

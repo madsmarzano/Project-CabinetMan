@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    private InputManager input;
-
     public bool showInventory;
 
     public GameObject roomText;
@@ -15,8 +13,6 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
-        input = GetComponent<InputManager>();
-
         roomText = transform.GetChild(0).gameObject;
         inventory = transform.GetChild(1).gameObject;
         actions = transform.GetChild(2).gameObject;
@@ -32,7 +28,7 @@ public class UIController : MonoBehaviour
     {
         showInventory = !inventory.activeSelf; //should return the opposite of activeSelf I hope
 
-        if (input.ToggledInventory)
+        if (InputManager.ToggledInventory())
         {
             inventory.SetActive(showInventory);
         }

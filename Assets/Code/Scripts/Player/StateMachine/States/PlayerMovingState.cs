@@ -8,11 +8,9 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class PlayerMovingState : PlayerGroundedState
 {
-    public PlayerMovingState(Player player, InputManager input, PlayerStateMachine stateMachine) : base(player, input, stateMachine)
+    public PlayerMovingState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
-
-    private Vector3 moveDirection;
 
     public override void EnterState()
     {
@@ -35,10 +33,8 @@ public class PlayerMovingState : PlayerGroundedState
     {
         base.Update();
 
-        moveDirection = new Vector3(input.xInputRaw, 0, input.zInputRaw);
-
         //If no input is detected from the player, change to idle state
-        if (input.xInputRaw == 0 && input.zInputRaw == 0)
+        if (player.movementAxes.x == 0 && player.movementAxes.y == 0)
         {
             stateMachine.ChangeState(player.idleState);
         }

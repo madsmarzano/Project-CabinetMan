@@ -939,6 +939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f8588caa96f07439497f67ee07f90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedItem: 0
+  itemScaleUpSize: 0.1
 --- !u!222 &2932932161678128738
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1335,7 +1337,6 @@ GameObject:
   - component: {fileID: 8305750429844093719}
   - component: {fileID: 8305750429844093718}
   - component: {fileID: 8305750429844093717}
-  - component: {fileID: 2124568098865758348}
   - component: {fileID: 5163619202564720882}
   m_Layer: 5
   m_Name: UI Canvas
@@ -1428,26 +1429,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2124568098865758348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8305750429844093716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dd601ab34683174b8285f01802f65f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xInput: 0
-  xInputRaw: 0
-  zInput: 0
-  zInputRaw: 0
-  PressedJump: 0
-  HoldingJump: 0
-  SizeChangeTriggered: 0
-  ToggledInventory: 0
 --- !u!114 &5163619202564720882
 MonoBehaviour:
   m_ObjectHideFlags: 0

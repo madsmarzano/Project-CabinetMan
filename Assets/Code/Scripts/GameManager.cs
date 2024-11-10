@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         inventoryUpdated = false;
+
+        InputManager.SetDefaultKeyBinds();
     }
 
 

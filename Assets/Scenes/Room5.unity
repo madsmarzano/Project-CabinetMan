@@ -1120,7 +1120,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2124568098865758348, guid: 35f32190d9bbbee49a4a8d2c2bbdbf23, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35f32190d9bbbee49a4a8d2c2bbdbf23, type: 3}
 --- !u!1 &460008840
 GameObject:
@@ -3400,7 +3401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d55bd751a391347b1272e0a2b39a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: ToyBalls
   itemIcon: {fileID: 21300000, guid: 3caaef8cde550f342929eb035929a302, type: 3}
   isUsable: 0
   isCD: 0
