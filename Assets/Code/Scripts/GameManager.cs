@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     //List to store the items that are in the Player's inventory
     public List <InventoryItem> Inventory;
+    public bool inventoryUpdated;
 
     private void Awake()
     {
@@ -32,7 +33,9 @@ public class GameManager : MonoBehaviour
             //Destroy
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);;
+        DontDestroyOnLoad(gameObject);
+
+        inventoryUpdated = false;
     }
 
 

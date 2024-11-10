@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventorySelector : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class InventorySelector : MonoBehaviour
     private void Start()
     {
         SelectItem();
+        UpdateIcons();
     }
 
     private void Update()
@@ -44,6 +46,11 @@ public class InventorySelector : MonoBehaviour
         {
             SelectItem();
         }
+
+        if (!GameManager.instance.inventoryUpdated)
+        {
+            UpdateIcons();
+        }
     }
 
     void SelectItem()
@@ -65,5 +72,19 @@ public class InventorySelector : MonoBehaviour
             }
             i++;
         }
+    }
+
+    void UpdateIcons()
+    {
+        //Add the icon from the item added to the inventory into the corresponding spot in the UI
+        foreach (InventoryItem item in GameManager.instance.Inventory)
+        {
+            int i = GameManager.instance.Inventory.IndexOf(item);
+            Image uiImage = transform.GetChild(i).GetComponent<Image>();
+            uiImage.sprite = GameManager.instance.Inventory[i].itemIcon;
+
+        }
+
+        GameManager.instance.inventoryUpdated = true;
     }
 }

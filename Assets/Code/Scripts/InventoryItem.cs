@@ -19,6 +19,7 @@ public class InventoryItem : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             AddToInventory();
+            GameManager.instance.inventoryUpdated = false;
             gameObject.SetActive(false);
         }
     }
