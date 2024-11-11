@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ActionSelector : MonoBehaviour
@@ -7,6 +8,8 @@ public class ActionSelector : MonoBehaviour
     public int selectedAction = 0;
     public Vector3 originalSize;
     public float scaleUpSize = 0.1f;
+
+    public static GameObject interactionTarget = null;
 
     private void Awake()
     {
@@ -72,13 +75,20 @@ public class ActionSelector : MonoBehaviour
 
     void PerformAction(int action)
     {
+        UIController.interactionMenu.SetActive(false);
+
         switch (action)
         {
             case 0:
+                //Check action
+                interactionTarget.GetComponent<Interactable>().OnCheck();
                 break;
             case 1:
-                UIController.inventory.SetActive(true);
-                InventorySelector.state = InventorySelector.InventoryState.SELECTABLE; 
+                //Use item action 
+                interactionTarget.GetComponent<Interactable>().OnItemUsed();
+                break;
+            case 2:
+                //Do nothing action
                 break;
         }
     }

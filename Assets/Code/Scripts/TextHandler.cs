@@ -7,18 +7,6 @@ using UnityEngine.UI;
 
 public class TextHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        TextLoader();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TextLoader()
     {
         string sceneName = SceneManager.GetActiveScene().name;

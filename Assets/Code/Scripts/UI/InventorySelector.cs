@@ -10,37 +10,16 @@ public class InventorySelector : MonoBehaviour
     //public float itemScaleOriginal = 0f;
     public float itemScaleUpSize = 0.1f;
 
-    public bool staticInitialized = false;
-
-    public enum InventoryState
-    {
-        STATIC,
-        SELECTABLE
-    };
-
-    public static InventoryState state;
-
     private void Start()
     {
         //SelectItem();
         UpdateIcons();
-
-        InitializeStatic();
-        state = InventoryState.STATIC;
     }
 
     private void Update()
     {
 
-        switch (state)
-        {
-            case InventoryState.STATIC:
-                if (!staticInitialized)
-                    InitializeStatic();
-                break;
-            case InventoryState.SELECTABLE:
-                HandleSelection(); break;
-        }
+        HandleSelection();
 
         if (!GameManager.instance.inventoryUpdated)
         {
@@ -114,15 +93,5 @@ public class InventorySelector : MonoBehaviour
         }
 
         GameManager.instance.inventoryUpdated = true;
-    }
-
-    void InitializeStatic()
-    {
-        //Set all the icons back to their original scale
-        foreach (Transform item in transform)
-        {
-            item.localScale = Vector3.one;
-        }
-        staticInitialized = true;
     }
 }

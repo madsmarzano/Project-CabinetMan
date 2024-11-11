@@ -26,19 +26,19 @@ public class Interactable : MonoBehaviour
         if (playerInRange)
         {
             //Display interaction prompt text on the screen
-            UIController.showInteractPrompt = true;
+            UIController.interactPrompt.SetActive(true);
         }
         else
         {
-            UIController.showInteractPrompt = false;
+            UIController.interactPrompt.SetActive(false);
         }
 
         if (playerInRange && InputManager.InteractPressed())
         {
             //Open the interaction menu
-            UIController.showInteractionMenu = true;
+            UIController.interactionMenu.SetActive(true);
             UIController.inventory.SetActive(false);
-            UIController.interactionTarget = this.gameObject;
+            ActionSelector.interactionTarget = this.gameObject;
         }
     }
 

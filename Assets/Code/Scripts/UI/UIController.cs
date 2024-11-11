@@ -7,16 +7,13 @@ public class UIController : MonoBehaviour
 {
     public bool showInventory;
     public bool inventoryToggleEnabled;
-    public static bool showInteractPrompt;
-    public static bool showInteractionMenu;
-
-    public static GameObject interactionTarget = null;
+    public bool roomTextEnabled;
 
     public static GameObject roomText;
     public static GameObject inventory;
-    public GameObject actions;
-    public GameObject interactPrompt;
-    public GameObject interactionMenu;
+    public static GameObject actions;
+    public static GameObject interactPrompt;
+    public static GameObject interactionMenu;
 
     private void Awake()
     {
@@ -39,9 +36,8 @@ public class UIController : MonoBehaviour
     {
         showInventory = !inventory.activeSelf; //should return the opposite of activeSelf I hope
         inventoryToggleEnabled = !interactionMenu.activeSelf;
-
-        interactPrompt.SetActive(showInteractPrompt);
-        interactionMenu.SetActive(showInteractionMenu);
+        roomTextEnabled = !interactionMenu.activeSelf;
+        roomText.SetActive(roomTextEnabled);
 
         if (InputManager.ToggledInventory() && inventoryToggleEnabled)
         {
