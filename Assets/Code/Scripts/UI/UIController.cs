@@ -6,11 +6,14 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     public bool showInventory;
+    public bool inventoryToggleEnabled;
     public static bool showInteractPrompt;
     public static bool showInteractionMenu;
 
-    public GameObject roomText;
-    public GameObject inventory;
+    public static GameObject interactionTarget = null;
+
+    public static GameObject roomText;
+    public static GameObject inventory;
     public GameObject actions;
     public GameObject interactPrompt;
     public GameObject interactionMenu;
@@ -35,11 +38,12 @@ public class UIController : MonoBehaviour
     private void Update()
     {
         showInventory = !inventory.activeSelf; //should return the opposite of activeSelf I hope
+        inventoryToggleEnabled = !interactionMenu.activeSelf;
 
         interactPrompt.SetActive(showInteractPrompt);
         interactionMenu.SetActive(showInteractionMenu);
 
-        if (InputManager.ToggledInventory())
+        if (InputManager.ToggledInventory() && inventoryToggleEnabled)
         {
             inventory.SetActive(showInventory);
         }

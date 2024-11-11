@@ -37,6 +37,8 @@ public class Interactable : MonoBehaviour
         {
             //Open the interaction menu
             UIController.showInteractionMenu = true;
+            UIController.inventory.SetActive(false);
+            UIController.interactionTarget = this.gameObject;
         }
     }
 
@@ -48,4 +50,7 @@ public class Interactable : MonoBehaviour
     {
         return Vector3.Distance(transform.position, player.transform.position) <= interactionRange;
     }
+
+    public virtual void OnCheck() { }
+    public virtual void OnItemUsed() { }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,13 +10,45 @@ public class InventorySelector : MonoBehaviour
     //public float itemScaleOriginal = 0f;
     public float itemScaleUpSize = 0.1f;
 
+    public bool staticInitialized = false;
+
+    public enum InventoryState
+    {
+        STATIC,
+        SELECTABLE
+    };
+
+    public static InventoryState state;
+
     private void Start()
     {
-        SelectItem();
+        //SelectItem();
         UpdateIcons();
+
+        InitializeStatic();
+        state = InventoryState.STATIC;
     }
 
     private void Update()
+    {
+
+        switch (state)
+        {
+            case InventoryState.STATIC:
+                if (!staticInitialized)
+                    InitializeStatic();
+                break;
+            case InventoryState.SELECTABLE:
+                HandleSelection(); break;
+        }
+
+        if (!GameManager.instance.inventoryUpdated)
+        {
+            UpdateIcons();
+        }
+    }
+
+    void HandleSelection()
     {
         int previousSelectedItem = selectedItem;
 
@@ -46,11 +79,6 @@ public class InventorySelector : MonoBehaviour
         {
             SelectItem();
         }
-
-        if (!GameManager.instance.inventoryUpdated)
-        {
-            UpdateIcons();
-        }
     }
 
     void SelectItem()
@@ -68,7 +96,7 @@ public class InventorySelector : MonoBehaviour
             else
             {
                 //return scale to original size
-                item.localScale = Vector3.one; ;
+                item.localScale = Vector3.one;
             }
             i++;
         }
@@ -86,5 +114,15 @@ public class InventorySelector : MonoBehaviour
         }
 
         GameManager.instance.inventoryUpdated = true;
+    }
+
+    void InitializeStatic()
+    {
+        //Set all the icons back to their original scale
+        foreach (Transform item in transform)
+        {
+            item.localScale = Vector3.one;
+        }
+        staticInitialized = true;
     }
 }
