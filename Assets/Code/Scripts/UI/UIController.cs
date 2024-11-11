@@ -5,34 +5,41 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    private InputManager input;
-
     public bool showInventory;
+    public bool inventoryToggleEnabled;
+    //public bool roomTextEnabled;
 
-    public GameObject roomText;
-    public GameObject inventory;
-    public GameObject actions;
+    public static GameObject textDisplay;
+    public static GameObject inventory;
+    public static GameObject inventoryActions;
+    public static GameObject interactPrompt;
+    public static GameObject interactionMenu;
 
     private void Awake()
     {
-        input = GetComponent<InputManager>();
-
-        roomText = transform.GetChild(0).gameObject;
+        textDisplay = transform.GetChild(0).gameObject;
         inventory = transform.GetChild(1).gameObject;
-        actions = transform.GetChild(2).gameObject;
+        inventoryActions = transform.GetChild(2).gameObject;
+        interactPrompt = transform.GetChild(3).gameObject;
+        interactionMenu = transform.GetChild(4).gameObject;
+
+        ResetToDefault();
     }
 
     private void Start()
     {
         //inventory and actions are hidden at the start
         inventory.SetActive(false);
-        actions.SetActive(false);
+        inventoryActions.SetActive(false);
+        interactPrompt.SetActive(false);
+        interactionMenu.SetActive(false);
     }
     private void Update()
     {
         showInventory = !inventory.activeSelf; //should return the opposite of activeSelf I hope
+        inventoryToggleEnabled = !interactionMenu.activeSelf;
 
-        if (input.ToggledInventory)
+        if (InputManager.ToggledInventory() && inventoryToggleEnabled)
         {
             inventory.SetActive(showInventory);
         }
@@ -42,8 +49,15 @@ public class UIController : MonoBehaviour
         {
             if (inventory.activeSelf == true)
             {
-                actions.SetActive(true);
+                inventoryActions.SetActive(true);
             }
         }
+    }
+
+    public static void ResetToDefault()
+    {
+        inventory.SetActive(false);
+        textDisplay.SetActive(true);
+        interactionMenu.SetActive(false);
     }
 }

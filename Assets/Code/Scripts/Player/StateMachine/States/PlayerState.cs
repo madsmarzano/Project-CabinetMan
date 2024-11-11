@@ -10,13 +10,11 @@ using UnityEngine;
 public class PlayerState
 {
     protected Player player;
-    protected InputManager input;
     protected PlayerStateMachine stateMachine;
 
-    public PlayerState(Player player, InputManager input, PlayerStateMachine stateMachine)
+    public PlayerState(Player player, PlayerStateMachine stateMachine)
     {
         this.player = player;
-        this.input = input;
         this.stateMachine = stateMachine;
     }
 

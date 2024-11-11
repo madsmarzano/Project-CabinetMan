@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerJumpingState : PlayerState
 {
-    public PlayerJumpingState(Player player, InputManager input, PlayerStateMachine stateMachine) : base(player, input, stateMachine)
+    public PlayerJumpingState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
 
@@ -44,7 +44,7 @@ public class PlayerJumpingState : PlayerState
     {
         base.Update();
 
-        if (!input.HoldingJump)
+        if (!InputManager.JumpHeld())
         {
             jumpTimer = 0;
             stateMachine.ChangeState(player.fallingState);

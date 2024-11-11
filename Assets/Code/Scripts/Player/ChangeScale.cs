@@ -18,14 +18,14 @@ public class ChangeScale : MonoBehaviour
     [Tooltip("Amount the scale and position will be changed each frame.")]
     private float changeIncrement;
 
-    public enum size
+    public enum Size
     {
         HUMAN = 1,
         BUG = 2,
     }
 
-    public size currentSize;
-    public size startingSize = size.HUMAN;
+    public Size currentSize;
+    public Size startingSize = Size.HUMAN;
     public bool isChanging = false;
 
     private void Awake()
@@ -52,7 +52,7 @@ public class ChangeScale : MonoBehaviour
     private void Update()
     {
         //References the input manager to determine if the input which changes the player's size has been activated.
-        if (player.input.SizeChangeTriggered && player.canChangeSize && !isChanging)
+        if (InputManager.SizeChangeTriggered() && player.canChangeSize && !isChanging)
         {
             StartChange();
         }
@@ -81,14 +81,14 @@ public class ChangeScale : MonoBehaviour
         changeTimer = scalingTimeSeconds;
         changeIncrement = -changeIncrement;
 
-        if (currentSize == size.HUMAN)
+        if (currentSize == Size.HUMAN)
         {
-            currentSize = size.BUG;
+            currentSize = Size.BUG;
             player.SetPlayerDataForSize((int)currentSize);
         }
         else
         {
-            currentSize = size.HUMAN;
+            currentSize = Size.HUMAN;
             player.SetPlayerDataForSize((int)currentSize);
         }
     }
@@ -99,14 +99,14 @@ public class ChangeScale : MonoBehaviour
         if (s == 1)
         {
             transform.localScale = humanSize;
-            currentSize = size.HUMAN;
+            currentSize = Size.HUMAN;
             player.SetPlayerDataForSize(s);
         }
         else
         {
             changeIncrement = -changeIncrement;
             transform.localScale = bugSize;
-            currentSize = size.BUG;
+            currentSize = Size.BUG;
             player.SetPlayerDataForSize(s);
         }
     }

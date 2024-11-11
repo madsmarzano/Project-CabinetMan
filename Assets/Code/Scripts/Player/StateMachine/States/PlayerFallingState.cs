@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerFallingState : PlayerState
 {
-    public PlayerFallingState(Player player, InputManager input, PlayerStateMachine stateMachine) : base(player, input, stateMachine)
+    public PlayerFallingState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
 
@@ -34,7 +34,7 @@ public class PlayerFallingState : PlayerState
     {
         base.Update();
 
-        if (player.input.PressedJump && player.canJump)
+        if (InputManager.JumpPressed() && player.canJump)
         {
             player.data.jumpCount++;
             stateMachine.ChangeState(player.jumpState);
