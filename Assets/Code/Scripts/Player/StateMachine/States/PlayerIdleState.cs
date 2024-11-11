@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerGroundedState
 {
-    public PlayerIdleState(Player player, InputManager input, PlayerStateMachine stateMachine) : base(player, input, stateMachine)
+    public PlayerIdleState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
 
@@ -32,7 +32,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Update()
     {
         base.Update();
-        if (input.xInputRaw != 0 || input.zInputRaw != 0)
+        if (player.movementAxes.x != 0 || player.movementAxes.y != 0)
         {
             stateMachine.ChangeState(player.movingState);
         }

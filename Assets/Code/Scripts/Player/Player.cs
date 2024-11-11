@@ -10,8 +10,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [HideInInspector]
-    public InputManager input;
-    [HideInInspector]
     public Rigidbody rb;
     [HideInInspector]
     public CapsuleCollider cc;
@@ -32,6 +30,7 @@ public class Player : MonoBehaviour
     public float jumpTimer = 0;
     public float flightTimer = 0f; //Amount of the time the player can spend flying. 
     public float groundCheckLength;
+    [HideInInspector] public Vector2 movementAxes;
 
     [Header("Player Abilities")]
     public bool canJump = true;
@@ -54,7 +53,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        input = GetComponent<InputManager>();
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CapsuleCollider>();
 
@@ -63,12 +61,12 @@ public class Player : MonoBehaviour
         stateMachine = new PlayerStateMachine();
 
         //Create instances of each player state and store them in a variable for easy access.
-        groundedState = new PlayerGroundedState(this, input, stateMachine);
-        idleState = new PlayerIdleState(this, input, stateMachine);
-        movingState = new PlayerMovingState(this, input, stateMachine);
-        jumpState = new PlayerJumpingState(this, input, stateMachine);
-        fallingState = new PlayerFallingState(this, input, stateMachine);
-        landedState = new PlayerLandedState(this, input, stateMachine);
+        groundedState = new PlayerGroundedState(this, stateMachine);
+        idleState = new PlayerIdleState(this, stateMachine);
+        movingState = new PlayerMovingState(this, stateMachine);
+        jumpState = new PlayerJumpingState(this, stateMachine);
+        fallingState = new PlayerFallingState(this, stateMachine);
+        landedState = new PlayerLandedState(this, stateMachine);
     }
 
     private void Start()
@@ -82,6 +80,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         stateMachine.currentState.Update();
+
+        movementAxes = InputManager.GetMovementInputRaw();
 
         //Determines how long player can fly for.
         //Might move this into one of the states.
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
     public void Move()
     {
         //Vector3 forward = Vector3.forward * Camera.main.transform.right;
-        Vector3 moveDirection = Camera.main.transform.right * input.xInputRaw + Camera.main.transform.forward * input.zInputRaw;
+        Vector3 moveDirection = Camera.main.transform.right * movementAxes.x + Camera.main.transform.forward * movementAxes.y;
         //Vector3 forward = new Vector3(Camera.main.transform.right.z, 0.0f, Camera.main.transform.forward.z);
         //Vector3 moveDirection = (forward * input.xInputRaw + Camera.main.transform.right * input.zInputRaw + Vector3.up * rb.velocity.y);
         //Vector3 moveDirection = transform.right * input.xInputRaw + transform.forward * input.zInputRaw;

@@ -23,7 +23,7 @@ public class Teleporter : MonoBehaviour
             //check if the player is bug-size 
             //if yes, proceed with teleportation
             ChangeScale sizeCheck = other.GetComponent<ChangeScale>();
-            if (sizeCheck.currentSize == ChangeScale.size.BUG)
+            if (sizeCheck.currentSize == ChangeScale.Size.BUG)
             {
                 other.transform.position = teleportPoint.position;
             }

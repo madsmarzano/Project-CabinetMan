@@ -2,70 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public static class InputManager
 {
     //Creating KeyCode variables for each action that is tied to a key press
     //to make passing the key into functions easier. 
-    private KeyCode _jump;
-    private KeyCode _changeSize;
-    private KeyCode _inventory;
+    private static KeyCode _jump;
+    private static KeyCode _changeSize;
+    private static KeyCode _inventory;
+    private static KeyCode _interact;
 
-    public float xInput, xInputRaw;
-    public float zInput, zInputRaw;
-
-    public bool PressedJump;
-    public bool HoldingJump;
-    public bool SizeChangeTriggered;
-
-    public bool ToggledInventory;
     //public bool UIselected; //used to select an item or action -- defaults to left mouse click
 
-    private void Start()
+    public static Vector2 GetMovementInput()
     {
-        SetDefaultKeyBinds();
-    }
-    private void Update()
-    {
-        xInput = Input.GetAxis("Horizontal");
-        xInputRaw = Input.GetAxisRaw("Horizontal");
-        zInput = Input.GetAxis("Vertical");
-        zInputRaw = Input.GetAxisRaw("Vertical");
-
-        PressedJump = CheckForKeyQuickPress(_jump);
-        HoldingJump = CheckForKeyPress(_jump);
-
-        SizeChangeTriggered = CheckForKeyQuickPress(_changeSize);
-
-        ToggledInventory = CheckForKeyQuickPress(_inventory);
+        return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
-    //Returns true if the key passed in as an argument is being held down
-    private bool CheckForKeyPress(KeyCode key)
+    public static Vector2 GetMovementInputRaw()
     {
-        if (Input.GetKey(key))
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+
+    public static bool JumpPressed()
+    {
+        return Input.GetKeyDown(_jump);
+    }
+
+    public static bool JumpHeld()
+    {
+        if (Input.GetKey(_jump))
             return true;
-        else if (Input.GetKeyDown(key))
+        else if (Input.GetKeyDown(_jump))
             return true;
-        else if (Input.GetKeyUp(key))
+        else if (Input.GetKeyUp(_jump))
             return false;
-
-        return false;
+        else return false;
     }
 
-    private bool CheckForKeyQuickPress(KeyCode key)
+    public static bool SizeChangeTriggered()
     {
-        if (Input.GetKeyDown(key))
-            return true;
-        else if (Input.GetKeyUp(key))
-            return false;
-
-        return false;
+        return Input.GetKeyDown(_changeSize);
     }
 
-    private void SetDefaultKeyBinds()
+    public static bool ToggledInventory()
+    {
+        return Input.GetKeyDown(_inventory);
+    }
+
+    public static bool InteractPressed()
+    {
+        return Input.GetKeyDown(_interact);
+    }
+
+    public static void SetDefaultKeyBinds()
     {
         _jump = KeyCode.Space;
         _changeSize = KeyCode.LeftShift;
         _inventory = KeyCode.Q;
+        _interact = KeyCode.E;
     }
 }

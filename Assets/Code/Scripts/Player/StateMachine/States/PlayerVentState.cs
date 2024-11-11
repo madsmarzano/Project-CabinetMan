@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class PlayerVentState : PlayerState
 {
-    public PlayerVentState(Player player, InputManager input, PlayerStateMachine stateMachine) : base(player, input, stateMachine)
+    public PlayerVentState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
 
