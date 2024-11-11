@@ -7,6 +7,7 @@ public class TestInteraction : Interactable
     public override void OnCheck()
     {
         base.OnCheck();
+        UIController.textDisplay.GetComponent<TextDisplay>().ChangeTextDisplay("This is just a test.");
         Debug.Log("CHECK OBJECT WAS TRIGGERED");
     }
 

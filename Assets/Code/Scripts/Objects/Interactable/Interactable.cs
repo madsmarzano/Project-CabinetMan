@@ -30,6 +30,10 @@ public class Interactable : MonoBehaviour
         }
         else
         {
+            if (UIController.interactionMenu.activeSelf)
+            {
+                UIController.ResetToDefault();
+            }
             UIController.interactPrompt.SetActive(false);
         }
 
@@ -38,6 +42,7 @@ public class Interactable : MonoBehaviour
             //Open the interaction menu
             UIController.interactionMenu.SetActive(true);
             UIController.inventory.SetActive(false);
+            UIController.textDisplay.SetActive(false);
             ActionSelector.interactionTarget = this.gameObject;
         }
     }

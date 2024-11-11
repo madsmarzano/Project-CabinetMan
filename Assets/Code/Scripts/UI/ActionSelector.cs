@@ -75,7 +75,7 @@ public class ActionSelector : MonoBehaviour
 
     void PerformAction(int action)
     {
-        UIController.interactionMenu.SetActive(false);
+        UIController.ResetToDefault();
 
         switch (action)
         {
@@ -84,7 +84,7 @@ public class ActionSelector : MonoBehaviour
                 interactionTarget.GetComponent<Interactable>().OnCheck();
                 break;
             case 1:
-                //Use item action 
+                //Use item action
                 interactionTarget.GetComponent<Interactable>().OnItemUsed();
                 break;
             case 2:

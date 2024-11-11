@@ -1276,6 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedAction: 0
+  originalSize: {x: 0, y: 0, z: 0}
   scaleUpSize: 0.1
 --- !u!1 &5174601249469297947
 GameObject:
@@ -1340,8 +1341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedItem: 0
   itemScaleUpSize: 0.1
-  staticInitialized: 0
-  state: 0
 --- !u!222 &2932932161678128738
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2252,11 +2251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showInventory: 0
-  roomText: {fileID: 0}
-  inventory: {fileID: 0}
-  actions: {fileID: 0}
-  interactPrompt: {fileID: 0}
-  interactionMenu: {fileID: 0}
+  inventoryToggleEnabled: 0
+  roomTextEnabled: 0
 --- !u!1 &8305750431241913555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,6 +2262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8305750431241913556}
+  - component: {fileID: 6174595449213082536}
   - component: {fileID: 8305750431241913558}
   - component: {fileID: 8305750431241913557}
   m_Layer: 5
@@ -2295,6 +2292,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &6174595449213082536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8305750431241913555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced6a19211439554c97e7f9660e7d03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changedTextDisplayTime: 5
 --- !u!222 &8305750431241913558
 CanvasRenderer:
   m_ObjectHideFlags: 0
