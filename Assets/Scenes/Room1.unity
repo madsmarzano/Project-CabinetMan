@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,23 +220,6 @@ Transform:
   m_Father: {fileID: 1763974163}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &55287146 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3615438217231565924, guid: 4990ef61124486344bd04e2dd38c60b3, type: 3}
-  m_PrefabInstance: {fileID: 1588027848}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &55287147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55287146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc18eb812704574caf86fe87b8d02af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &74084532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,6 +2756,23 @@ Transform:
   m_Father: {fileID: 523547052}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &896300367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6768519184106478838, guid: 2a7b52af39d5a7f4d9a80282e6c3afea, type: 3}
+  m_PrefabInstance: {fileID: 6768519185267377323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &896300368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896300367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d1fd28ea7f4d045b69fe375f4a36df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &905840484
 GameObject:
   m_ObjectHideFlags: 0
@@ -4914,19 +4914,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 551d877dbdbf393499352453a99e8d99, type: 3}
   m_PrefabInstance: {fileID: 1464698212}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1464698214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464698213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c54eacd302e8534c8cf8cfff757c70f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Key: {fileID: 1464698213}
 --- !u!136 &1464698215
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4935,7 +4922,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464698213}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -4983,6 +4970,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1464698219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464698213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d55bd751a391347b1272e0a2b39a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: citrus lump
+  itemIcon: {fileID: 21300000, guid: 3caaef8cde550f342929eb035929a302, type: 3}
+  isUsable: 0
+  isCD: 0
 --- !u!1 &1511003759
 GameObject:
   m_ObjectHideFlags: 0
