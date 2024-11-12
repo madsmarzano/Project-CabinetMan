@@ -18,5 +18,18 @@ public class TestInteraction : Interactable
     {
         base.OnItemUsed();
         Debug.Log("ITEM USED WAS TRIGGERED");
+        foreach (Item item in GameManager.instance.Inventory)
+        {
+            if (item.useWith == gameObject.name)
+            {
+                Debug.Log("THE ITEM IS BEING USED");
+                GameManager.instance.Inventory.Remove(item);
+                break;
+            }
+            else
+            {
+                Debug.Log("You don't have the item in your inventory.");
+            }
+        }
     }
 }
