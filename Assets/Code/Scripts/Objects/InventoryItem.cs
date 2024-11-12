@@ -26,6 +26,14 @@ public class InventoryItem : MonoBehaviour
 
     public void AddToInventory()
     {
-        GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, isUsable, isCD));
+        if (GameManager.instance.Inventory.Count > 10)
+        {
+            Debug.Log("L");
+        }
+        else
+        {
+            GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, isUsable, isCD));
+        }
+        
     }
 }
