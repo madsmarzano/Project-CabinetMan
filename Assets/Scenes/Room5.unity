@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4250,6 +4250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: ToyBlocks
   itemIcon: {fileID: 21300000, guid: fa3fc95e6b603f64c80aba02156aafcc, type: 3}
+  useWith: 
   isUsable: 0
   isCD: 0
 --- !u!64 &3469287837381905928
@@ -4301,7 +4302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: BallpitBalls01
-  itemIcon: {fileID: 21300000, guid: 3caaef8cde550f342929eb035929a302, type: 3}
+  itemIcon: {fileID: 21300000, guid: 3f109dfd9d664cf4a89bba7304780291, type: 3}
+  useWith: TestInteractable
   isUsable: 0
   isCD: 0
 --- !u!33 &3469287837535566286

@@ -11,6 +11,7 @@ public class InventoryItem : MonoBehaviour
 {
     public string itemName;
     public Sprite itemIcon;
+    public string useWith;
     public bool isUsable;
     public bool isCD;
 
@@ -26,6 +27,6 @@ public class InventoryItem : MonoBehaviour
 
     public void AddToInventory()
     {
-        GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, isUsable, isCD));
+        GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, useWith, isUsable, isCD));
     }
 }
