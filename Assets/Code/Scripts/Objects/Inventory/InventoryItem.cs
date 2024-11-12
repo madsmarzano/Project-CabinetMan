@@ -11,8 +11,14 @@ public class InventoryItem : MonoBehaviour
 {
     public string itemName;
     public Sprite itemIcon;
+    public string useWith;
     public bool isUsable;
     public bool isCD;
+
+    private void Awake()
+    {
+        itemName = gameObject.name;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -32,7 +38,7 @@ public class InventoryItem : MonoBehaviour
         }
         else
         {
-            GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, isUsable, isCD));
+            GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, useWith, isUsable, isCD));
         }
         
     }
