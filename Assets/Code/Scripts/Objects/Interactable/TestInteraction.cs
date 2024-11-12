@@ -17,13 +17,6 @@ public class TestInteraction : Interactable
     public override void OnItemUsed()
     {
         base.OnItemUsed();
-        foreach (Item item in GameManager.instance.Inventory)
-        {
-            if (item.useWith == gameObject.name)
-            {
-                Debug.Log("YOU USED THE ITEM!!!!!!!!");
-            }
-        }
         Debug.Log("ITEM USED WAS TRIGGERED");
     }
 }
