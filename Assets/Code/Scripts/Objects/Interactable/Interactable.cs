@@ -1,6 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// By Mads:
+/// This is a base script with logic that all interactable objects share (mostly UI stuff).
+/// Includes virtual methods for OnCheck and OnItemUsed -- scripts that inherit from this class can override those methods to create their own logic.
+/// WHEN WRITING CUSTOM LOGIC FOR INTERACTABLE ITEMS: Create a new script and have it inherit from "Interactable".
+/// </summary>
 
 public class Interactable : MonoBehaviour
 {
@@ -11,7 +16,6 @@ public class Interactable : MonoBehaviour
     protected bool playerInRange = false;
 
     public bool interactionEnabled = true; //Allows interaction to be turned off if there is nothing else you can do with the object.
-    //protected bool interactionMenuOpen = false;
 
     private void Awake()
     {
@@ -37,12 +41,16 @@ public class Interactable : MonoBehaviour
             UIController.interactPrompt.SetActive(false);
         }
 
+        //If E is pressed, display the Interaction menu and hide the other UI stuff
         if (playerInRange && InputManager.InteractPressed())
         {
             //Open the interaction menu
             UIController.interactionMenu.SetActive(true);
+            //Hide inventory and text display
             UIController.inventory.SetActive(false);
             UIController.textDisplay.SetActive(false);
+            //Create a reference to the object you are interacting with in the Action Selector script
+            //This is selecting an action from the Interaction Menu will call the OnCheck or OnItemUsed methods.
             ActionSelector.interactionTarget = this.gameObject;
         }
     }
