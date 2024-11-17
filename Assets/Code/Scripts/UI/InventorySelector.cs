@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InventorySelector : MonoBehaviour
 {
@@ -84,12 +85,20 @@ public class InventorySelector : MonoBehaviour
     void UpdateIcons()
     {
         //Add the icon from the item added to the inventory into the corresponding spot in the UI
-        foreach (Item item in GameManager.instance.Inventory)
+        int i = 0;
+        foreach (Transform inventorySlot in transform)
         {
-            int i = GameManager.instance.Inventory.IndexOf(item);
-            Image uiImage = transform.GetChild(i).GetComponent<Image>();
-            uiImage.sprite = GameManager.instance.Inventory[i].itemIcon;
+            Image uiImage = inventorySlot.GetComponent<Image>(); // get reference to the image in the UI
+            if (i < GameManager.instance.Inventory.Count)
+            {
+                uiImage.sprite = GameManager.instance.Inventory[i].itemIcon;
+            }
+            else
+            {
+                uiImage.sprite = null;
+            }
 
+            i++;
         }
 
         GameManager.instance.inventoryUpdated = true;
