@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6768519184106478837}
   - component: {fileID: 6732035678060608813}
+  - component: {fileID: 43437501820597184}
   m_Layer: 0
   m_Name: Room Manager
   m_TagString: Untagged
@@ -42,5 +43,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16dd6564b547f9748bac914d4c23c408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &43437501820597184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768519184106478838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d1fd28ea7f4d045b69fe375f4a36df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

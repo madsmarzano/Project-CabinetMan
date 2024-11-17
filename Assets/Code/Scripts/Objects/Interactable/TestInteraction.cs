@@ -24,6 +24,7 @@ public class TestInteraction : Interactable
             {
                 Debug.Log("THE ITEM IS BEING USED");
                 GameManager.instance.Inventory.Remove(item);
+                GameManager.instance.inventoryUpdated = false;
                 break;
             }
             else

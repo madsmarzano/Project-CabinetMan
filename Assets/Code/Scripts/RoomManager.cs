@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     GameObject gameController;
-    void Awake()
+    void Start()
     {
         gameController = GameObject.Find("Room Manager");
 
@@ -15,19 +15,17 @@ public class RoomManager : MonoBehaviour
     public void ItemCheck()
     {
         GameObject check;
-        foreach (Item item in GameManager.instance.Inventory)
+        if (GameManager.instance.Inventory.Count > 0)
         {
-            check = GameObject.Find(item.itemname);
-            if (check != null)
+            foreach (Item item in GameManager.instance.Inventory)
             {
-                Destroy(check);
+                check = GameObject.Find(item.itemname);
+                if (check != null)
+                {
+                    Destroy(check);
+                }
             }
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
