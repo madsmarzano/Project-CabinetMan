@@ -30,7 +30,7 @@ public class ChangeScale : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(new Vector3(transform.position.x, 1.05f, transform.position.z), 1f);
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x, transform.position.y + 1.05f, transform.position.z), 1f);
     }
 
     private void Awake()
@@ -59,8 +59,11 @@ public class ChangeScale : MonoBehaviour
         //References the input manager to determine if the input which changes the player's size has been activated.
         if (InputManager.SizeChangeTriggered() && player.canChangeSize && !isChanging)
         {
+            //StartChange();
             if (currentSize == Size.BUG)
             {
+                //If the Player is currently Bug-Size, check if the Player has room to grow.
+                //If no objects are near the Player, size change will be triggered.
                 bool canGrow = CheckRoomToGrow();
                 if (canGrow)
                 {
@@ -68,6 +71,7 @@ public class ChangeScale : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("CANNOT GROW: Something is in the way!");
                     return;
                 }
             }
@@ -131,9 +135,15 @@ public class ChangeScale : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// By Mads:
+    /// Creates a sphere around the Player, similar to the size that the Player is when human.
+    /// </summary>
+    /// <returns>The opposite of the raycast; FALSE if objects are detected, TRUE if objects are not detected.</returns>
     private bool CheckRoomToGrow()
     {
-        return (!Physics.CheckSphere(new Vector3(transform.position.x, 1.05f, transform.position.z), 1f));
+        //Sphere is slightly above Player so CheckSphere does not detect ground
+        return (!Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + 1.05f, transform.position.z), 1f));
     }
 
 }
