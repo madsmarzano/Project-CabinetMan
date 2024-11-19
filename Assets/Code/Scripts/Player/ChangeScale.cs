@@ -28,6 +28,11 @@ public class ChangeScale : MonoBehaviour
     public Size startingSize = Size.HUMAN;
     public bool isChanging = false;
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x, 1.05f, transform.position.z), 1f);
+    }
+
     private void Awake()
     {
         player = GetComponent<Player>();
@@ -54,7 +59,22 @@ public class ChangeScale : MonoBehaviour
         //References the input manager to determine if the input which changes the player's size has been activated.
         if (InputManager.SizeChangeTriggered() && player.canChangeSize && !isChanging)
         {
-            StartChange();
+            if (currentSize == Size.BUG)
+            {
+                bool canGrow = CheckRoomToGrow();
+                if (canGrow)
+                {
+                    StartChange();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else if (currentSize == Size.HUMAN)
+            {
+                StartChange();
+            }
         }
 
         if (changeTimer > 0.0f)
@@ -109,6 +129,11 @@ public class ChangeScale : MonoBehaviour
             currentSize = Size.BUG;
             player.SetPlayerDataForSize(s);
         }
+    }
+
+    private bool CheckRoomToGrow()
+    {
+        return (!Physics.CheckSphere(new Vector3(transform.position.x, 1.05f, transform.position.z), 1f));
     }
 
 }
