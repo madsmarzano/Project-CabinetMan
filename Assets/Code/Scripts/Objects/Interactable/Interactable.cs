@@ -15,6 +15,8 @@ public class Interactable : MonoBehaviour
     [SerializeField]
     protected bool playerInRange = false;
 
+    protected bool isActive = false;
+
     public bool interactionEnabled = true; //Allows interaction to be turned off if there is nothing else you can do with the object.
 
     private void Awake()
@@ -30,15 +32,17 @@ public class Interactable : MonoBehaviour
         if (playerInRange)
         {
             //Display interaction prompt text on the screen
+            isActive = true;
             UIController.interactPrompt.SetActive(true);
         }
-        else
+        else if (isActive)
         {
             if (UIController.interactionMenu.activeSelf)
             {
                 UIController.ResetToDefault();
             }
             UIController.interactPrompt.SetActive(false);
+            isActive = false;
         }
 
         //If E is pressed, display the Interaction menu and hide the other UI stuff
