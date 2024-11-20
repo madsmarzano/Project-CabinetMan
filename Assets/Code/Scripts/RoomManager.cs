@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     GameObject gameController;
+
     void Start()
     {
         gameController = GameObject.Find("Room Manager");
@@ -15,9 +16,9 @@ public class RoomManager : MonoBehaviour
     public void ItemCheck()
     {
         GameObject check;
-        if (GameManager.instance.Inventory.Count > 0)
+        if (GameManager.instance.ItemsPickedUp.Count > 0)
         {
-            foreach (Item item in GameManager.instance.Inventory)
+            foreach (Item item in GameManager.instance.ItemsPickedUp)
             {
                 check = GameObject.Find(item.itemname);
                 if (check != null)
@@ -26,11 +27,5 @@ public class RoomManager : MonoBehaviour
                 }
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

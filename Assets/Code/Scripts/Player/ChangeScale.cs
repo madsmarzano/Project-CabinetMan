@@ -28,6 +28,11 @@ public class ChangeScale : MonoBehaviour
     public Size startingSize = Size.HUMAN;
     public bool isChanging = false;
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x, transform.position.y + 1.05f, transform.position.z), 1f);
+    }
+
     private void Awake()
     {
         player = GetComponent<Player>();
@@ -54,7 +59,26 @@ public class ChangeScale : MonoBehaviour
         //References the input manager to determine if the input which changes the player's size has been activated.
         if (InputManager.SizeChangeTriggered() && player.canChangeSize && !isChanging)
         {
-            StartChange();
+            //StartChange();
+            if (currentSize == Size.BUG)
+            {
+                //If the Player is currently Bug-Size, check if the Player has room to grow.
+                //If no objects are near the Player, size change will be triggered.
+                bool canGrow = CheckRoomToGrow();
+                if (canGrow)
+                {
+                    StartChange();
+                }
+                else
+                {
+                    Debug.Log("CANNOT GROW: Something is in the way!");
+                    return;
+                }
+            }
+            else if (currentSize == Size.HUMAN)
+            {
+                StartChange();
+            }
         }
 
         if (changeTimer > 0.0f)
@@ -109,6 +133,17 @@ public class ChangeScale : MonoBehaviour
             currentSize = Size.BUG;
             player.SetPlayerDataForSize(s);
         }
+    }
+
+    /// <summary>
+    /// By Mads:
+    /// Creates a sphere around the Player, similar to the size that the Player is when human.
+    /// </summary>
+    /// <returns>The opposite of the raycast; FALSE if objects are detected, TRUE if objects are not detected.</returns>
+    private bool CheckRoomToGrow()
+    {
+        //Sphere is slightly above Player so CheckSphere does not detect ground
+        return (!Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + 1.05f, transform.position.z), 1f));
     }
 
 }
