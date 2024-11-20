@@ -13,7 +13,16 @@ public class InteractableChairPP : Interactable
 {
     public GameObject partnerChair; //Chair opposite to the one this script is attached to.
     public GameObject doll; //Doll that sits on the chair.
-    public GameObject ballpitBalls; 
+    public GameObject ballpitBalls;
+    public int chairID;
+
+    private void Start()
+    {
+        if (GameManager.instance.dollyPlacedInChair[chairID])
+        {
+            InitializeAsCompleted();
+        }
+    }
 
     public override void OnCheck()
     {
@@ -36,6 +45,7 @@ public class InteractableChairPP : Interactable
                 {
                     TextDisplay.Instance.ChangeTextDisplay("The party has arrived!");
                     ballpitBalls.SetActive(true);
+                    GameManager.instance.dollyPuzzleComplete = true;
                 }
                 else
                 {
@@ -45,6 +55,7 @@ public class InteractableChairPP : Interactable
                 //Remove item from inventory
                 GameManager.instance.Inventory.Remove(item);
                 GameManager.instance.inventoryUpdated = false;
+                GameManager.instance.dollyPlacedInChair[chairID] = true;
 
                 //Disable further interaction with this chair
                 interactionEnabled = false;
@@ -55,5 +66,14 @@ public class InteractableChairPP : Interactable
                 TextDisplay.Instance.ChangeTextDisplay("I don't have any items that I can use with this chair.");
             }
         }
+    }
+
+    /// <summary>
+    /// Ensures that the if the puzzle is completed, all of the objects are in their completed state whenever the scene is loaded.
+    /// </summary>
+    private void InitializeAsCompleted()
+    {
+        doll.SetActive(true);
+        interactionEnabled = false;
     }
 }

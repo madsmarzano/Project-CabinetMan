@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1932691170675163048, guid: ba7d6938d2181f947b986322456aad64, type: 3}
       propertyPath: m_Name
-      value: Dolly
+      value: Dolly01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba7d6938d2181f947b986322456aad64, type: 3}
@@ -2857,6 +2857,7 @@ MonoBehaviour:
   partnerChair: {fileID: 919132149210983633}
   doll: {fileID: 1282506536}
   ballpitBalls: {fileID: 1177138392}
+  chairID: 1
 --- !u!1 &1718724380
 GameObject:
   m_ObjectHideFlags: 0
@@ -4966,6 +4967,7 @@ MonoBehaviour:
   partnerChair: {fileID: 1596905298}
   doll: {fileID: 919132148519129631}
   ballpitBalls: {fileID: 1177138392}
+  chairID: 0
 --- !u!4 &2239113325128157313
 Transform:
   m_ObjectHideFlags: 0
@@ -5690,7 +5692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1932691170675163048, guid: ba7d6938d2181f947b986322456aad64, type: 3}
       propertyPath: m_Name
-      value: Dolly
+      value: Dolly02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba7d6938d2181f947b986322456aad64, type: 3}

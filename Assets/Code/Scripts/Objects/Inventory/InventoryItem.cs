@@ -38,7 +38,8 @@ public class InventoryItem : MonoBehaviour
         }
         else
         {
-            GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, useWith, isUsable, isCD));
+            GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, useWith, isUsable, isCD)); //Add to current inventory
+            GameManager.instance.ItemsPickedUp.Add(new Item(itemName, itemIcon, useWith, isUsable, isCD)); //Add to running items list
         }
         
     }
