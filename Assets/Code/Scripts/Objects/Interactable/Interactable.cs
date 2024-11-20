@@ -29,11 +29,36 @@ public class Interactable : MonoBehaviour
     {
         playerInRange = CheckPlayerDistance();
 
-        if (playerInRange)
+        if (interactionEnabled)
         {
-            //Display interaction prompt text on the screen
-            isActive = true;
-            UIController.interactPrompt.SetActive(true);
+            if (playerInRange)
+            {
+                //Display interaction prompt text on the screen
+                isActive = true;
+                UIController.interactPrompt.SetActive(true);
+            }
+            else if (isActive)
+            {
+                if (UIController.interactionMenu.activeSelf)
+                {
+                    UIController.ResetToDefault();
+                }
+                UIController.interactPrompt.SetActive(false);
+                isActive = false;
+            }
+
+            //If E is pressed, display the Interaction menu and hide the other UI stuff
+            if (playerInRange && InputManager.InteractPressed())
+            {
+                //Open the interaction menu
+                UIController.interactionMenu.SetActive(true);
+                //Hide inventory and text display
+                UIController.inventory.SetActive(false);
+                UIController.textDisplay.SetActive(false);
+                //Create a reference to the object you are interacting with in the Action Selector script
+                //This is selecting an action from the Interaction Menu will call the OnCheck or OnItemUsed methods.
+                ActionSelector.interactionTarget = this.gameObject;
+            }
         }
         else if (isActive)
         {
@@ -45,18 +70,7 @@ public class Interactable : MonoBehaviour
             isActive = false;
         }
 
-        //If E is pressed, display the Interaction menu and hide the other UI stuff
-        if (playerInRange && InputManager.InteractPressed())
-        {
-            //Open the interaction menu
-            UIController.interactionMenu.SetActive(true);
-            //Hide inventory and text display
-            UIController.inventory.SetActive(false);
-            UIController.textDisplay.SetActive(false);
-            //Create a reference to the object you are interacting with in the Action Selector script
-            //This is selecting an action from the Interaction Menu will call the OnCheck or OnItemUsed methods.
-            ActionSelector.interactionTarget = this.gameObject;
-        }
+        
     }
 
     /// <summary>
