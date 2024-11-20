@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -14,7 +12,7 @@ public class InteractableChairPP : Interactable
     public GameObject partnerChair; //Chair opposite to the one this script is attached to.
     public GameObject doll; //Doll that sits on the chair.
     public GameObject ballpitBalls;
-    public int chairID;
+    public int chairID; //Distinguishes one chair from the other; referenced in the GameManager when determining which chair a dolly has been placed in, if any.
 
     private void Start()
     {
