@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public bool interactionInProgress = false;
 
     [Header("Playplace Puzzle Checks")]
+    public bool talkedToLittleGuy = false;
+    public bool ballpitFull = false;
     public bool[] dollyPlacedInChair = new bool[2];
     public bool dollyPuzzleComplete = false;
 
