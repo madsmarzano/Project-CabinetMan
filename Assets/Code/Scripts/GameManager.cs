@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public bool talkedToLittleGuy = false;
     public bool ballpitFull = false;
     public bool[] dollyPlacedInChair = new bool[2];
-    public bool dollyPuzzleComplete = false;
+    public bool dollyPuzzleComplete;
 
     private void Awake()
     {
