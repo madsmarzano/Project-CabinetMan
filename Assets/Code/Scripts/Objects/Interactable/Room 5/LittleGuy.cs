@@ -24,6 +24,8 @@ public class LittleGuy : Interactable
             TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"I wanna play in the ballpit SO BAD!!! But it's EMPTY!!!\"");
             TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"If you fill up the ballpit for me, I'll give you this cool CD I found!\"");
 
+            TextDisplay.Instance.ChangeRoomText("I should look for the missing ballpit balls.");
+
             GameManager.instance.talkedToLittleGuy = true;
         }
         else if (GameManager.instance.talkedToLittleGuy && !GameManager.instance.ballpitFull)
