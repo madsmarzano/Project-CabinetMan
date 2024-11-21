@@ -25,12 +25,15 @@ public class InteractableChairPP : Interactable
     public override void OnCheck()
     {
         base.OnCheck();
+        GameManager.instance.interactionInProgress = true;
         TextDisplay.Instance.ChangeTextDisplay("Two chairs facing each other... perfect for two friends to sit and have a tea party!");
     }
 
     public override void OnItemUsed()
     {
         base.OnItemUsed();
+        GameManager.instance.interactionInProgress = true;
+
         foreach (Item item in GameManager.instance.Inventory)
         {
             if (item.useWith == gameObject.name)

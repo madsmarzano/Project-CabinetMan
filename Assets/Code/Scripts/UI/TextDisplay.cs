@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,9 @@ public class TextDisplay : MonoBehaviour
 
     [Tooltip("Amount of time that the text will display on the screen before returning to Default (Room Text)")]
     public float changedTextDisplayTime = 5f;
+
+    public List <string> textQueue = new List<string>();
+    public bool isDisplayingNewText = false;
 
     private void Awake()
     {
@@ -53,13 +57,44 @@ public class TextDisplay : MonoBehaviour
     /// <param name="newText">New text that is to be displayed on screen.</param>
     public void ChangeTextDisplay(string newText)
     {
-        textComponent.text = newText;
+        //Check if there is already temporary text on the screen
+        if (isDisplayingNewText)
+        {
+            //Add text to a queue to process after the previous one has finished
+            textQueue.Add(newText);
+        }
+        else
+        {
+            //Just process the text right away
+            isDisplayingNewText = true;
+            textComponent.text = newText;
+            StartCoroutine(WaitForTextDisplayTime());
+        }
+    }
+
+    public void ProcessTextQueue()
+    {
+        //Display text at the top of the queue.
+        textComponent.text = textQueue[0];
+        //Remove that text now that it has been used.
+        textQueue.RemoveAt(0);
         StartCoroutine(WaitForTextDisplayTime());
     }
 
     public IEnumerator WaitForTextDisplayTime()
     {
         yield return new WaitForSeconds(changedTextDisplayTime);
-        LoadRoomText();
+        //Check if there is still text in the queue
+        if (textQueue.Count > 0)
+        {
+            ProcessTextQueue();
+        }
+        else
+        {
+            //Go back to default room text.
+            isDisplayingNewText = false;
+            GameManager.instance.interactionInProgress = false;
+            LoadRoomText();
+        }
     }
 }

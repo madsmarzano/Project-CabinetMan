@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
                                                          //This is the list that is referenced when loading rooms to determine which items are active.
     public bool inventoryUpdated;
 
+    public bool interactionInProgress = false;
+
     [Header("Playplace Puzzle Checks")]
     public bool[] dollyPlacedInChair = new bool[2];
     public bool dollyPuzzleComplete = false;
