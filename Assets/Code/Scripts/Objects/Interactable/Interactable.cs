@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour
     protected bool isActive = false;
 
     public bool interactionEnabled = true; //Allows interaction to be turned off if there is nothing else you can do with the object.
+    public bool interactionPaused = false; //Pauses interactions on other objects while an interaction (such as text display) is occuring.
 
     private void Awake()
     {
@@ -27,9 +28,20 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
+        //Pause interaction on an object while another object is being interacted with
+        if (GameManager.instance.interactionInProgress)
+        {
+            interactionPaused = true;
+        }
+        else
+        {
+            interactionPaused = false;
+        }
+
+        //Check if player is in range of the object.
         playerInRange = CheckPlayerDistance();
 
-        if (interactionEnabled)
+        if (interactionEnabled && !interactionPaused)
         {
             if (playerInRange)
             {
