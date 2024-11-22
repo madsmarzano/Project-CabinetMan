@@ -17,26 +17,34 @@ public class LittleGuy : Interactable
         base.OnCheck();
         GameManager.instance.interactionInProgress = true;
 
-        if (GameManager.instance.talkedToLittleGuy == false)
+        ChangeScale sizeCheck = player.GetComponent<ChangeScale>();
+        if (sizeCheck.currentSize == ChangeScale.Size.HUMAN) //If Player is human-sized, little guy tells you to shrink down
         {
-            //Initial interaction -- Get info on what to do
-            TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"Hey bug-human thingy... I need your help.\"");
-            TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"I wanna play in the ballpit SO BAD!!! But it's EMPTY!!!\"");
-            TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"If you fill up the ballpit for me, I'll give you this cool CD I found!\"");
-
-            TextDisplay.Instance.ChangeRoomText("I should look for the missing ballpit balls.");
-
-            GameManager.instance.talkedToLittleGuy = true;
+            TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"Yo! Big Guy! Get down here so I can talk to you!\"");
         }
-        else if (GameManager.instance.talkedToLittleGuy && !GameManager.instance.ballpitFull)
+        else //Player is bug-sized; regular interaction
         {
-            //Slightly different text giving you a hint
-            TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"There should be some ballpit balls scattered around here, idk.\"");
-        }
-        else if (GameManager.instance.ballpitFull)
-        {
-            TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"YIPPEE!!!! Great work, bug! I left your reward in the ballpit.\"");
-            TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"This is the BEST DAY OF MY LIFE!!!!\"");
+            if (GameManager.instance.talkedToLittleGuy == false)
+            {
+                //Initial interaction -- Get info on what to do
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"Hey bug-human thingy... I need your help.\"");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"I wanna play in the ballpit SO BAD!!! But it's EMPTY!!!\"");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"If you fill up the ballpit for me, I'll give you this cool CD I found!\"");
+
+                TextDisplay.Instance.ChangeRoomText("I should look for the missing ballpit balls.");
+
+                GameManager.instance.talkedToLittleGuy = true;
+            }
+            else if (GameManager.instance.talkedToLittleGuy && !GameManager.instance.ballpitFull)
+            {
+                //Slightly different text giving you a hint
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"There should be some ballpit balls scattered around here, idk.\"");
+            }
+            else if (GameManager.instance.ballpitFull)
+            {
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"YIPPEE!!!! Great work, bug! I left your reward in the ballpit.\"");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"This is the BEST DAY OF MY LIFE!!!!\"");
+            }
         }
     }
 
