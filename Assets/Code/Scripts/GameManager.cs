@@ -17,12 +17,15 @@ public class GameManager : MonoBehaviour
         "INSERT ROOM 5 INFO HERE"
     };
 
-    public List <Item> Inventory = new List<Item>(); //List to store the items that are in the Player's inventory
-    public List <Item> ItemsPickedUp = new List<Item>(); //List of all items that have been picked up, whether or not they are presently in inventory.
-                                                         //This is the list that is referenced when loading rooms to determine which items are active.
+    public List<Item> Inventory = new List<Item>(); //List to store the items that are in the Player's inventory
+    public List<Item> ItemsPickedUp = new List<Item>(); //List of all items that have been picked up, whether or not they are presently in inventory.
+                                                        //This is the list that is referenced when loading rooms to determine which items are active.
     public bool inventoryUpdated;
 
     public bool interactionInProgress = false;
+
+    [Header("General Puzzle Checks")]
+    public bool[] cdCollected = new bool[5];
 
     [Header("Playplace Puzzle Checks")]
     public bool talkedToLittleGuy = false;
@@ -31,7 +34,6 @@ public class GameManager : MonoBehaviour
     public bool[] dollyPlacedInChair = new bool[2];
     public bool dollyPuzzleComplete;
     public bool playplaceSpawnedCD = false;
-    public bool playplaceCDCollected = false;
 
     private void Awake()
     {

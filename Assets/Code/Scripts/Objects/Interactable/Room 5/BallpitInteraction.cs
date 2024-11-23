@@ -7,7 +7,7 @@ public class BallpitInteraction : Interactable
     GameObject balls;
     GameObject[] ballLayers = new GameObject[5];
 
-    private void Awake()
+    public override void UniqueStart()
     {
         balls = transform.GetChild(0).gameObject;
 
@@ -16,10 +16,7 @@ public class BallpitInteraction : Interactable
         {
             ballLayers[i] = balls.transform.GetChild(i).gameObject;
         }
-    }
 
-    private void Start()
-    {
         InitializeBallpit();
     }
 

@@ -11,6 +11,17 @@ using UnityEngine;
 public class LittleGuy : Interactable
 {
     public GameObject scatteredBalls;
+    public GameObject CD;
+
+    public override void UniqueUpdate()
+    {
+        //If the CD has been collected in this room, change the room's default text
+        if (GameManager.instance.cdCollected[4])
+        {
+            TextDisplay.Instance.ChangeRoomText("I don't think there's anything else I need to do in this room.");
+        }
+    }
+
     public override void OnCheck()
     {
         base.OnCheck();
@@ -47,11 +58,12 @@ public class LittleGuy : Interactable
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"YIPPEE!!!! Great work, bug! I left your reward in the ballpit.\"");
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"This is the BEST DAY OF MY LIFE!!!!\"");
                 //spawn CD
+                CD.SetActive(true);
                 GameManager.instance.playplaceSpawnedCD = true;
             }
             else //This should be the last thing little guy can say to you 
             {
-                TextDisplay.Instance.ChangeTextDisplay("I'm proud of you.");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"I'm proud of you.\"");
             }
         }
     }

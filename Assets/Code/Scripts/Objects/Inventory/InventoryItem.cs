@@ -40,6 +40,16 @@ public class InventoryItem : MonoBehaviour
             GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, useWith, isCD)); //Add to current inventory
             GameManager.instance.ItemsPickedUp.Add(new Item(itemName, itemIcon, useWith, isCD)); //Add to running items list
         }
+
+        if (isCD)
+        {
+            //Get the number of the CD which corresponds with the Room Number
+            //Should be the last character in the game object's name
+            string cdNumberString = gameObject.name.Substring(2);
+            int cdNumber = int.Parse(cdNumberString);
+            //Bool stored in the game manager is set to true
+            GameManager.instance.cdCollected[cdNumber-1] = true;
+        }
         
     }
 }
