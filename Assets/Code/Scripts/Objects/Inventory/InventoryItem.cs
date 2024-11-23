@@ -12,7 +12,6 @@ public class InventoryItem : MonoBehaviour
     public string itemName;
     public Sprite itemIcon;
     public string useWith;
-    public bool isUsable;
     public bool isCD;
 
     private void Awake()
@@ -38,8 +37,8 @@ public class InventoryItem : MonoBehaviour
         }
         else
         {
-            GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, useWith, isUsable, isCD)); //Add to current inventory
-            GameManager.instance.ItemsPickedUp.Add(new Item(itemName, itemIcon, useWith, isUsable, isCD)); //Add to running items list
+            GameManager.instance.Inventory.Add(new Item(itemName, itemIcon, useWith, isCD)); //Add to current inventory
+            GameManager.instance.ItemsPickedUp.Add(new Item(itemName, itemIcon, useWith, isCD)); //Add to running items list
         }
         
     }
