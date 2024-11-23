@@ -1,17 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 /// <summary>
 /// By Mads:
 /// Logic for interaction with Little Guy.
 /// Talk to him to learn that you need to fill up the ballpit before he gives you a CD.
-/// Maybe the ballpit balls don't spawn until you talk to him first also?
+/// Ballpit balls don't spawn until you talk to little guy (except for the one you get from dolly puzzle).
 /// </summary>
 
 public class LittleGuy : Interactable
 {
-
+    public GameObject scatteredBalls;
     public override void OnCheck()
     {
         base.OnCheck();
@@ -34,16 +33,25 @@ public class LittleGuy : Interactable
                 TextDisplay.Instance.ChangeRoomText("I should look for the missing ballpit balls.");
 
                 GameManager.instance.talkedToLittleGuy = true;
+
+                //Make the collectable ballpit balls in the scene active
+                scatteredBalls.SetActive(true);
             }
             else if (GameManager.instance.talkedToLittleGuy && !GameManager.instance.ballpitFull)
             {
                 //Slightly different text giving you a hint
-                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"There should be some ballpit balls scattered around here, idk.\"");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"If you find any balls, throw them in the ballpit for me, would ya?\"");
             }
-            else if (GameManager.instance.ballpitFull)
+            else if (GameManager.instance.ballpitFull && !GameManager.instance.playplaceSpawnedCD)
             {
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"YIPPEE!!!! Great work, bug! I left your reward in the ballpit.\"");
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"This is the BEST DAY OF MY LIFE!!!!\"");
+                //spawn CD
+                GameManager.instance.playplaceSpawnedCD = true;
+            }
+            else //This should be the last thing little guy can say to you 
+            {
+                TextDisplay.Instance.ChangeTextDisplay("I'm proud of you.");
             }
         }
     }
@@ -59,7 +67,15 @@ public class LittleGuy : Interactable
         }
         else
         {
-            TextDisplay.Instance.ChangeTextDisplay("He doesn't seem to want any of my items.");
+            TextDisplay.Instance.ChangeTextDisplay("I might crush this lil guy if I try to give him an item.");
+        }
+    }
+
+    public void InitializeLittleGuy()
+    {
+        if (GameManager.instance.talkedToLittleGuy == true)
+        {
+            scatteredBalls.SetActive(true);
         }
     }
 }

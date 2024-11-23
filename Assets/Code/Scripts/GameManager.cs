@@ -26,9 +26,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Playplace Puzzle Checks")]
     public bool talkedToLittleGuy = false;
+    public int ballpitPercentFull = 0;
     public bool ballpitFull = false;
     public bool[] dollyPlacedInChair = new bool[2];
     public bool dollyPuzzleComplete;
+    public bool playplaceSpawnedCD = false;
+    public bool playplaceCDCollected = false;
 
     private void Awake()
     {

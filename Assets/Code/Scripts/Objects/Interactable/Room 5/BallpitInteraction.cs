@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BallpitInteraction : Interactable
 {
-    public int percentageFull = 0;
     GameObject balls;
     GameObject[] ballLayers = new GameObject[5];
 
-    private void Start()
+    private void Awake()
     {
         balls = transform.GetChild(0).gameObject;
 
@@ -19,10 +18,16 @@ public class BallpitInteraction : Interactable
         }
     }
 
+    private void Start()
+    {
+        InitializeBallpit();
+    }
+
     public override void OnCheck()
     {
         base.OnCheck();
         GameManager.instance.interactionInProgress = true;
+        TextDisplay.Instance.ChangeTextDisplay("The ballpit is " + GameManager.instance.ballpitPercentFull + "% full.");
     }
 
     public override void OnItemUsed()
@@ -34,7 +39,7 @@ public class BallpitInteraction : Interactable
         {
             if (item.useWith == gameObject.name)
             {
-                percentageFull += 10;
+                GameManager.instance.ballpitPercentFull += 10;
                 UpdateBallPit();
                 TextDisplay.Instance.ChangeTextDisplay("More balls have been added to the ball pit.");
 
@@ -50,7 +55,7 @@ public class BallpitInteraction : Interactable
 
     public void UpdateBallPit()
     {
-        switch (percentageFull)
+        switch (GameManager.instance.ballpitPercentFull)
         {
             case 0: break;
             case 10:
@@ -63,6 +68,7 @@ public class BallpitInteraction : Interactable
                 ballLayers[3].SetActive(true); break;
             case 50:
                 ballLayers[4].SetActive(true); break;
+            //Past 50%, raise the level of the ballpit balls to simulate the ballpit filling up.
             case 60:
                 balls.transform.position = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z); break;
             case 70:
@@ -70,14 +76,22 @@ public class BallpitInteraction : Interactable
             case 80:
                 balls.transform.position = new Vector3(transform.position.x, transform.position.y + 0.75f, transform.position.z); break;
             case 90:
-                //Raise the level of the ballpit balls
-                Debug.Log("Raising ball level");
                 balls.transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z); break;
             case 100:
-                balls.transform.position = new Vector3(transform.position.x, transform.position.y + 1.25f, transform.position.z); 
-                //additional logic indicating that puzzle has been solved.
+                balls.transform.position = new Vector3(transform.position.x, transform.position.y + 1.25f, transform.position.z);
+                //Additional logic indicating that the ballpit puzzle has been solved.
+                GameManager.instance.ballpitFull = true;
+                TextDisplay.Instance.ChangeTextDisplay("The ballpit is full! I should check in with that little guy...");
                 break;
 
+        }
+    }
+
+    public void InitializeBallpit()
+    {
+        for (int i = 0; i < GameManager.instance.ballpitPercentFull/10; i++)
+        {
+            ballLayers[i].SetActive(true);
         }
     }
 }
