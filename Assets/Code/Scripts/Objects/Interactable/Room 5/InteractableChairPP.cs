@@ -60,13 +60,11 @@ public class InteractableChairPP : Interactable
 
                 //Disable further interaction with this chair
                 interactionEnabled = false;
-                break;
-            }
-            else
-            {
-                TextDisplay.Instance.ChangeTextDisplay("I don't have any items that I can use with this chair.");
+                return;
             }
         }
+        //Entire inventory was searched and no item was found.
+        TextDisplay.Instance.ChangeTextDisplay("I don't have any items that I can use with this chair.");
     }
 
     /// <summary>
