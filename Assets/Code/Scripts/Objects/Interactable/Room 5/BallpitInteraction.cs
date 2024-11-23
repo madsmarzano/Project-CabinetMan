@@ -74,7 +74,7 @@ public class BallpitInteraction : Interactable
                 Debug.Log("Raising ball level");
                 balls.transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z); break;
             case 100:
-                balls.transform.position = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z); 
+                balls.transform.position = new Vector3(transform.position.x, transform.position.y + 1.25f, transform.position.z); 
                 //additional logic indicating that puzzle has been solved.
                 break;
 
