@@ -41,6 +41,18 @@ public class UIController : MonoBehaviour
         if (InputManager.ToggledInventory() && inventoryToggleEnabled)
         {
             inventory.SetActive(showInventory);
+
+            RectTransform textTransform = textDisplay.GetComponent<RectTransform>();
+            if (inventory.activeSelf)
+            {
+                //Move the text display up
+                textTransform.anchoredPosition = new Vector3(0, 100, 0);
+            }
+            else
+            {
+                //Move the text display down
+                textTransform.anchoredPosition = Vector3.zero;
+            }
         }
     }
 
