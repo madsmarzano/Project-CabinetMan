@@ -11,7 +11,6 @@ public class UIController : MonoBehaviour
 
     public static GameObject textDisplay;
     public static GameObject inventory;
-    public static GameObject inventoryActions;
     public static GameObject interactPrompt;
     public static GameObject interactionMenu;
 
@@ -19,9 +18,8 @@ public class UIController : MonoBehaviour
     {
         textDisplay = transform.GetChild(0).gameObject;
         inventory = transform.GetChild(1).gameObject;
-        inventoryActions = transform.GetChild(2).gameObject;
-        interactPrompt = transform.GetChild(3).gameObject;
-        interactionMenu = transform.GetChild(4).gameObject;
+        interactPrompt = transform.GetChild(2).gameObject;
+        interactionMenu = transform.GetChild(3).gameObject;
 
         ResetToDefault();
     }
@@ -30,7 +28,6 @@ public class UIController : MonoBehaviour
     {
         //inventory and actions are hidden at the start
         inventory.SetActive(false);
-        inventoryActions.SetActive(false);
         interactPrompt.SetActive(false);
         interactionMenu.SetActive(false);
     }
@@ -42,15 +39,6 @@ public class UIController : MonoBehaviour
         if (InputManager.ToggledInventory() && inventoryToggleEnabled)
         {
             inventory.SetActive(showInventory);
-        }
-
-        //If inventory is active, click to open actions menu
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (inventory.activeSelf == true)
-            {
-                inventoryActions.SetActive(true);
-            }
         }
     }
 
