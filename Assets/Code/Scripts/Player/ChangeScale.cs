@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -17,6 +18,8 @@ public class ChangeScale : MonoBehaviour
     public float changeTimer = 0.0f;
     [Tooltip("Amount the scale and position will be changed each frame.")]
     private float changeIncrement;
+
+    private bool sizeWarningDisplayed = false;
 
     public enum Size
     {
@@ -72,6 +75,10 @@ public class ChangeScale : MonoBehaviour
                 else
                 {
                     Debug.Log("CANNOT GROW: Something is in the way!");
+                    if (!sizeWarningDisplayed)
+                    {
+                        StartCoroutine(DisplaySizeWarning());
+                    }
                     return;
                 }
             }
@@ -144,6 +151,15 @@ public class ChangeScale : MonoBehaviour
     {
         //Sphere is slightly above Player so CheckSphere does not detect ground
         return (!Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + 1.05f, transform.position.z), 1f));
+    }
+
+    public IEnumerator DisplaySizeWarning()
+    {
+        sizeWarningDisplayed = true;
+        UIController.sizeChangeWarning.SetActive(true);
+        yield return new WaitForSeconds(3);
+        UIController.sizeChangeWarning.SetActive(false);
+        sizeWarningDisplayed = false;
     }
 
 }
