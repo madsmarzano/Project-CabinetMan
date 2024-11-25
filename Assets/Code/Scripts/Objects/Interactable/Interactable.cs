@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    protected GameObject player;
+    public GameObject player;
     [SerializeField, Tooltip("Maximum distance the player needs to be from the object in order to interract with it.")]
     protected float interactionRange;
     [SerializeField]
@@ -24,6 +24,11 @@ public class Interactable : MonoBehaviour
     {
         //Get reference to the player
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void Start()
+    {
+        UniqueStart();
     }
 
     private void Update()
@@ -82,7 +87,7 @@ public class Interactable : MonoBehaviour
             isActive = false;
         }
 
-        
+        UniqueUpdate();
     }
 
     /// <summary>
@@ -94,6 +99,15 @@ public class Interactable : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= interactionRange;
     }
 
+    public void ResetUI()
+    {
+        UIController.ResetToDefault();
+    }
+
     public virtual void OnCheck() { }
     public virtual void OnItemUsed() { }
+
+    //Recreate start and update methods so that derived classes can implement unique logic without overriding the stuff in this class.
+    public virtual void UniqueUpdate() { }
+    public virtual void UniqueStart() { }
 }

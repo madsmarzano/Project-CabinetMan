@@ -14,12 +14,14 @@ public class InteractableChairPP : Interactable
     public GameObject ballpitBalls;
     public int chairID; //Distinguishes one chair from the other; referenced in the GameManager when determining which chair a dolly has been placed in, if any.
 
-    private void Start()
+    public override void UniqueStart()
     {
+        base.UniqueStart();
         if (GameManager.instance.dollyPlacedInChair[chairID])
         {
             InitializeAsCompleted();
         }
+
     }
 
     public override void OnCheck()
@@ -60,13 +62,11 @@ public class InteractableChairPP : Interactable
 
                 //Disable further interaction with this chair
                 interactionEnabled = false;
-                break;
-            }
-            else
-            {
-                TextDisplay.Instance.ChangeTextDisplay("I don't have any items that I can use with this chair.");
+                return;
             }
         }
+        //Entire inventory was searched and no item was found.
+        TextDisplay.Instance.ChangeTextDisplay("I don't have any items that I can use with this chair.");
     }
 
     /// <summary>
