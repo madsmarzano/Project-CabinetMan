@@ -10,8 +10,14 @@ using UnityEngine;
 
 public class LittleGuy : Interactable
 {
-    public GameObject scatteredBalls;
+    public GameObject[] scatteredBalls;
     public GameObject CD;
+
+    public override void UniqueStart()
+    {
+        base.UniqueStart();
+        InitializeLittleGuy();
+    }
 
     public override void UniqueUpdate()
     {
@@ -46,7 +52,10 @@ public class LittleGuy : Interactable
                 GameManager.instance.talkedToLittleGuy = true;
 
                 //Make the collectable ballpit balls in the scene active
-                scatteredBalls.SetActive(true);
+                foreach (GameObject p in scatteredBalls)
+                {
+                    p.SetActive(true);
+                }
             }
             else if (GameManager.instance.talkedToLittleGuy && !GameManager.instance.ballpitFull)
             {
@@ -57,6 +66,7 @@ public class LittleGuy : Interactable
             {
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"YIPPEE!!!! Great work, bug! I left your reward in the ballpit.\"");
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"This is the BEST DAY OF MY LIFE!!!!\"");
+                TextDisplay.Instance.ChangeRoomText("Let's grab that CD from the ballpit!");
                 //spawn CD
                 CD.SetActive(true);
                 GameManager.instance.playplaceSpawnedCD = true;
@@ -85,9 +95,17 @@ public class LittleGuy : Interactable
 
     public void InitializeLittleGuy()
     {
-        if (GameManager.instance.talkedToLittleGuy == true)
+        if (GameManager.instance.talkedToLittleGuy)
         {
-            scatteredBalls.SetActive(true);
+            foreach (GameObject p in scatteredBalls)
+            {
+                p.SetActive(true);
+            }
+        }
+
+        if (GameManager.instance.playplaceSpawnedCD && !GameManager.instance.cdCollected[4])
+        {
+            CD.SetActive(true);
         }
     }
 }

@@ -47,10 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d55bd751a391347b1272e0a2b39a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: BallpitBalls01
+  itemName: 
   itemIcon: {fileID: 21300000, guid: 3caaef8cde550f342929eb035929a302, type: 3}
   useWith: BallPit
-  isUsable: 0
   isCD: 0
 --- !u!33 &2144980960492523099
 MeshFilter:

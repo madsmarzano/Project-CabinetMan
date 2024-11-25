@@ -14,12 +14,14 @@ public class InteractableChairPP : Interactable
     public GameObject ballpitBalls;
     public int chairID; //Distinguishes one chair from the other; referenced in the GameManager when determining which chair a dolly has been placed in, if any.
 
-    private void Start()
+    public override void UniqueStart()
     {
+        base.UniqueStart();
         if (GameManager.instance.dollyPlacedInChair[chairID])
         {
             InitializeAsCompleted();
         }
+
     }
 
     public override void OnCheck()
