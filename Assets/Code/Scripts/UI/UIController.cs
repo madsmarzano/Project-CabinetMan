@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     public static GameObject inventory;
     public static GameObject interactPrompt;
     public static GameObject interactionMenu;
+    public static GameObject sizeChangeWarning;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class UIController : MonoBehaviour
         inventory = transform.GetChild(1).gameObject;
         interactPrompt = transform.GetChild(2).gameObject;
         interactionMenu = transform.GetChild(3).gameObject;
+        sizeChangeWarning = transform.GetChild(4).gameObject;
 
         ResetToDefault();
     }
