@@ -85,15 +85,11 @@ public class TextDisplay : MonoBehaviour
     /// Change the default text for the room you are currently in when this method is called.
     /// </summary>
     /// <param name="newText">Text you would like the default room text to be changed to.</param>
-    public void ChangeRoomText(string newText)
+    public void ChangeRoomText(string newText, int roomNumber)
     {
-        //Get current scene number
-        string sceneName = SceneManager.GetActiveScene().name;
-        string roomNumber = sceneName.Substring(sceneName.Length - 1);
-        int theNumber = int.Parse(roomNumber);
 
-        //Change the default text for this room
-        GameManager.instance.roomInfo[theNumber-1] = newText;
+        //Change the default text for room number passed into this method
+        GameManager.instance.roomInfo[roomNumber-1] = newText;
     }
 
     public IEnumerator WaitForTextDisplayTime()
