@@ -1255,7 +1255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92013459}
   m_LocalRotation: {x: -0, y: 0.058205366, z: 0.000000009313225, w: 0.9983047}
-  m_LocalPosition: {x: 0.06490002, y: 0.7328131, z: -0.4500002}
+  m_LocalPosition: {x: 0.06, y: 0.733, z: -0.486}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1282,8 +1282,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c820e2d4ba407af49bd2f96d93127ea3, type: 2}
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 49e862ac292a38146974966b43b67fd9, type: 2}
+  - {fileID: 2100000, guid: 1bce69ed5e4e7a441953b785379a5b3c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12261,6 +12261,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5036777622747677923, guid: 8657508adb01f954aa2f5bc5142a0b55, type: 3}
   m_PrefabInstance: {fileID: 772097865}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &778194708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778194712}
+  - component: {fileID: 778194711}
+  - component: {fileID: 778194709}
+  m_Layer: 0
+  m_Name: JungleGymBarrier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &778194709
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778194708}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &778194711
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778194708}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &778194712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778194708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.625, y: 5.6250005, z: -16.499994}
+  m_LocalScale: {x: 20.750366, y: 11.250309, z: 17.499971}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &778529611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15152,7 +15206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004491885}
   m_LocalRotation: {x: -0, y: -0.071543515, z: -0.000000011175871, w: 0.99743754}
-  m_LocalPosition: {x: 0.06490002, y: 0.7328063, z: -0.1500022}
+  m_LocalPosition: {x: 0.066, y: 0.741, z: -0.159}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15179,8 +15233,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c820e2d4ba407af49bd2f96d93127ea3, type: 2}
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 49e862ac292a38146974966b43b67fd9, type: 2}
+  - {fileID: 2100000, guid: 1bce69ed5e4e7a441953b785379a5b3c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15609,7 +15663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037812285}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0649, y: 0.7328, z: -0.30000007}
+  m_LocalPosition: {x: 0.0649, y: 0.726, z: -0.322}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15636,8 +15690,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c820e2d4ba407af49bd2f96d93127ea3, type: 2}
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a76af2f56d81dc746b6171c7245f869d, type: 2}
+  - {fileID: 2100000, guid: 49e862ac292a38146974966b43b67fd9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30301,13 +30355,32 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652490376323}
+  - component: {fileID: 919132148216430138}
   m_Layer: 0
-  m_Name: JungleGymBoards
+  m_Name: JungleGymGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148216430138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148216430137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ea6d66898355a4093cd841dd4a6b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  interactionRange: 8
+  playerInRange: 0
+  interactionEnabled: 1
+  interactionPaused: 0
+  jungleGymBarrier: {fileID: 778194708}
 --- !u!1 &919132148400437813
 GameObject:
   m_ObjectHideFlags: 0
@@ -30422,8 +30495,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c820e2d4ba407af49bd2f96d93127ea3, type: 2}
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1bce69ed5e4e7a441953b785379a5b3c, type: 2}
+  - {fileID: 2100000, guid: a76af2f56d81dc746b6171c7245f869d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

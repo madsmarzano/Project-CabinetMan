@@ -99,6 +99,11 @@ public class Interactable : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= interactionRange;
     }
 
+    public void ResetUI()
+    {
+        UIController.ResetToDefault();
+    }
+
     public virtual void OnCheck() { }
     public virtual void OnItemUsed() { }
 

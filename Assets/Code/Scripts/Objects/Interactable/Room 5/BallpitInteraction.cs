@@ -24,7 +24,7 @@ public class BallpitInteraction : Interactable
     {
         base.OnCheck();
         GameManager.instance.interactionInProgress = true;
-        TextDisplay.Instance.ChangeTextDisplay("The ballpit is " + GameManager.instance.ballpitPercentFull + "% full.");
+        TextDisplay.Instance.ChangeTextDisplay("The ball pit is " + GameManager.instance.ballpitPercentFull + "% full.");
     }
 
     public override void OnItemUsed()
@@ -38,7 +38,7 @@ public class BallpitInteraction : Interactable
             {
                 GameManager.instance.ballpitPercentFull += 10;
                 UpdateBallPit();
-                TextDisplay.Instance.ChangeTextDisplay("More balls have been added to the ball pit.");
+                TextDisplay.Instance.ChangeTextDisplay("I add some balls into the ball pit.");
 
                 //Remove item from inventory
                 GameManager.instance.Inventory.Remove(item);
@@ -78,7 +78,7 @@ public class BallpitInteraction : Interactable
                 balls.transform.position = new Vector3(transform.position.x, transform.position.y + 1.25f, transform.position.z);
                 //Additional logic indicating that the ballpit puzzle has been solved.
                 GameManager.instance.ballpitFull = true;
-                TextDisplay.Instance.ChangeTextDisplay("The ballpit is full! I should check in with that little guy...");
+                TextDisplay.Instance.ChangeTextDisplay("The ball pit is full! I should check in with that little guy...");
                 break;
 
         }

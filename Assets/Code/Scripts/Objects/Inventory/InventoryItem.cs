@@ -45,7 +45,7 @@ public class InventoryItem : MonoBehaviour
         {
             //Get the number of the CD which corresponds with the Room Number
             //Should be the last character in the game object's name
-            string cdNumberString = gameObject.name.Substring(2);
+            string cdNumberString = itemName.Substring(itemName.Length - 1);
             int cdNumber = int.Parse(cdNumberString);
             //Bool stored in the game manager is set to true
             GameManager.instance.cdCollected[cdNumber-1] = true;

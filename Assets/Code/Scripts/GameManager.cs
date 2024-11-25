@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     public int ballpitPercentFull = 0;
     public bool ballpitFull = false;
     public bool[] dollyPlacedInChair = new bool[2];
-    public bool dollyPuzzleComplete;
+    public bool dollyPuzzleComplete = false;
+    public bool jungleGymOpen = false;
     public bool playplaceSpawnedCD = false;
 
     private void Awake()

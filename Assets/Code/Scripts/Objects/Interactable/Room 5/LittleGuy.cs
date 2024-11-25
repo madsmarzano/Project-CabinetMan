@@ -24,7 +24,7 @@ public class LittleGuy : Interactable
         //If the CD has been collected in this room, change the room's default text
         if (GameManager.instance.cdCollected[4])
         {
-            TextDisplay.Instance.ChangeRoomText("I don't think there's anything else I need to do in this room.");
+            TextDisplay.Instance.ChangeRoomText("I've collected a CD from this room. I should put it where it belongs.");
         }
     }
 
@@ -44,10 +44,10 @@ public class LittleGuy : Interactable
             {
                 //Initial interaction -- Get info on what to do
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"Hey bug-human thingy... I need your help.\"");
-                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"I wanna play in the ballpit SO BAD!!! But it's EMPTY!!!\"");
-                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"If you fill up the ballpit for me, I'll give you this cool CD I found!\"");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"I wanna play in the ball pit SO BAD!!! But it's EMPTY!!!\"");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"If you fill up the ball pit for me, I'll give you this cool CD I found!\"");
 
-                TextDisplay.Instance.ChangeRoomText("I should look for the missing ballpit balls.");
+                TextDisplay.Instance.ChangeRoomText("I should look for the missing ball pit balls.");
 
                 GameManager.instance.talkedToLittleGuy = true;
 
@@ -60,13 +60,13 @@ public class LittleGuy : Interactable
             else if (GameManager.instance.talkedToLittleGuy && !GameManager.instance.ballpitFull)
             {
                 //Slightly different text giving you a hint
-                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"If you find any balls, throw them in the ballpit for me, would ya?\"");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"If you find any balls, throw them in the ball pit for me, would ya?\"");
             }
             else if (GameManager.instance.ballpitFull && !GameManager.instance.playplaceSpawnedCD)
             {
-                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"YIPPEE!!!! Great work, bug! I left your reward in the ballpit.\"");
+                TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"YIPPEE!!!! Great work, bug! I left your reward in the ball pit.\"");
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"This is the BEST DAY OF MY LIFE!!!!\"");
-                TextDisplay.Instance.ChangeRoomText("Let's grab that CD from the ballpit!");
+                TextDisplay.Instance.ChangeRoomText("Let's grab that CD from the ball pit!");
                 //spawn CD
                 CD.SetActive(true);
                 GameManager.instance.playplaceSpawnedCD = true;
