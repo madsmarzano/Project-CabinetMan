@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+
+/// <summary>
+/// By Mads:
+/// Handles the display of UI elements.
+/// Includes static references to all UI elements as well as a method to reset the UI to its default state.
+/// </summary>
 
 public class UIController : MonoBehaviour
 {
