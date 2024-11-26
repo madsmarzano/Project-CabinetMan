@@ -38,7 +38,7 @@ public class BallpitInteraction : Interactable
             {
                 GameManager.instance.ballpitPercentFull += 10;
                 UpdateBallPit();
-                TextDisplay.Instance.ChangeTextDisplay("I add some balls into the ball pit.");
+                TextDisplay.Instance.ChangeTextDisplay("I've added some balls to the ball pit.");
 
                 //Remove item from inventory
                 GameManager.instance.Inventory.Remove(item);
@@ -88,7 +88,28 @@ public class BallpitInteraction : Interactable
     {
         for (int i = 0; i < GameManager.instance.ballpitPercentFull/10; i++)
         {
-            ballLayers[i].SetActive(true);
+            if (i < 5)
+            {
+                //Determine how many balls are showing
+                ballLayers[i].SetActive(true);
+            }
+            else if (i < 10)
+            {
+                //Determine height of the balls
+                switch (i)
+                {
+                    case 5:
+                        balls.transform.position = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z); break;
+                    case 6:
+                        balls.transform.position = new Vector3(transform.position.x, transform.position.y + 0.50f, transform.position.z); break;
+                    case 7:
+                        balls.transform.position = new Vector3(transform.position.x, transform.position.y + 0.75f, transform.position.z); break;
+                    case 8:
+                        balls.transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z); break;
+                    case 9:
+                        balls.transform.position = new Vector3(transform.position.x, transform.position.y + 1.25f, transform.position.z); break;
+                }
+            }
         }
     }
 }
