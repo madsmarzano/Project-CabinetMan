@@ -79,6 +79,7 @@ public class BallpitInteraction : Interactable
                 //Additional logic indicating that the ballpit puzzle has been solved.
                 GameManager.instance.ballpitFull = true;
                 TextDisplay.Instance.ChangeTextDisplay("The ball pit is full! I should check in with that little guy...");
+                interactionEnabled = false; //You can no longer interact with the ballpit
                 break;
 
         }
