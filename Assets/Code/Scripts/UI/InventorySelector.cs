@@ -87,11 +87,16 @@ public class InventorySelector : MonoBehaviour
             Image uiImage = inventorySlot.GetComponent<Image>(); // get reference to the image in the UI
             if (i < GameManager.instance.Inventory.Count)
             {
+                //Activate the inventory slot
+                inventorySlot.gameObject.SetActive(true);
+                //Replace the sprite image with the item icon
                 uiImage.sprite = GameManager.instance.Inventory[i].itemIcon;
             }
             else
             {
-                uiImage.sprite = null;
+                //Deactivate the inventory slot
+                inventorySlot.gameObject.SetActive(false);
+                //uiImage.sprite = null;
             }
 
             i++;
