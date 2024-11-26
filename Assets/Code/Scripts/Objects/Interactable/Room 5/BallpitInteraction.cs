@@ -1,6 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// By Mads:
+/// Handles interaction with the ball pit.
+/// Determines appearance of the ball pit based on the amount of balls added.
+/// </summary>
 
 public class BallpitInteraction : Interactable
 {

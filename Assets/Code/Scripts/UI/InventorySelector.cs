@@ -1,6 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// By Mads:
+/// Handles the display of the item icons in the inventory UI.
+/// It also allows you to scroll through the items in the inventory -- this might be removed if there's never a need to select an item.
+/// </summary>
+
 public class InventorySelector : MonoBehaviour
 {
     public int selectedItem = 0;
@@ -18,7 +24,7 @@ public class InventorySelector : MonoBehaviour
 
         HandleSelection();
 
-        if (!GameManager.instance.inventoryUpdated)
+        if (!GameManager.instance.inventoryUpdated) //Another script has changed the inventory, indicating that the UI display needs to be updated.
         {
             UpdateIcons();
         }
@@ -85,6 +91,7 @@ public class InventorySelector : MonoBehaviour
         foreach (Transform inventorySlot in transform)
         {
             Image uiImage = inventorySlot.GetComponent<Image>(); // get reference to the image in the UI
+
             if (i < GameManager.instance.Inventory.Count)
             {
                 //Activate the inventory slot
@@ -102,6 +109,6 @@ public class InventorySelector : MonoBehaviour
             i++;
         }
 
-        GameManager.instance.inventoryUpdated = true;
+        GameManager.instance.inventoryUpdated = true; //Indicates inventory is now up to date
     }
 }

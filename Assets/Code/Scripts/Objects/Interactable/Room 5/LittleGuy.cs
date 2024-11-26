@@ -1,11 +1,10 @@
-using System.Xml.Serialization;
 using UnityEngine;
 
 /// <summary>
 /// By Mads:
-/// Logic for interaction with Little Guy.
-/// Talk to him to learn that you need to fill up the ballpit before he gives you a CD.
-/// Ballpit balls don't spawn until you talk to little guy (except for the one you get from dolly puzzle).
+/// Logic for interaction with Little Guy (cockroach).
+/// Talking to Little Guy begins the ball pit puzzle (spawns ball pit balls after first interaction).
+/// Also handles spawning of the CD when the ball pit puzzle is complete.
 /// </summary>
 
 public class LittleGuy : Interactable
