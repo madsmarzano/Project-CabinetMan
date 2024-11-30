@@ -12,6 +12,7 @@ public class VentFan : MonoBehaviour
     public Transform vortexExit;
 
     public bool vortexActive;
+    public bool vortexWaiting = false;
     public float vortexTimer = 0f;
     [Tooltip("Total amount of time in seconds that the vortex will last.")]
     public float vortexDuration = 5f;
@@ -35,8 +36,6 @@ public class VentFan : MonoBehaviour
             //Timer has reached 0 before player has been able to escape vortex
             //Trigger death screen; Player restarts from beginning of level 2
 
-            //putting this here for testing
-            ExitVortex();
         }
         else
         {
@@ -52,6 +51,7 @@ public class VentFan : MonoBehaviour
 
         if (vortexActive && exitClicks == 5)
         {
+            vortexActive = false;
             //reset clicks
             exitClicks = 0;
             //end timer
@@ -63,7 +63,7 @@ public class VentFan : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Check if player has activated the trigger
-        if (other.CompareTag("Player") && !vortexActive)
+        if (other.CompareTag("Player") && !vortexActive && !vortexWaiting)
         {
             //Make sure this fan stores the reference of the Player 
             _player = other.gameObject;
@@ -98,13 +98,20 @@ public class VentFan : MonoBehaviour
     {
         Debug.Log("Exiting Vortex");
 
-        vortexActive = false;
         //Move player to the vortex exit point
         _player.transform.position = vortexExit.position;
 
         //Put player in Idle state
         playerController.stateMachine.ChangeState(playerController.idleState);
 
-        //Trigger some kind of wait time before the fan starts up again
+        //Trigger wait time before the fan starts up again
+        StartCoroutine(VortexWait());
+    }
+
+    public IEnumerator VortexWait()
+    {
+        vortexWaiting = true;
+        yield return new WaitForSeconds(3f);
+        vortexWaiting = false;
     }
 }
