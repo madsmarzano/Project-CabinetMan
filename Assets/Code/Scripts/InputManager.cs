@@ -10,6 +10,7 @@ public static class InputManager
     private static KeyCode _changeSize;
     private static KeyCode _inventory;
     private static KeyCode _interact;
+    private static KeyCode _pause;
 
     //public bool UIselected; //used to select an item or action -- defaults to left mouse click
 
@@ -54,11 +55,17 @@ public static class InputManager
         return Input.GetKeyDown(_interact);
     }
 
+    public static bool PausePressed()
+    {
+        return Input.GetKeyDown(_pause);
+    }
+
     public static void SetDefaultKeyBinds()
     {
         _jump = KeyCode.Space;
         _changeSize = KeyCode.LeftShift;
         _inventory = KeyCode.Q;
         _interact = KeyCode.E;
+        _pause = KeyCode.Escape;
     }
 }
