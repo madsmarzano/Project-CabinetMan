@@ -11,10 +11,14 @@ public class VentFan : MonoBehaviour
     public Transform vortexEnd;
     public Transform vortexExit;
 
-    public bool vortexActivated;
+    public bool vortexActive;
     public float vortexTimer = 0f;
+    [Tooltip("Total amount of time in seconds that the vortex will last.")]
+    public float vortexDuration = 5f;
 
     public float step; //distance the player moves per second when caught in the vortex
+
+    public int exitClicks = 0;
 
     private void Update()
     {
@@ -26,7 +30,7 @@ public class VentFan : MonoBehaviour
             //Tick down timer
             vortexTimer -= Time.deltaTime;
         }
-        else if (vortexActivated)
+        else if (vortexActive)
         {
             //Timer has reached 0 before player has been able to escape vortex
             //Trigger death screen; Player restarts from beginning of level 2
@@ -39,12 +43,27 @@ public class VentFan : MonoBehaviour
             vortexTimer = 0f;
             
         }
+
+        //testing the exit condition
+        if (vortexActive && Input.GetKeyDown(KeyCode.Backspace))
+        {
+            exitClicks++;
+        }
+
+        if (vortexActive && exitClicks == 5)
+        {
+            //reset clicks
+            exitClicks = 0;
+            //end timer
+            vortexTimer = 0f;
+            ExitVortex();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //Check if player has activated the trigger
-        if (other.CompareTag("Player") && !vortexActivated)
+        if (other.CompareTag("Player") && !vortexActive)
         {
             //Make sure this fan stores the reference of the Player 
             _player = other.gameObject;
@@ -56,17 +75,20 @@ public class VentFan : MonoBehaviour
 
     public void StartVortex()
     {
-        vortexActivated = true;
+        vortexActive = true;
 
         //Start the timer
-        vortexTimer = 5f;
+        vortexTimer = vortexDuration;
 
         //Calculate the amount player will move per second 
         float distanceFromFan = Vector3.Distance(vortexStart.position, vortexEnd.position);
-        step = distanceFromFan / 5f;
+        step = distanceFromFan / vortexDuration;
 
         //Put player in Paused state
         playerController.stateMachine.ChangeState(playerController.pausedState);
+
+        //Make player face the vent
+        Camera.main.transform.forward = -vortexStart.forward;
 
         //Set the player's position to be the vortex start position
         _player.transform.position = vortexStart.position;
@@ -76,7 +98,7 @@ public class VentFan : MonoBehaviour
     {
         Debug.Log("Exiting Vortex");
 
-        vortexActivated = false;
+        vortexActive = false;
         //Move player to the vortex exit point
         _player.transform.position = vortexExit.position;
 

@@ -31220,6 +31220,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395495884}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1400787784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 848135716782435961, guid: 7712df0450572b345ad5cc92d45882af, type: 3}
+  m_PrefabInstance: {fileID: 1502569091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1403910130
 GameObject:
   m_ObjectHideFlags: 0
@@ -33783,6 +33788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentFan (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6574278754457709202, guid: 7712df0450572b345ad5cc92d45882af, type: 3}
+      propertyPath: vortexExit
+      value: 
+      objectReference: {fileID: 1400787784}
     - target: {fileID: 6789853721751051757, guid: 7712df0450572b345ad5cc92d45882af, type: 3}
       propertyPath: m_RootOrder
       value: 1

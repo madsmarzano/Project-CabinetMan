@@ -196,6 +196,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   vortexStart: {fileID: 6125280915970836923}
   vortexEnd: {fileID: 8755698389540991904}
+  vortexExit: {fileID: 0}
   vortexActivated: 0
   vortexTimer: 0
   step: 0
@@ -223,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7840890449587041148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.5}
+  m_LocalPosition: {x: 0.000000029802322, y: 0, z: 3.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
