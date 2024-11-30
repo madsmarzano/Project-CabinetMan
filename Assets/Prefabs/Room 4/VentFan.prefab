@@ -196,10 +196,13 @@ MonoBehaviour:
   playerController: {fileID: 0}
   vortexStart: {fileID: 6125280915970836923}
   vortexEnd: {fileID: 8755698389540991904}
-  vortexExit: {fileID: 0}
-  vortexActivated: 0
+  vortexExit: {fileID: 848135716782435961}
+  vortexActive: 0
+  vortexWaiting: 0
   vortexTimer: 0
+  vortexDuration: 5
   step: 0
+  exitClicks: 0
 --- !u!1 &7840890449587041148
 GameObject:
   m_ObjectHideFlags: 0
