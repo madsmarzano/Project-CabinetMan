@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class VentFan : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject _player;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
