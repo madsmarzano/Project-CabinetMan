@@ -27,6 +27,15 @@ public class GameManager : MonoBehaviour
     [Header("General Puzzle Checks")]
     public bool[] cdCollected = new bool[5];
 
+    [Header("Food Court Puzzle Checks")]
+    public bool cdPurchased = false;
+
+    [Header("Clothing Store Puzzle Checks")]
+    public bool registerOpened = false;
+
+    [Header("Music Store Puzzle Checks")]
+    public bool posterChecked = false;
+
     [Header("Playplace Puzzle Checks")]
     public bool talkedToLittleGuy = false;
     public int ballpitPercentFull = 0;
