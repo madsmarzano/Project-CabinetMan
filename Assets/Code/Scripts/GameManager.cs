@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     [Header("General Puzzle Checks")]
     public bool[] cdCollected = new bool[5];
 
+    [Header("Vent Maze Puzzle Checks")]
+    public bool visitedSecondFloor = false;
+
     [Header("Playplace Puzzle Checks")]
     public bool talkedToLittleGuy = false;
     public int ballpitPercentFull = 0;
