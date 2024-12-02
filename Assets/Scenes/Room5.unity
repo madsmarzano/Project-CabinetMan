@@ -31794,7 +31794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 69ec3f5a0614e264989cb14c6113ca92, type: 3}
   useWith: JungleGymGate
   isCD: 0
 --- !u!1 &6902737968217819136

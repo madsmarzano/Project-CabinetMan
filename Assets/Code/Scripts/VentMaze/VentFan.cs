@@ -20,6 +20,8 @@ public class VentFan : MonoBehaviour
     public float step; //distance the player moves per second when caught in the vortex
 
     public int exitClicks = 0;
+    public bool lastClickedLeft = false;
+    public bool lastClickedRight = false;
 
     private void Update()
     {
@@ -36,6 +38,9 @@ public class VentFan : MonoBehaviour
             //Timer has reached 0 before player has been able to escape vortex
             //Trigger death screen; Player restarts from beginning of level 2
 
+            //for now (REMOVE LATER)
+            ExitVortex();
+
         }
         else
         {
@@ -44,9 +49,34 @@ public class VentFan : MonoBehaviour
         }
 
         //testing the exit condition
-        if (vortexActive && Input.GetKeyDown(KeyCode.Backspace))
+        if (vortexActive && Input.GetKeyDown(KeyCode.A))
         {
-            exitClicks++;
+            if (lastClickedRight)
+            {
+                exitClicks++;
+                lastClickedRight = false;
+                lastClickedLeft = true;
+            }
+            else if (!lastClickedLeft && !lastClickedRight)
+            {
+                exitClicks++;
+                lastClickedLeft = true;
+            }
+        }
+
+        if (vortexActive && Input.GetKeyDown(KeyCode.D))
+        {
+            if (lastClickedLeft)
+            {
+                exitClicks++;
+                lastClickedRight = true;
+                lastClickedLeft = false;
+            }
+            else if (!lastClickedLeft && !lastClickedRight)
+            {
+                exitClicks++;
+                lastClickedRight = true;
+            }
         }
 
         if (vortexActive && exitClicks == 5)
@@ -97,6 +127,9 @@ public class VentFan : MonoBehaviour
     public void ExitVortex()
     {
         Debug.Log("Exiting Vortex");
+        //Reset click variables
+        lastClickedRight = false;
+        lastClickedLeft = false;
 
         //Move player to the vortex exit point
         _player.transform.position = vortexExit.position;
