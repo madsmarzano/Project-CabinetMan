@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  itemIcon: {fileID: 21300000, guid: 3caaef8cde550f342929eb035929a302, type: 3}
+  itemIcon: {fileID: 21300000, guid: 21b91ae063b25234ea1e374d93b1f28b, type: 3}
   useWith: BallPit
   isCD: 0
 --- !u!33 &2144980960492523099
