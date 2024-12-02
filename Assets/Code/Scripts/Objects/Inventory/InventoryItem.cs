@@ -52,6 +52,9 @@ public class InventoryItem : MonoBehaviour
             int cdNumber = int.Parse(cdNumberString);
             //Bool stored in the GameManager is set to true, indicating a CD has been collected for the room
             GameManager.instance.cdCollected[cdNumber-1] = true;
+            //Change the default text for the room the CD was collected in
+            TextDisplay.Instance.ChangeRoomText("I've collected a CD from this room. I should put it where it belongs.", cdNumber);
+            TextDisplay.Instance.LoadRoomText();
         }
         
     }

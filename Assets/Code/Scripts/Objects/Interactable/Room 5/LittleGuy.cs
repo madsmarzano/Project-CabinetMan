@@ -22,11 +22,11 @@ public class LittleGuy : Interactable
     {
         base.UniqueUpdate();
         //If the CD has been collected in this room, change the room's default text
-        if (GameManager.instance.cdCollected[4])
-        {
-            TextDisplay.Instance.ChangeRoomText("I've collected a CD from this room. I should put it where it belongs.", 5);
-            TextDisplay.Instance.LoadRoomText();
-        }
+        //if (GameManager.instance.cdCollected[4])
+        //{
+        //    TextDisplay.Instance.ChangeRoomText("I've collected a CD from this room. I should put it where it belongs.", 5);
+        //    TextDisplay.Instance.LoadRoomText();
+        //}
     }
 
     public override void OnCheck()
