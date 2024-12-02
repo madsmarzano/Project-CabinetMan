@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// By Mads.
@@ -70,6 +71,16 @@ public class Player : MonoBehaviour
         fallingState = new PlayerFallingState(this, stateMachine);
         landedState = new PlayerLandedState(this, stateMachine);
         pausedState = new PlayerPausedState(this, stateMachine);
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "StartScene" || sceneName == "Room4")
+        {
+            isInVent = true;
+        }
+        else
+        {
+            isInVent = false;
+        }
     }
 
     private void Start()

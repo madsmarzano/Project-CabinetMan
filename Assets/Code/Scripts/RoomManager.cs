@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
@@ -8,8 +9,6 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
-        gameController = GameObject.Find("Room Manager");
-
         ItemCheck();
     }
 
