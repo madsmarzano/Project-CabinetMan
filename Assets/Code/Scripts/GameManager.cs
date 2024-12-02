@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Music Store Puzzle Checks")]
     public bool posterChecked = false;
+    public int cdInserted = 0;
 
     [Header("Playplace Puzzle Checks")]
     public bool talkedToLittleGuy = false;

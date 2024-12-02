@@ -23,6 +23,7 @@ public class Poster : Interactable
         TextDisplay.Instance.ChangeTextDisplay("Hey, there's a CD behind this poster!");
         gameObject.SetActive(false);
         musicCD.SetActive(true);
+        GameManager.instance.posterChecked = true;
     }
 
 
