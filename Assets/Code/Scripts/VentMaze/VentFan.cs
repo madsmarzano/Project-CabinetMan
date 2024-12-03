@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VentFan : MonoBehaviour
 {
@@ -43,8 +44,10 @@ public class VentFan : MonoBehaviour
             //Timer has reached 0 before player has been able to escape vortex
             //Trigger death screen; Player restarts from beginning of level 2
 
+            SceneManager.LoadScene("FanDeath");
+
             //for now (REMOVE LATER)
-            ExitVortex();
+            //ExitVortex();
 
         }
         else

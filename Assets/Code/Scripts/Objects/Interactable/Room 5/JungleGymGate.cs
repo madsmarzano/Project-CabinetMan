@@ -20,7 +20,6 @@ public class JungleGymGate : Interactable
             {
                 //Bear found
                 //Remove item from inventory
-                //Remove item from inventory
                 GameManager.instance.Inventory.Remove(item);
                 GameManager.instance.inventoryUpdated = false;
                 //Disable jungle gym barrier and gate;
