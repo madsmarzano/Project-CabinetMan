@@ -23,6 +23,11 @@ public class VentFan : MonoBehaviour
     public bool lastClickedLeft = false;
     public bool lastClickedRight = false;
 
+    //UI stuff
+    public GameObject vortexUICanvas;
+    public GameObject leftButtonUI;
+    public GameObject rightButtonUI;
+
     private void Update()
     {
         if (vortexTimer > 0f)
@@ -56,11 +61,19 @@ public class VentFan : MonoBehaviour
                 exitClicks++;
                 lastClickedRight = false;
                 lastClickedLeft = true;
+
+                //UI
+                leftButtonUI.SetActive(true);
+                rightButtonUI.SetActive(false);
             }
             else if (!lastClickedLeft && !lastClickedRight)
             {
                 exitClicks++;
                 lastClickedLeft = true;
+
+                //UI
+                leftButtonUI.SetActive(true);
+                rightButtonUI.SetActive(false);
             }
         }
 
@@ -71,11 +84,19 @@ public class VentFan : MonoBehaviour
                 exitClicks++;
                 lastClickedRight = true;
                 lastClickedLeft = false;
+
+                //UI
+                leftButtonUI.SetActive(false);
+                rightButtonUI.SetActive(true);
             }
             else if (!lastClickedLeft && !lastClickedRight)
             {
                 exitClicks++;
                 lastClickedRight = true;
+
+                //UI
+                leftButtonUI.SetActive(false);
+                rightButtonUI.SetActive(true);
             }
         }
 
@@ -122,6 +143,9 @@ public class VentFan : MonoBehaviour
 
         //Set the player's position to be the vortex start position
         _player.transform.position = vortexStart.position;
+        
+        //show UI
+        vortexUICanvas.SetActive(true);
     }
 
     public void ExitVortex()
@@ -136,6 +160,9 @@ public class VentFan : MonoBehaviour
 
         //Put player in Idle state
         playerController.stateMachine.ChangeState(playerController.idleState);
+
+        //Deactivate UI
+        vortexUICanvas?.SetActive(false);
 
         //Trigger wait time before the fan starts up again
         StartCoroutine(VortexWait());
