@@ -44,9 +44,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39eba3dee0e9d148879cc87f8ad5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  previousScene: 
   roomInfo:
   - This is the Food Court
   - This is the Clothing Store
   - This is the Music Store
   - This is the Vent Maze
-  - This is the Playplace
+  - "Ooooh it\u2019s whimsical in here\u2026 but also creepy and eerie! Such fun
+    colors! Also really gross! What\u2019s going on here??!!"
+  - This is the Arcade
+  - Where am I?
+  Inventory: []
+  ItemsPickedUp: []
+  inventoryUpdated: 0
+  interactionInProgress: 0
+  cdCollected: 0000000000
+  visitedSecondFloor: 0
+  talkedToLittleGuy: 0
+  ballpitPercentFull: 0
+  ballpitFull: 0
+  dollyPlacedInChair: 0000
+  dollyPuzzleComplete: 0
+  jungleGymOpen: 0
+  playplaceSpawnedCD: 0

@@ -39,6 +39,16 @@ public class GameManagerEditor : Editor
         gameManager.roomInfo[4] = EditorGUILayout.TextField(gameManager.roomInfo[4], GUILayout.MinHeight(30f));
         EditorGUI.indentLevel--;
 
+        EditorGUILayout.LabelField("Room 6 (Arcade) Text:", EditorStyles.largeLabel, GUILayout.MinHeight(10f));
+        EditorGUI.indentLevel++;
+        gameManager.roomInfo[5] = EditorGUILayout.TextField(gameManager.roomInfo[5], GUILayout.MinHeight(30f));
+        EditorGUI.indentLevel--;
+
+        EditorGUILayout.LabelField("Start Scene Text:", EditorStyles.largeLabel, GUILayout.MinHeight(10f));
+        EditorGUI.indentLevel++;
+        gameManager.roomInfo[6] = EditorGUILayout.TextField(gameManager.roomInfo[6], GUILayout.MinHeight(30f));
+        EditorGUI.indentLevel--;
+
         if (EditorGUI.EndChangeCheck())
         {
             EditorUtility.SetDirty(gameManager);
