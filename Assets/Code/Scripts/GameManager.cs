@@ -31,6 +31,16 @@ public class GameManager : MonoBehaviour
 
     [Header("Vent Maze Puzzle Checks")]
     public bool visitedSecondFloor = false;
+    
+    [Header("Food Court Puzzle Checks")]
+    public bool cdPurchased = false;
+
+    [Header("Clothing Store Puzzle Checks")]
+    public bool registerOpened = false;
+
+    [Header("Music Store Puzzle Checks")]
+    public bool posterChecked = false;
+    public int cdInserted = 0;
 
     [Header("Playplace Puzzle Checks")]
     public bool talkedToLittleGuy = false;

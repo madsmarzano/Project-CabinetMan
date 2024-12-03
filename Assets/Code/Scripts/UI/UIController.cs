@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
     public static GameObject interactPrompt;
     public static GameObject interactionMenu;
     public static GameObject sizeChangeWarning;
+    
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class UIController : MonoBehaviour
         interactPrompt = transform.GetChild(2).gameObject;
         interactionMenu = transform.GetChild(3).gameObject;
         sizeChangeWarning = transform.GetChild(4).gameObject;
+        
 
         ResetToDefault();
     }
@@ -35,6 +37,7 @@ public class UIController : MonoBehaviour
         inventory.SetActive(false);
         interactPrompt.SetActive(false);
         interactionMenu.SetActive(false);
+       
     }
     private void Update()
     {
