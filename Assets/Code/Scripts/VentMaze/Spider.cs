@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 public class Spider : MonoBehaviour
@@ -154,5 +155,13 @@ public class Spider : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         branchDetected = false;
         isTurning = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("SpiderDeath");
+        }
     }
 }
