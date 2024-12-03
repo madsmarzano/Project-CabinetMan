@@ -44,8 +44,9 @@ public class Boombox : Interactable
                     GameManager.instance.cdInserted++;
                     TextDisplay.Instance.ChangeTextDisplay("Looks like the CD fits!");
                 }
-            }
-            return;
+				return;
+			}
+            
         }
         TextDisplay.Instance.ChangeTextDisplay("I can't use that with this.");
     }

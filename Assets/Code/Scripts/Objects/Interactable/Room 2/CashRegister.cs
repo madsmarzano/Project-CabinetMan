@@ -49,9 +49,11 @@ public class CashRegister : Interactable
                 openRegister.SetActive(true);
                 gameObject.SetActive(false);
                 GameManager.instance.registerOpened = true;
+                
+                return;
 
             }
-            return;
+             
         }
         TextDisplay.Instance.ChangeTextDisplay("I don't have the key for this.");
     }
