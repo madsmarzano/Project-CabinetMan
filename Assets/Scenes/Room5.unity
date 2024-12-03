@@ -849,10 +849,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dolly01
       objectReference: {fileID: 0}
-    - target: {fileID: 7220612155339475010, guid: ba7d6938d2181f947b986322456aad64, type: 3}
-      propertyPath: itemIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: 71a4cacb158f79b4eb84ffe2e6d40eed, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba7d6938d2181f947b986322456aad64, type: 3}
 --- !u!4 &78296227 stripped
@@ -30590,6 +30586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652340969615}
+  - component: {fileID: 919132148400437814}
   m_Layer: 0
   m_Name: Crayon
   m_TagString: Untagged
@@ -30597,6 +30594,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148400437814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148400437813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d55bd751a391347b1272e0a2b39a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemIcon: {fileID: 21300000, guid: c55c8d9e8f4058e46b8d2b20d372d8b4, type: 3}
+  useWith: 
+  isCD: 0
 --- !u!1 &919132148519129631
 GameObject:
   m_ObjectHideFlags: 0
@@ -31353,8 +31366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: ToyBlocks
-  itemIcon: {fileID: 21300000, guid: fa3fc95e6b603f64c80aba02156aafcc, type: 3}
-  useWith: TestInteractable
+  itemIcon: {fileID: 21300000, guid: 711f94dec9c6aa541912062268ae2396, type: 3}
+  useWith: 
   isCD: 0
 --- !u!64 &3469287837381905928
 MeshCollider:
@@ -31794,7 +31807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 69ec3f5a0614e264989cb14c6113ca92, type: 3}
   useWith: JungleGymGate
   isCD: 0
 --- !u!1 &6902737968217819136
