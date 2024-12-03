@@ -99,8 +99,16 @@ public class ChangeScale : MonoBehaviour
             changeTimer = 0.0f;
         }
 
-        if (changeTimer == 0)
+        if (changeTimer <= 0 && isChanging)
         {
+            if (currentSize == Size.BUG)
+            {
+                transform.localScale = bugSize;
+            }
+            else if (currentSize == Size.HUMAN)
+            {
+                transform.localScale = humanSize;
+            }
             isChanging = false;
         }
     }

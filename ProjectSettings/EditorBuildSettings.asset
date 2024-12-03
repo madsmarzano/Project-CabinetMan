@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: 2f184862fdb02f942a345f926ab1d737
+  - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: de95cca67f42bc8489119ec1a51cc7d5
   - enabled: 1
@@ -26,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room6.unity
     guid: 796d3a53d27b5b34fb573ac78b688951
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: b087182b0b3110b45a107daf72b3f9dd
   - enabled: 1
     path: Assets/Scenes/SpiderDeath.unity
     guid: 1161e49634f6919468a50a01a3f503ee

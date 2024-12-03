@@ -24,9 +24,9 @@ public class JungleGymGate : Interactable
                 GameManager.instance.inventoryUpdated = false;
                 //Disable jungle gym barrier and gate;
                 TextDisplay.Instance.ChangeTextDisplay("With Beary on my side, we can absolutely DESTROY this gate!");
-                //TextDisplay.Instance.ChangeTextDisplay("Thanks Beary!");
                 GameManager.instance.jungleGymOpen = true;
                 jungleGymBarrier.SetActive(false);
+                interactionEnabled = false;
                 //gameObject.SetActive(false);
                 return;
             }
@@ -46,6 +46,7 @@ public class JungleGymGate : Interactable
         if(!GameManager.instance.interactionInProgress && GameManager.instance.jungleGymOpen)
         {
             gameObject.SetActive(false);
+            
         }
     }
 

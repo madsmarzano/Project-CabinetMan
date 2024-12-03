@@ -48,8 +48,9 @@ public class VendingMachine : Interactable
                 TextDisplay.Instance.ChangeTextDisplay("The machine accepted the coin, and I got a CD!");
                 vendingCD.transform.position = new Vector3(-7.046f, 0.596f, 14.607f);
                 GameManager.instance.cdPurchased = true;
-            }
-            return;
+				return;
+			}
+            
         }
         TextDisplay.Instance.ChangeTextDisplay("I don't have any money to use in the vending machine.");
     }

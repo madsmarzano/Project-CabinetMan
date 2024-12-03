@@ -29,6 +29,10 @@ public class Boombox : Interactable
         {
             if (item.useWith == gameObject.name)
             {
+                //Remove item from inventory
+                GameManager.instance.Inventory.Remove(item);
+                GameManager.instance.inventoryUpdated = false;
+
                 if (GameManager.instance.cdInserted == 4)
                 {
                     GameManager.instance.cdInserted++;
@@ -40,8 +44,9 @@ public class Boombox : Interactable
                     GameManager.instance.cdInserted++;
                     TextDisplay.Instance.ChangeTextDisplay("Looks like the CD fits!");
                 }
-            }
-            return;
+				return;
+			}
+            
         }
         TextDisplay.Instance.ChangeTextDisplay("I can't use that with this.");
     }
