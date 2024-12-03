@@ -38,6 +38,12 @@ public class TextDisplay : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
         Debug.Log("Active scene is " + sceneName);
 
+        if (sceneName == "StartScene")
+        {
+            textComponent.text = GameManager.instance.roomInfo[6];
+            return;
+        }
+
         string roomNumber = sceneName.Substring(sceneName.Length - 1);
         Debug.Log("Scene number is " + roomNumber);
 

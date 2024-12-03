@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
         "INSERT ROOM 2 INFO HERE",
         "INSERT ROOM 3 INFO HERE",
         "INSERT ROOM 4 INFO HERE",
-        "INSERT ROOM 5 INFO HERE"
+        "INSERT ROOM 5 INFO HERE",
+        "INSERT ROOM 6 INFO HERE",
+        "INSERT START SCENE TEXT"
     };
 
     public List<Item> Inventory = new List<Item>(); //List to store the items that are in the Player's inventory
@@ -36,6 +38,9 @@ public class GameManager : MonoBehaviour
     [Header("Music Store Puzzle Checks")]
     public bool posterChecked = false;
     public int cdInserted = 0;
+
+    [Header("Vent Maze Puzzle Checks")]
+    public bool visitedSecondFloor = false;
 
     [Header("Playplace Puzzle Checks")]
     public bool talkedToLittleGuy = false;

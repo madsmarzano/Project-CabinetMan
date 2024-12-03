@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// By Mads.
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
     [Header("Player Abilities")]
     public bool canJump = true;
     public bool canChangeSize = true;
+    public bool cameraEnabled = true;
 
     [Header("Vent Stuff")]
     public bool isInVent = false;
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour
     public PlayerJumpingState jumpState;
     public PlayerFallingState fallingState;
     public PlayerLandedState landedState;
+    public PlayerPausedState pausedState;
 
     #endregion
 
@@ -67,6 +70,17 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpingState(this, stateMachine);
         fallingState = new PlayerFallingState(this, stateMachine);
         landedState = new PlayerLandedState(this, stateMachine);
+        pausedState = new PlayerPausedState(this, stateMachine);
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "StartScene" || sceneName == "Room4")
+        {
+            isInVent = true;
+        }
+        else
+        {
+            isInVent = false;
+        }
     }
 
     private void Start()
@@ -97,6 +111,11 @@ public class Player : MonoBehaviour
         //transform.rotation = orientation.rotation;
 
         isGrounded = GroundCheck();
+
+        if (cameraEnabled != Camera.main.GetComponent<CameraControl>().enabled)
+        {
+            Camera.main.GetComponent<CameraControl>().enabled = cameraEnabled;
+        }
     }
 
     private void FixedUpdate()

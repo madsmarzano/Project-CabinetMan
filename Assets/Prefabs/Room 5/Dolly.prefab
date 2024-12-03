@@ -48,9 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 89730f3686ff73f47a04823d58a76072, type: 3}
   useWith: PlayplaceChair
-  isUsable: 0
   isCD: 0
 --- !u!33 &2753466668085619383
 MeshFilter:

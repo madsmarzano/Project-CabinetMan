@@ -9,6 +9,8 @@ public class VentMaze : MonoBehaviour
     public GameObject spider;
     public Spider spiderController;
 
+    public GameObject level2ShortcutBlocks;
+
     private void Awake()
     {
         playerController = player.GetComponent<Player>();
@@ -22,6 +24,12 @@ public class VentMaze : MonoBehaviour
         SpawnSpider(spawnIndex);
 
         playerController.isInVent = true;
+
+        //Open the shortcut if the player has collected the CD from the vents
+        if (GameManager.instance.cdCollected[3])
+        {
+            level2ShortcutBlocks.SetActive(false);
+        }
     }
 
     private int SetSpawnPoint(string previousScene)
@@ -68,5 +76,13 @@ public class VentMaze : MonoBehaviour
         spider.transform.position = spiderSpawnPosition;
         spider.transform.forward = spawnPoints[spiderSpawnPoint].transform.forward;
         Debug.Log("Spider spawned at " + spawnPoints[spiderSpawnPoint].name);
+    }
+
+    private void Update()
+    {
+        if (GameManager.instance.cdCollected[3] == level2ShortcutBlocks.activeSelf)
+        {
+            level2ShortcutBlocks.SetActive(false);
+        }
     }
 }
