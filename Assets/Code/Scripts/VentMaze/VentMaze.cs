@@ -45,8 +45,10 @@ public class VentMaze : MonoBehaviour
                 index = 2; break;
             case "Room3":
                 index = 3; break;
-            default:
+            case "FanDeath":
                 index = 4; break;
+            default:
+                index = 5; break;
         }
         return index;
     }

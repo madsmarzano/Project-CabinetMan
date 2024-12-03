@@ -41,6 +41,10 @@ public class VendingMachine : Interactable
         {
             if (item.useWith == gameObject.name)
             {
+                //Remove item from inventory
+                GameManager.instance.Inventory.Remove(item);
+                GameManager.instance.inventoryUpdated = false;
+
                 TextDisplay.Instance.ChangeTextDisplay("The machine accepted the coin, and I got a CD!");
                 vendingCD.transform.position = new Vector3(-7.046f, 0.596f, 14.607f);
                 GameManager.instance.cdPurchased = true;
