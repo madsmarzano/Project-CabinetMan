@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18189,27 +18189,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 421481917af3d64449176d95e0e3418b, type: 3}
---- !u!1 &2010260676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7038220909929732568, guid: 421481917af3d64449176d95e0e3418b, type: 3}
-  m_PrefabInstance: {fileID: 2010260675}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2010260677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010260676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d55bd751a391347b1272e0a2b39a68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemIcon: {fileID: 0}
-  useWith: CDPlayer
-  isCD: 1
 --- !u!1001 &2018729257
 PrefabInstance:
   m_ObjectHideFlags: 0

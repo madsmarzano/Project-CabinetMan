@@ -40,14 +40,20 @@ public class CashRegister : Interactable
         {
             if (item.useWith == gameObject.name)
             {
+                //Remove item from inventory
+                GameManager.instance.Inventory.Remove(item);
+                GameManager.instance.inventoryUpdated = false;
+
                 TextDisplay.Instance.ChangeTextDisplay("The key fits, and there's a CD inside!");
                 clothingCD.SetActive(true);
                 openRegister.SetActive(true);
                 gameObject.SetActive(false);
                 GameManager.instance.registerOpened = true;
-				return;
-			}
-            
+                
+                return;
+
+            }
+             
         }
         TextDisplay.Instance.ChangeTextDisplay("I don't have the key for this.");
     }
