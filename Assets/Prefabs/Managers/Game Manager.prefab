@@ -52,7 +52,7 @@ MonoBehaviour:
   - This is the Vent Maze
   - "Ooooh it\u2019s whimsical in here\u2026 but also creepy and eerie! Such fun
     colors! Also really gross! What\u2019s going on here??!!"
-  - This is the Arcade
+  - Am I... in a mall?
   - Where am I?
   Inventory: []
   ItemsPickedUp: []
@@ -60,6 +60,10 @@ MonoBehaviour:
   interactionInProgress: 0
   cdCollected: 0000000000
   visitedSecondFloor: 0
+  cdPurchased: 0
+  registerOpened: 0
+  posterChecked: 0
+  cdInserted: 0
   talkedToLittleGuy: 0
   ballpitPercentFull: 0
   ballpitFull: 0
