@@ -131,6 +131,9 @@ public class VentFan : MonoBehaviour
     {
         vortexActive = true;
 
+        //turn off player light
+        _player.transform.GetChild(1).gameObject.SetActive(false);
+
         //Start the timer
         vortexTimer = vortexDuration;
 
@@ -157,6 +160,9 @@ public class VentFan : MonoBehaviour
         //Reset click variables
         lastClickedRight = false;
         lastClickedLeft = false;
+
+        //turn on player light
+        _player.transform.GetChild(1).gameObject.SetActive(true);
 
         //Move player to the vortex exit point
         _player.transform.position = vortexExit.position;
