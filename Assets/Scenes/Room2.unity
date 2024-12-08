@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1830,6 +1830,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageExit_S
       objectReference: {fileID: 0}
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6837190534932511306, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassageWallL_S
@@ -1837,7 +1849,7 @@ PrefabInstance:
     - target: {fileID: 6837190534932511319, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79f64ed6f5d6d374d91c3a0af4070258, type: 2}
+      objectReference: {fileID: 2100000, guid: 67e2c18708c570040babfafc40d94d5d, type: 2}
     - target: {fileID: 6837190534986445988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -1889,7 +1901,11 @@ PrefabInstance:
     - target: {fileID: 6837190535355324513, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79f64ed6f5d6d374d91c3a0af4070258, type: 2}
+      objectReference: {fileID: 2100000, guid: a0ab4c52a1bb10347a2654b3c7ef5223, type: 2}
+    - target: {fileID: 6837190535355324515, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6837190535355324516, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassageRoof_S
@@ -1897,7 +1913,19 @@ PrefabInstance:
     - target: {fileID: 6837190535554411970, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79f64ed6f5d6d374d91c3a0af4070258, type: 2}
+      objectReference: {fileID: 2100000, guid: 67e2c18708c570040babfafc40d94d5d, type: 2}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6837190535554411973, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassageWallR_S
@@ -1905,7 +1933,11 @@ PrefabInstance:
     - target: {fileID: 6837190535653940099, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79f64ed6f5d6d374d91c3a0af4070258, type: 2}
+      objectReference: {fileID: 2100000, guid: a0ab4c52a1bb10347a2654b3c7ef5223, type: 2}
+    - target: {fileID: 6837190535653940101, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6837190535653940102, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassageFloor_S
@@ -2312,7 +2344,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c852af001dae0064e9acaa832f1dadb7, type: 2}
+  - {fileID: 2100000, guid: a0ab4c52a1bb10347a2654b3c7ef5223, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2617,8 +2649,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421169943}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 44.5, y: 0.49999973, z: -6}
-  m_LocalScale: {x: 12.0004015, y: 0.99960643, z: 1}
+  m_LocalPosition: {x: 44.5, y: 0.5, z: -6}
+  m_LocalScale: {x: 12, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002053756}
@@ -2658,7 +2690,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c852af001dae0064e9acaa832f1dadb7, type: 2}
+  - {fileID: 2100000, guid: 67e2c18708c570040babfafc40d94d5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2716,7 +2748,7 @@ Transform:
   m_GameObject: {fileID: 1422046946}
   m_LocalRotation: {x: -0.00000014963639, y: 0.7071068, z: 0.7071068, w: -0.00000009853663}
   m_LocalPosition: {x: 45, y: 1, z: -6}
-  m_LocalScale: {x: 1, y: 12.000078, z: 1}
+  m_LocalScale: {x: 1, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002053756}
@@ -2756,7 +2788,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c852af001dae0064e9acaa832f1dadb7, type: 2}
+  - {fileID: 2100000, guid: a0ab4c52a1bb10347a2654b3c7ef5223, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3104,8 +3136,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772774251}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 45.5, y: 0.49999973, z: -6}
-  m_LocalScale: {x: 12.0004015, y: 0.99960643, z: 1}
+  m_LocalPosition: {x: 45.5, y: 0.5, z: -6}
+  m_LocalScale: {x: 12, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002053756}
@@ -3145,7 +3177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c852af001dae0064e9acaa832f1dadb7, type: 2}
+  - {fileID: 2100000, guid: 67e2c18708c570040babfafc40d94d5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4019,7 +4051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002053755}
   m_LocalRotation: {x: -0, y: 0.7071065, z: -0, w: 0.7071072}
-  m_LocalPosition: {x: 51.05355, y: 0, z: 44.45158}
+  m_LocalPosition: {x: 51, y: 0, z: 44.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4408,13 +4440,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6837190534986445988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_RootOrder
       value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 6837190534986445988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45
+      value: -45.5
       objectReference: {fileID: 0}
     - target: {fileID: 6837190534986445988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4455,6 +4499,26 @@ PrefabInstance:
     - target: {fileID: 6837190534986445989, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassage_N
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535355324515, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535653940101, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6837190536104848567, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: teleportPoint
