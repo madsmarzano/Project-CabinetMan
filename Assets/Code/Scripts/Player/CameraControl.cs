@@ -27,7 +27,8 @@ public class CameraControl : MonoBehaviour
 
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked; //Locks the cursor in the middle of the screen -- MM 10/12/24
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked; //Locks the cursor in the middle of the screen -- MM 10/12/24
     }
 
     void LateUpdate()
