@@ -22225,7 +22225,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -29150,7 +29150,7 @@ GameObject:
   - component: {fileID: 1609400489}
   - component: {fileID: 1609400491}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: RainbowLight2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29231,7 +29231,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1609400491
 MonoBehaviour:
@@ -29259,7 +29259,7 @@ GameObject:
   - component: {fileID: 1612554805}
   - component: {fileID: 1612554807}
   m_Layer: 0
-  m_Name: Point Light (1)
+  m_Name: RainbowLight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29340,7 +29340,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1612554807
 MonoBehaviour:
