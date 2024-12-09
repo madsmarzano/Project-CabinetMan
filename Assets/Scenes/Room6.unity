@@ -12065,6 +12065,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1844515665229982152, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf6f36d59ac0ffd4e9c10397557b8533, type: 2}
     - target: {fileID: 5918852788907933988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: DoorS
@@ -12072,6 +12076,18 @@ PrefabInstance:
     - target: {fileID: 5918852789840845533, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassageExit_S
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6837190534932511306, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
@@ -12125,13 +12141,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassage_S
       objectReference: {fileID: 0}
+    - target: {fileID: 6837190535355324515, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6837190535355324516, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassageRoof_S
       objectReference: {fileID: 0}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535554411972, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6837190535554411973, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassageWallR_S
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837190535653940101, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6837190535653940102, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
@@ -12145,6 +12181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrancePoint_S
       objectReference: {fileID: 0}
+    - target: {fileID: 7196527650951158191, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2f4e23b183a9184293a4dfea60b92e3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
 --- !u!1 &1227079271

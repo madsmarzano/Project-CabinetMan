@@ -3246,6 +3246,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrance_N
       objectReference: {fileID: 0}
+    - target: {fileID: 1257685137329404833, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 1257685137329404833, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
 --- !u!1001 &357718488
@@ -4955,6 +4963,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrance_W
       objectReference: {fileID: 0}
+    - target: {fileID: 1257685137329404833, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 1257685137329404833, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
 --- !u!1 &619203493
@@ -5470,6 +5486,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1844515665229982152, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2f4e23b183a9184293a4dfea60b92e3, type: 2}
+    - target: {fileID: 5270057297813414129, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057297813414129, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057298765855496, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057298765855496, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
     - target: {fileID: 6837190534932511305, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_LocalScale.x
       value: 12
@@ -9267,6 +9303,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrance_S
       objectReference: {fileID: 0}
+    - target: {fileID: 1257685137329404833, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 1257685137329404833, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
 --- !u!1 &1143024856
@@ -10528,6 +10572,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1844515665229982152, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2f4e23b183a9184293a4dfea60b92e3, type: 2}
+    - target: {fileID: 5270057297813414129, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057297813414129, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057298765855496, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057298765855496, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
     - target: {fileID: 5918852788907933988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: DoorS
@@ -10656,6 +10720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrancePoint_S
       objectReference: {fileID: 0}
+    - target: {fileID: 7196527650951158191, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf6f36d59ac0ffd4e9c10397557b8533, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
 --- !u!4 &1225162070 stripped
@@ -13846,6 +13914,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1844515665229982152, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2f4e23b183a9184293a4dfea60b92e3, type: 2}
+    - target: {fileID: 5270057297813414129, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057297813414129, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057298765855496, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057298765855496, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
     - target: {fileID: 5918852788907933988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: DoorW
@@ -13966,6 +14054,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrancePoint_W
       objectReference: {fileID: 0}
+    - target: {fileID: 7196527650951158191, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 179414217d600a04a9b36e17db5a1094, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
 --- !u!1001 &1588027848
@@ -18698,6 +18790,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrance_E
       objectReference: {fileID: 0}
+    - target: {fileID: 1257685137329404833, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 1257685137329404833, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
 --- !u!1 &2061782718
@@ -18867,6 +18967,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1844515665229982152, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2f4e23b183a9184293a4dfea60b92e3, type: 2}
+    - target: {fileID: 5270057297813414129, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057297813414129, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057298765855496, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
+    - target: {fileID: 5270057298765855496, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a981e9cfba080544e89e07e6756b91bb, type: 2}
     - target: {fileID: 5918852788907933988, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: DoorE
@@ -18991,6 +19111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrancePoint_E
       objectReference: {fileID: 0}
+    - target: {fileID: 7196527650951158191, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ee3dc5f5591edc48bfc540c74119537, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
 --- !u!1001 &2104834744
