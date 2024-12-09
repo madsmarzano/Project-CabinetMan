@@ -1786,6 +1786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageEntrance_N
       objectReference: {fileID: 0}
+    - target: {fileID: 2551917087663661995, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
+      propertyPath: m_Name
+      value: VentSpotLight
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d6e5be64d9deb439eb5b13ed88194c, type: 3}
 --- !u!4 &123142196 stripped

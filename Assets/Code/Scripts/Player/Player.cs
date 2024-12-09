@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
 
     [Header("Vent Stuff")]
     public bool isInVent = false;
+    public GameObject playerLight;
 
     public PlayerStateMachine stateMachine;
 
@@ -81,6 +82,8 @@ public class Player : MonoBehaviour
         {
             isInVent = false;
         }
+
+        playerLight.SetActive(false);
     }
 
     private void Start()
@@ -115,6 +118,15 @@ public class Player : MonoBehaviour
         if (cameraEnabled != Camera.main.GetComponent<CameraControl>().enabled)
         {
             Camera.main.GetComponent<CameraControl>().enabled = cameraEnabled;
+        }
+
+        if (isInVent && !playerLight.activeSelf)
+        {
+            playerLight.SetActive(true);
+        }
+        else if (!isInVent && playerLight.activeSelf)
+        {
+            playerLight.SetActive(false);
         }
     }
 
