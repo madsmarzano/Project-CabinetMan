@@ -27,6 +27,15 @@ public class Teleporter : MonoBehaviour
             {
                 other.transform.position = teleportPoint.position;
             }
+            Player player = other.GetComponent<Player>();
+            if (!player.isInVent)
+            {
+                player.isInVent = true;
+            }
+            else
+            {
+                player.isInVent = false;
+            }
         }
     }
 }
