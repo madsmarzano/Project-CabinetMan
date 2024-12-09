@@ -25,6 +25,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (InputManager.PausePressed() && !activeMenu)
         {
+            //show cursor and unlock cursor -- MM 12/08/24
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+
             pauseMenu.SetActive(true);
             activeMenu = true;
             Time.timeScale = 0;
@@ -35,7 +40,11 @@ public class PauseMenu : MonoBehaviour
     
     public void Resume()
     {
-             Time.timeScale = 1;
+        //hide and lock cursor -- MM 12/08/24
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        Time.timeScale = 1;
             pauseMenu.SetActive(false);
             activeMenu = false;
         Debug.Log("yeah");
