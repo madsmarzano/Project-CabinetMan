@@ -10,6 +10,7 @@ public class BallpitInteraction : Interactable
 {
     GameObject balls;
     GameObject[] ballLayers = new GameObject[5];
+    public GameObject staticBalls;
 
     public override void UniqueStart()
     {
@@ -56,6 +57,10 @@ public class BallpitInteraction : Interactable
 
     public void UpdateBallPit()
     {
+        if (GameManager.instance.ballpitPercentFull > 50 && !staticBalls.activeSelf)
+        {
+            staticBalls.SetActive(true);
+        }
         switch (GameManager.instance.ballpitPercentFull)
         {
             case 0: break;
@@ -91,6 +96,11 @@ public class BallpitInteraction : Interactable
 
     public void InitializeBallpit()
     {
+        if (GameManager.instance.ballpitPercentFull > 50)
+        {
+            staticBalls.SetActive(true);
+        }
+
         for (int i = 0; i < GameManager.instance.ballpitPercentFull/10; i++)
         {
             if (i < 5)
