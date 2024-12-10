@@ -11,6 +11,7 @@ public class LittleGuy : Interactable
 {
     public GameObject[] scatteredBalls;
     public GameObject CD;
+    public GameObject exlamationParticles;
 
     public override void UniqueStart()
     {
@@ -43,6 +44,9 @@ public class LittleGuy : Interactable
         {
             if (GameManager.instance.talkedToLittleGuy == false)
             {
+                //Turn off the exclamation particles
+                exlamationParticles.SetActive(false);
+
                 //Initial interaction -- Get info on what to do
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"Hey bug-human thingy... I need your help.\"");
                 TextDisplay.Instance.ChangeTextDisplay("Little Guy: \"I wanna play in the ball pit SO BAD!!! But it's EMPTY!!!\"");
@@ -102,6 +106,8 @@ public class LittleGuy : Interactable
             {
                 p.SetActive(true);
             }
+
+            exlamationParticles.SetActive(false);
         }
 
         if (GameManager.instance.playplaceSpawnedCD && !GameManager.instance.cdCollected[4])
