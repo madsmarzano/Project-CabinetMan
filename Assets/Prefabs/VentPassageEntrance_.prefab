@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 483473239474403152}
-  m_Layer: 0
-  m_Name: VentPassageExitPoint_
+  m_Layer: 9
+  m_Name: VentPassageExitPoint_S
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 483473240852539179}
   - component: {fileID: 8277946870844563377}
   - component: {fileID: 483473240852539176}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: VentPassageEntrance_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753453022740290164}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000011920926}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 7.597, y: 0.5, z: 18.13}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
@@ -243,7 +243,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
