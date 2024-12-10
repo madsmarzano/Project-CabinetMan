@@ -24,6 +24,7 @@ public class Poster : Interactable
         gameObject.SetActive(false);
         musicCD.SetActive(true);
         GameManager.instance.posterChecked = true;
+        transform.position = transform.position + new Vector3(0f, -10f, 0f);
     }
 
 
@@ -33,6 +34,7 @@ public class Poster : Interactable
         GameManager.instance.interactionInProgress = true;
         TextDisplay.Instance.ChangeTextDisplay("I don't think I can do anything with this.");
     }
+
 
 
     // Start is called before the first frame update
