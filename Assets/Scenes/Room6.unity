@@ -32664,6 +32664,7 @@ GameObject:
   - component: {fileID: 1695613888}
   - component: {fileID: 1695613890}
   - component: {fileID: 1695613889}
+  - component: {fileID: 1695613891}
   m_Layer: 0
   m_Name: FoodCourtGate
   m_TagString: Untagged
@@ -32736,6 +32737,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695613887}
   m_Mesh: {fileID: -7827845872785010756, guid: e79406f801f563047850d1d785741156, type: 3}
+--- !u!65 &1695613891
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695613887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.34575528, y: 6.17048, z: 17.710085}
+  m_Center: {x: -0.000000029802322, y: 0.0000001192093, z: 3.9861235e-15}
 --- !u!1 &1701863037
 GameObject:
   m_ObjectHideFlags: 0
