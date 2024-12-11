@@ -5,7 +5,10 @@ using UnityEngine;
 public class CashRegister : Interactable
 {
     GameObject openRegister;
+    public GameObject drawer;
     GameObject clothingCD;
+
+    public Vector3 openPos;
     public override void UniqueStart()
     {
         base.UniqueStart();
@@ -13,14 +16,15 @@ public class CashRegister : Interactable
         openRegister = GameObject.Find("OpenRegister");
         if (GameManager.instance.registerOpened == true)
         {
-            gameObject.SetActive(false);
-            openRegister.SetActive(true);
+            //gameObject.SetActive(false);
+            //openRegister.SetActive(true);
+            drawer.transform.localPosition = openPos;
             TextDisplay.Instance.ChangeRoomText("I've already gotten the CD from here.  I need to find where it belongs.", 2);
         }
         else
         {
             clothingCD.SetActive(false);
-            openRegister.SetActive(false);
+            //openRegister.SetActive(false);
         }
     }
 
@@ -46,8 +50,13 @@ public class CashRegister : Interactable
 
                 TextDisplay.Instance.ChangeTextDisplay("The key fits, and there's a CD inside!");
                 clothingCD.SetActive(true);
-                openRegister.SetActive(true);
-                gameObject.SetActive(false);
+                //openRegister.SetActive(true);
+
+                //slide drawer out
+                drawer.transform.localPosition = openPos;
+
+                //gameObject.SetActive(false);
+                interactionEnabled = false;
                 GameManager.instance.registerOpened = true;
                 
                 return;
