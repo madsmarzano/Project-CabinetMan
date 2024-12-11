@@ -67,5 +67,9 @@ public class UIController : MonoBehaviour
         inventory.SetActive(false);
         textDisplay.SetActive(true);
         interactionMenu.SetActive(false);
+
+        //hide cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

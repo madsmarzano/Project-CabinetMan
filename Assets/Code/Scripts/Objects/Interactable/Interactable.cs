@@ -75,6 +75,9 @@ public class Interactable : MonoBehaviour
                 //Create a reference to the object you are interacting with in the Action Selector script
                 //This is selecting an action from the Interaction Menu will call the OnCheck or OnItemUsed methods.
                 ActionSelector.interactionTarget = this.gameObject;
+                //show the cursor on screen 
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
         else if (isActive)
@@ -82,9 +85,13 @@ public class Interactable : MonoBehaviour
             if (UIController.interactionMenu.activeSelf)
             {
                 UIController.ResetToDefault();
+                //hide cursor
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             UIController.interactPrompt.SetActive(false);
             isActive = false;
+
         }
 
         UniqueUpdate();
