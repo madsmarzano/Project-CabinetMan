@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1839,7 +1839,7 @@ PrefabInstance:
     - target: {fileID: -264430861247414160, guid: 32ab1fcf4d5be9c46bc0e504575a9216, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2edc2bf718f8ddb4e9d8fde657e64560, type: 2}
+      objectReference: {fileID: 2100000, guid: db705ea30447ac142ae6b1b996ee8221, type: 2}
     - target: {fileID: 919132149155446097, guid: 32ab1fcf4d5be9c46bc0e504575a9216, type: 3}
       propertyPath: m_Name
       value: lamp (2)
@@ -2422,7 +2422,7 @@ PrefabInstance:
     - target: {fileID: -264430861247414160, guid: 32ab1fcf4d5be9c46bc0e504575a9216, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2edc2bf718f8ddb4e9d8fde657e64560, type: 2}
+      objectReference: {fileID: 2100000, guid: db705ea30447ac142ae6b1b996ee8221, type: 2}
     - target: {fileID: 919132149155446097, guid: 32ab1fcf4d5be9c46bc0e504575a9216, type: 3}
       propertyPath: m_Name
       value: lamp (3)
@@ -2674,12 +2674,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 895
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3119,6 +3119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassage_W
       objectReference: {fileID: 0}
+    - target: {fileID: 6837190535355324513, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 825d1cafd6b5b7b4e8cc0b1644070d9d, type: 2}
     - target: {fileID: 6837190535355324516, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_Name
       value: VentPassageRoof_W
@@ -3139,6 +3143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VentPassageWallR_W
       objectReference: {fileID: 0}
+    - target: {fileID: 6837190535653940099, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 825d1cafd6b5b7b4e8cc0b1644070d9d, type: 2}
     - target: {fileID: 6837190535653940101, guid: fc827956c043db44989e13dd5a22b92b, type: 3}
       propertyPath: m_LocalScale.y
       value: 12
@@ -4516,12 +4524,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 895
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -4695,7 +4703,7 @@ PrefabInstance:
     - target: {fileID: -264430861247414160, guid: 32ab1fcf4d5be9c46bc0e504575a9216, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2edc2bf718f8ddb4e9d8fde657e64560, type: 2}
+      objectReference: {fileID: 2100000, guid: db705ea30447ac142ae6b1b996ee8221, type: 2}
     - target: {fileID: 919132149155446097, guid: 32ab1fcf4d5be9c46bc0e504575a9216, type: 3}
       propertyPath: m_Name
       value: lamp
@@ -5177,7 +5185,7 @@ PrefabInstance:
     - target: {fileID: -264430861247414160, guid: 32ab1fcf4d5be9c46bc0e504575a9216, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2edc2bf718f8ddb4e9d8fde657e64560, type: 2}
+      objectReference: {fileID: 2100000, guid: db705ea30447ac142ae6b1b996ee8221, type: 2}
     - target: {fileID: 919132149155446097, guid: 32ab1fcf4d5be9c46bc0e504575a9216, type: 3}
       propertyPath: m_Name
       value: lamp (1)
@@ -5569,12 +5577,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 895
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -5812,12 +5820,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 895
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

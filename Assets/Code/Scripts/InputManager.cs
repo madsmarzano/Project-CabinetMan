@@ -11,6 +11,8 @@ public static class InputManager
     private static KeyCode _inventory;
     private static KeyCode _interact;
     private static KeyCode _pause;
+    private static KeyCode _map;
+    private static KeyCode _switchMap;
 
     //public bool UIselected; //used to select an item or action -- defaults to left mouse click
 
@@ -50,6 +52,16 @@ public static class InputManager
         return Input.GetKeyDown(_inventory);
     }
 
+    public static bool ToggledMap()
+    {
+        return Input.GetKeyDown(_map);
+    }
+
+    public static bool SwitchedMap()
+    {
+        return Input.GetKeyDown(_switchMap);
+    }
+
     public static bool InteractPressed()
     {
         return Input.GetKeyDown(_interact);
@@ -67,5 +79,7 @@ public static class InputManager
         _inventory = KeyCode.Q;
         _interact = KeyCode.E;
         _pause = KeyCode.Escape;
+        _map = KeyCode.M;
+        _switchMap = KeyCode.Tab;
     }
 }

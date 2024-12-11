@@ -84,6 +84,7 @@ public class Player : MonoBehaviour
         }
 
         playerLight.SetActive(false);
+
     }
 
     private void Start()
@@ -127,6 +128,16 @@ public class Player : MonoBehaviour
         else if (!isInVent && playerLight.activeSelf)
         {
             playerLight.SetActive(false);
+        }
+
+        if (UIController.interactionMenu.activeSelf && stateMachine.currentState != pausedState)
+        {
+            stateMachine.ChangeState(pausedState);
+        }
+
+        if (!UIController.interactionMenu.activeSelf && stateMachine.currentState == pausedState)
+        {
+            stateMachine.ChangeState(idleState);
         }
     }
 
