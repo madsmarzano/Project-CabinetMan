@@ -51,6 +51,9 @@ public class GameManager : MonoBehaviour
     public bool jungleGymOpen = false;
     public bool playplaceSpawnedCD = false;
 
+    public bool firstMapCollected = false;
+    public bool secondMapCollected = false;
+
     private void Awake()
     {
         if (instance == null)

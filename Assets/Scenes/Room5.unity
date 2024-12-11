@@ -23999,7 +23999,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -29466,9 +29466,9 @@ Transform:
   - {fileID: 509928167}
   - {fileID: 243721745}
   - {fileID: 1421857712}
+  - {fileID: 543450652480190134}
   - {fileID: 684057361}
   - {fileID: 584909884}
-  - {fileID: 543450652480190134}
   - {fileID: 726415508}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -31688,7 +31688,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -31797,7 +31797,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -39307,7 +39307,7 @@ Transform:
   - {fileID: 3525456451055500398}
   - {fileID: 1380581314127663506}
   m_Father: {fileID: 1455559018}
-  m_RootOrder: 54
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652490376323
 Transform:
@@ -40680,7 +40680,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

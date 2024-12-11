@@ -9,7 +9,9 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     public bool showInventory;
+    public bool showMap;
     public bool inventoryToggleEnabled;
+    public bool mapOpen;
     //public bool roomTextEnabled;
 
     public static GameObject textDisplay;
@@ -17,6 +19,8 @@ public class UIController : MonoBehaviour
     public static GameObject interactPrompt;
     public static GameObject interactionMenu;
     public static GameObject sizeChangeWarning;
+    public static GameObject map;
+
     
 
     private void Awake()
@@ -26,6 +30,7 @@ public class UIController : MonoBehaviour
         interactPrompt = transform.GetChild(2).gameObject;
         interactionMenu = transform.GetChild(3).gameObject;
         sizeChangeWarning = transform.GetChild(4).gameObject;
+        map = transform.GetChild(5).gameObject;
         
 
         ResetToDefault();
@@ -42,6 +47,7 @@ public class UIController : MonoBehaviour
     private void Update()
     {
         showInventory = !inventory.activeSelf; //should return the opposite of activeSelf I hope
+        showMap = !map.activeSelf;
         inventoryToggleEnabled = !interactionMenu.activeSelf;
 
         if (InputManager.ToggledInventory() && inventoryToggleEnabled)
@@ -58,6 +64,30 @@ public class UIController : MonoBehaviour
             {
                 //Move the text display down
                 textTransform.anchoredPosition = Vector3.zero;
+            }
+        }
+
+        if (GameManager.instance.firstMapCollected && InputManager.ToggledMap())
+        {
+            //show map on the screen
+            map.SetActive(showMap);
+            mapOpen = showMap;
+        }
+
+        if (mapOpen && GameManager.instance.secondMapCollected)
+        {
+            if (InputManager.SwitchedMap())
+            {
+                if (map.transform.GetChild(0).gameObject.activeSelf)
+                {
+                    map.transform.GetChild(0).gameObject.SetActive(false);
+                    map.transform.GetChild(1).gameObject.SetActive(true);
+                }
+                else
+                {
+                    map.transform.GetChild(0).gameObject.SetActive(true);
+                    map.transform.GetChild(1).gameObject.SetActive(false);
+                }
             }
         }
     }
