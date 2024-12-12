@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
     public PlayerFallingState fallingState;
     public PlayerLandedState landedState;
     public PlayerPausedState pausedState;
+    public PlayerVortexState vortexState;
 
     #endregion
 
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
         fallingState = new PlayerFallingState(this, stateMachine);
         landedState = new PlayerLandedState(this, stateMachine);
         pausedState = new PlayerPausedState(this, stateMachine);
+        vortexState = new PlayerVortexState(this, stateMachine);
 
         string sceneName = SceneManager.GetActiveScene().name;
         if (sceneName == "StartScene" || sceneName == "Room4")
@@ -121,7 +123,7 @@ public class Player : MonoBehaviour
             Camera.main.GetComponent<CameraControl>().enabled = cameraEnabled;
         }
 
-        if (isInVent && !playerLight.activeSelf)
+        if (isInVent && !playerLight.activeSelf && stateMachine.currentState != vortexState)
         {
             playerLight.SetActive(true);
         }
