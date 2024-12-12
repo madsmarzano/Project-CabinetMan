@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousScene: 
   roomInfo:
-  - This is the Food Court
-  - This is the Clothing Store
-  - This is the Music Store
+  - A food court! I could use a snack.
+  - I think I must be in the Clothing Outlet.
+  - Cool, a music store! I should look at everything I can in this room...
   - Vents as far as the eye can see...
   - "Ooooh it\u2019s whimsical in here\u2026 but also creepy and eerie! Such fun
     colors! Also really gross! What\u2019s going on here??!!"
@@ -71,3 +71,5 @@ MonoBehaviour:
   dollyPuzzleComplete: 0
   jungleGymOpen: 0
   playplaceSpawnedCD: 0
+  firstMapCollected: 0
+  secondMapCollected: 0

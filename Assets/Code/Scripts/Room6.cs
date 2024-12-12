@@ -8,8 +8,17 @@ public class Room6 : MonoBehaviour
     public Transform spawnPositionStart;
     public Transform spawnPositionVent;
 
+    public GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     private void Start()
     {
+        DetermineSpawn();
+
         if (GameManager.instance.firstMapCollected)
         {
             firstMap.SetActive(false);
@@ -20,11 +29,11 @@ public class Room6 : MonoBehaviour
     {
         if (GameManager.instance.previousScene == "StartScene")
         {
-            transform.position = spawnPositionStart.position;
+            player.transform.position = spawnPositionStart.position;
         }
         else
         {
-            transform.position = spawnPositionVent.position;
+            player.transform.position = spawnPositionVent.position;
         }
     }
 }
