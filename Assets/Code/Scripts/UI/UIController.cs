@@ -20,8 +20,9 @@ public class UIController : MonoBehaviour
     public static GameObject interactionMenu;
     public static GameObject sizeChangeWarning;
     public static GameObject map;
+    public static GameObject fullInventoryWarning;
 
-    
+
 
     private void Awake()
     {
@@ -31,7 +32,8 @@ public class UIController : MonoBehaviour
         interactionMenu = transform.GetChild(3).gameObject;
         sizeChangeWarning = transform.GetChild(4).gameObject;
         map = transform.GetChild(5).gameObject;
-        
+        fullInventoryWarning = transform.GetChild(6).gameObject;
+
 
         ResetToDefault();
     }
@@ -89,6 +91,16 @@ public class UIController : MonoBehaviour
                     map.transform.GetChild(1).gameObject.SetActive(false);
                 }
             }
+        }
+
+        //Determine if inventory prompt needs to show
+        if (GameManager.instance.Inventory.Count == 10)
+        {
+            fullInventoryWarning.SetActive(true);
+        }
+        else if (GameManager.instance.Inventory.Count < 10 && fullInventoryWarning.activeSelf)
+        {
+            fullInventoryWarning.SetActive(false);
         }
     }
 
