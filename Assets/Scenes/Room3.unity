@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: CD3
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 2bad2ff0091998a4f9d9f10e79d90de6, type: 3}
   useWith: CDPlayer
   isCD: 1
 --- !u!4 &168688764 stripped
