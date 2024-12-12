@@ -141,8 +141,8 @@ public class VentFan : MonoBehaviour
         float distanceFromFan = Vector3.Distance(vortexStart.position, vortexEnd.position);
         step = distanceFromFan / vortexDuration;
 
-        //Put player in Paused state
-        playerController.stateMachine.ChangeState(playerController.pausedState);
+        //Put player in Vortex state
+        playerController.stateMachine.ChangeState(playerController.vortexState);
 
         //Make player face the vent
         Camera.main.transform.forward = -vortexStart.forward;

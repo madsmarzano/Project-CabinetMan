@@ -40,7 +40,7 @@ public class PlayerPausedState : PlayerState
         //Slows the player down if they had been moving prior to becoming paused.
         if (player.rb.velocity.magnitude > 0)
         {
-            player.rb.velocity = Vector3.Lerp(player.rb.velocity, Vector3.zero, player.data.slowDownSpeed * Time.deltaTime);
+            player.rb.velocity = Vector3.Lerp(player.rb.velocity, Vector3.zero, 50 * Time.deltaTime);
         }
     }
 

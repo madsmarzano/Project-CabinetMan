@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// By Mads:
@@ -33,10 +34,11 @@ public class InventoryItem : MonoBehaviour
 
     public void AddToInventory()
     {
-        if (GameManager.instance.Inventory.Count > 10)
+        if (GameManager.instance.Inventory.Count == 10)
         {
             //Player loses game due to having too many items
-            Debug.Log("L");
+            SceneManager.LoadScene("InventoryDeath");
+            //Debug.Log("L");
         }
         else
         {
