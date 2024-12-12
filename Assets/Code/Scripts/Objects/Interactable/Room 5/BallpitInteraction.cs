@@ -43,7 +43,10 @@ public class BallpitInteraction : Interactable
             {
                 GameManager.instance.ballpitPercentFull += 10;
                 UpdateBallPit();
-                TextDisplay.Instance.ChangeTextDisplay("I've added some balls to the ball pit.");
+                if (GameManager.instance.ballpitPercentFull < 100)
+                {
+                    TextDisplay.Instance.ChangeTextDisplay("I've added some balls to the ball pit.");
+                }
 
                 //Remove item from inventory
                 GameManager.instance.Inventory.Remove(item);

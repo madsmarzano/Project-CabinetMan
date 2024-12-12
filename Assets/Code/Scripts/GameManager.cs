@@ -54,6 +54,9 @@ public class GameManager : MonoBehaviour
     public bool firstMapCollected = false;
     public bool secondMapCollected = false;
 
+    [Header("Arcade Puzzle Checks")]
+    public int timesTeleported = 0;
+
     private void Awake()
     {
         if (instance == null)

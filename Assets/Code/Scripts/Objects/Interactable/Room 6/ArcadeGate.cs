@@ -10,13 +10,14 @@ public class ArcadeGate : Interactable
         GameManager.instance.interactionInProgress = true;
         TextDisplay.Instance.ChangeTextDisplay("It's an old arcade... I think I see an exit all the way in the back!");
         TextDisplay.Instance.ChangeTextDisplay("Is there something I can do to open this gate?");
+        TextDisplay.Instance.ChangeRoomText("I need to find a way to open the arcade gate.", 6);
     }
 
     public override void OnItemUsed()
     {
         base.OnItemUsed();
         GameManager.instance.interactionInProgress = true;
-        TextDisplay.Instance.ChangeTextDisplay("I don't see any way I can use an item right here to open it... but there must be a way.");
+        TextDisplay.Instance.ChangeTextDisplay("I'll probably need an item, but I need to find the device that's controlling this gate.");
     }
 
     public override void UniqueStart()
@@ -26,6 +27,8 @@ public class ArcadeGate : Interactable
         {
             interactionEnabled = false;
             gameObject.SetActive(false);
+            TextDisplay.Instance.ChangeRoomText("The arcade gate is gone!", 6);
+            TextDisplay.Instance.LoadRoomText();
         }
     }
 
