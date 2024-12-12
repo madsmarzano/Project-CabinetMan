@@ -49,6 +49,11 @@ public class ChangeScale : MonoBehaviour
         {
             SetStartingSize(2);
         }
+        else if (GameManager.instance.previousScene == ("StartScene"))
+        {
+            //Player starts out small going from start scene to scene 6 (fall from vents)
+            SetStartingSize(2);
+        }
         else
         {
             SetStartingSize(1);
