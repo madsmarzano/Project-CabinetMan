@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b7047bd0d4c33d48ab3884a89829755
+guid: 2c737dae1c425eb4aa5b01129efbe60c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: fruit
-    second: {fileID: 2100000, guid: ff06444daa6115d4ca1c2f3475215b1d, type: 2}
+      name: blinn3
+    second: {fileID: 2100000, guid: 12296c78e7e9f1b46b2788bfe02f2b7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 1a769f2b644a3dd4892a2858f164ba4b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
