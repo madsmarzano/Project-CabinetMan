@@ -1,17 +1,18 @@
-
-using System.Diagnostics;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPausedState : PlayerState
+//Literally just a clone of the paused state
+
+public class PlayerVortexState : PlayerState
 {
-    public PlayerPausedState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
+    public PlayerVortexState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
 
     public override void EnterState()
     {
         base.EnterState();
-
         //Disable abilities
         player.canJump = false;
         player.canChangeSize = false;
@@ -20,6 +21,8 @@ public class PlayerPausedState : PlayerState
         //Disable gravity on rigidbody
         player.rb.useGravity = false;
 
+        //turn off player light
+        player.playerLight.SetActive(false);
     }
 
     public override void ExitState()
@@ -32,16 +35,14 @@ public class PlayerPausedState : PlayerState
         player.cameraEnabled = true;
         //Enable gravity on rigidbody
         player.rb.useGravity = true;
+
+        //turn on player light
+        player.playerLight.SetActive(true);
     }
 
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        //Slows the player down if they had been moving prior to becoming paused.
-        if (player.rb.velocity.magnitude > 0)
-        {
-            player.rb.velocity = Vector3.Lerp(player.rb.velocity, Vector3.zero, 50 * Time.deltaTime);
-        }
     }
 
     public override void Update()

@@ -15,5 +15,10 @@ public class DeathScreen : MonoBehaviour
         GameManager.instance.previousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Room4");
     }
+
+    public void InventoryDeathRestart()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
     
 }

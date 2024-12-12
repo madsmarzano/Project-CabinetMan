@@ -11,6 +11,8 @@ public class VentMaze : MonoBehaviour
 
     public GameObject level2ShortcutBlocks;
 
+    public GameObject level2Map;
+
     private void Awake()
     {
         playerController = player.GetComponent<Player>();
@@ -29,6 +31,11 @@ public class VentMaze : MonoBehaviour
         if (GameManager.instance.cdCollected[3])
         {
             level2ShortcutBlocks.SetActive(false);
+        }
+
+        if (GameManager.instance.secondMapCollected)
+        {
+            level2Map.SetActive(false);
         }
     }
 
